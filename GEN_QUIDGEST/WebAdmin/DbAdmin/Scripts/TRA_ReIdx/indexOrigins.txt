@@ -1,0 +1,6 @@
+TRAPSW_26E26542784242FF
+    Tabela NotDup PSW
+    Tabela NotDup PSW
+TRAS_UA_60FD56FAE9FA4AF6
+    Tabela NotDup S_UA
+    Tabela NotDup S_UA
