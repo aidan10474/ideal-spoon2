@@ -279,6 +279,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Properties"
+		/// </summary>
+		public static string PROPERTIES34868 {
+			get {
+				return ResourceManager.GetString("PROPERTIES34868", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Date"
 		/// </summary>
 		public static string DATE18475 {
@@ -513,6 +522,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Telephone"
+		/// </summary>
+		public static string TELEPHONE28697 {
+			get {
+				return ResourceManager.GetString("TELEPHONE28697", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Process info"
 		/// </summary>
 		public static string PROCESS_INFO62044 {
@@ -567,6 +585,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Property"
+		/// </summary>
+		public static string PROPERTY43977 {
+			get {
+				return ResourceManager.GetString("PROPERTY43977", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Level"
 		/// </summary>
 		public static string LEVEL06184 {
@@ -590,6 +617,15 @@ namespace GenioMVC.Resources
 		public static string CERTIFIED_SERIES_NUM14349 {
 			get {
 				return ResourceManager.GetString("CERTIFIED_SERIES_NUM14349", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to "Price"
+		/// </summary>
+		public static string PRICE06900 {
+			get {
+				return ResourceManager.GetString("PRICE06900", resourceCulture);
 			}
 		}
 
@@ -855,6 +891,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Title"
+		/// </summary>
+		public static string TITLE21885 {
+			get {
+				return ResourceManager.GetString("TITLE21885", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Sucesso"
 		/// </summary>
 		public static string SUCESSO65230 {
@@ -896,6 +941,15 @@ namespace GenioMVC.Resources
 		public static string ADMINISTRADOR57294 {
 			get {
 				return ResourceManager.GetString("ADMINISTRADOR57294", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to "Broker"
+		/// </summary>
+		public static string BROKER49181 {
+			get {
+				return ResourceManager.GetString("BROKER49181", resourceCulture);
 			}
 		}
 
@@ -1058,6 +1112,15 @@ namespace GenioMVC.Resources
 		public static string EMAIL25170 {
 			get {
 				return ResourceManager.GetString("EMAIL25170", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to "Main Photo"
+		/// </summary>
+		public static string MAIN_PHOTO18723 {
+			get {
+				return ResourceManager.GetString("MAIN_PHOTO18723", resourceCulture);
 			}
 		}
 
@@ -22100,15 +22163,6 @@ namespace GenioMVC.Resources
 		public static string MORE_PROPERTIES36834 {
 			get {
 				return ResourceManager.GetString("MORE_PROPERTIES36834", resourceCulture);
-			}
-		}
-
-		/// <summary>
-		///   Looks up a localized string similar to "Property"
-		/// </summary>
-		public static string PROPERTY43977 {
-			get {
-				return ResourceManager.GetString("PROPERTY43977", resourceCulture);
 			}
 		}
 

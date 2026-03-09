@@ -72,6 +72,9 @@
   <msg id="Executed by external app" code="EXECUTED_BY_EXTERNAL36156">
     <ENUS>Executed by external app</ENUS>
   </msg>
+  <msg id="Properties" code="PROPERTIES34868">
+    <ENUS>Properties</ENUS>
+  </msg>
   <msg id="Date" code="DATE18475">
     <ENUS>Date</ENUS>
   </msg>
@@ -150,6 +153,9 @@
   <msg id="Hidden" code="HIDDEN49780">
     <ENUS>Hidden</ENUS>
   </msg>
+  <msg id="Telephone" code="TELEPHONE28697">
+    <ENUS>Telephone</ENUS>
+  </msg>
   <msg id="Process info" code="PROCESS_INFO62044">
     <ENUS>Process info</ENUS>
   </msg>
@@ -168,6 +174,9 @@
   <msg id="Agendado para execução" code="AGENDADO_PARA_EXECUC11223">
     <ENUS>Agendado para execução</ENUS>
   </msg>
+  <msg id="Property" code="PROPERTY43977">
+    <ENUS>Property</ENUS>
+  </msg>
   <msg id="Level" code="LEVEL06184">
     <ENUS>Level</ENUS>
   </msg>
@@ -176,6 +185,9 @@
   </msg>
   <msg id="Certified Series Number" code="CERTIFIED_SERIES_NUM14349">
     <ENUS>Certified Series Number</ENUS>
+  </msg>
+  <msg id="Price" code="PRICE06900">
+    <ENUS>Price</ENUS>
   </msg>
   <msg id="Modos de processamento" code="MODOS_DE_PROCESSAMEN07602">
     <ENUS>Modos de processamento</ENUS>
@@ -264,6 +276,9 @@
   <msg id="Cancelado" code="CANCELADO05982">
     <ENUS>Cancelado</ENUS>
   </msg>
+  <msg id="Title" code="TITLE21885">
+    <ENUS>Title</ENUS>
+  </msg>
   <msg id="Sucesso" code="SUCESSO65230">
     <ENUS>Sucesso</ENUS>
   </msg>
@@ -278,6 +293,9 @@
   </msg>
   <msg id="Administrador" code="ADMINISTRADOR57294">
     <ENUS>Administrador</ENUS>
+  </msg>
+  <msg id="Broker" code="BROKER49181">
+    <ENUS>Broker</ENUS>
   </msg>
   <msg id="Agents" code="AGENTS29376">
     <ENUS>Agents</ENUS>
@@ -332,6 +350,9 @@
   </msg>
   <msg id="Email" code="EMAIL25170">
     <ENUS>Email</ENUS>
+  </msg>
+  <msg id="Main Photo" code="MAIN_PHOTO18723">
+    <ENUS>Main Photo</ENUS>
   </msg>
   <msg id="Sends attachment?" code="SENDS_ATTACHMENT_64661">
     <ENUS>Sends attachment?</ENUS>
@@ -7346,9 +7367,6 @@
   </msg>
   <msg id="More Properties" code="MORE_PROPERTIES36834">
     <ENUS>More Properties</ENUS>
-  </msg>
-  <msg id="Property" code="PROPERTY43977">
-    <ENUS>Property</ENUS>
   </msg>
   <msg id="Key" code="KEY01046">
     <ENUS>Key</ENUS>

@@ -189,6 +189,9 @@
 	<data name="EXECUTED_BY_EXTERNAL36156" xml:space="preserve">
 		<value>Executed by external app</value>
 	</data>
+	<data name="PROPERTIES34868" xml:space="preserve">
+		<value>Properties</value>
+	</data>
 	<data name="DATE18475" xml:space="preserve">
 		<value>Date</value>
 	</data>
@@ -267,6 +270,9 @@
 	<data name="HIDDEN49780" xml:space="preserve">
 		<value>Hidden</value>
 	</data>
+	<data name="TELEPHONE28697" xml:space="preserve">
+		<value>Telephone</value>
+	</data>
 	<data name="PROCESS_INFO62044" xml:space="preserve">
 		<value>Process info</value>
 	</data>
@@ -285,6 +291,9 @@
 	<data name="AGENDADO_PARA_EXECUC11223" xml:space="preserve">
 		<value>Agendado para execução</value>
 	</data>
+	<data name="PROPERTY43977" xml:space="preserve">
+		<value>Property</value>
+	</data>
 	<data name="LEVEL06184" xml:space="preserve">
 		<value>Level</value>
 	</data>
@@ -293,6 +302,9 @@
 	</data>
 	<data name="CERTIFIED_SERIES_NUM14349" xml:space="preserve">
 		<value>Certified Series Number</value>
+	</data>
+	<data name="PRICE06900" xml:space="preserve">
+		<value>Price</value>
 	</data>
 	<data name="MODOS_DE_PROCESSAMEN07602" xml:space="preserve">
 		<value>Modos de processamento</value>
@@ -381,6 +393,9 @@
 	<data name="CANCELADO05982" xml:space="preserve">
 		<value>Cancelado</value>
 	</data>
+	<data name="TITLE21885" xml:space="preserve">
+		<value>Title</value>
+	</data>
 	<data name="SUCESSO65230" xml:space="preserve">
 		<value>Sucesso</value>
 	</data>
@@ -395,6 +410,9 @@
 	</data>
 	<data name="ADMINISTRADOR57294" xml:space="preserve">
 		<value>Administrador</value>
+	</data>
+	<data name="BROKER49181" xml:space="preserve">
+		<value>Broker</value>
 	</data>
 	<data name="AGENTS29376" xml:space="preserve">
 		<value>Agents</value>
@@ -449,6 +467,9 @@
 	</data>
 	<data name="EMAIL25170" xml:space="preserve">
 		<value>Email</value>
+	</data>
+	<data name="MAIN_PHOTO18723" xml:space="preserve">
+		<value>Main Photo</value>
 	</data>
 	<data name="SENDS_ATTACHMENT_64661" xml:space="preserve">
 		<value>Sends attachment?</value>
@@ -7463,9 +7484,6 @@
 	</data>
 	<data name="MORE_PROPERTIES36834" xml:space="preserve">
 		<value>More Properties</value>
-	</data>
-	<data name="PROPERTY43977" xml:space="preserve">
-		<value>Property</value>
 	</data>
 	<data name="KEY01046" xml:space="preserve">
 		<value>Key</value>

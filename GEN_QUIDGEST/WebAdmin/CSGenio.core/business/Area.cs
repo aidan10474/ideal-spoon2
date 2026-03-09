@@ -24,12 +24,16 @@ namespace CSGenio.business
         private static AreaRef m_AreaS_ARG = new AreaRef("TRA", "asyncprocessargument", "s_arg");
         public static AreaRef AreaS_NM { get { return m_AreaS_NM; } }
         private static AreaRef m_AreaS_NM = new AreaRef("TRA", "notificationmessage", "s_nm");
+        public static AreaRef AreaPROPERTY { get { return m_AreaPROPERTY; } }
+        private static AreaRef m_AreaPROPERTY = new AreaRef("TRA", "traproperty", "property");
         public static AreaRef AreaAGENT { get { return m_AreaAGENT; } }
         private static AreaRef m_AreaAGENT = new AreaRef("TRA", "traagent", "agent");
         public static AreaRef AreaS_UA { get { return m_AreaS_UA; } }
         private static AreaRef m_AreaS_UA = new AreaRef("TRA", "userauthorization", "s_ua");
         public static AreaRef AreaS_NES { get { return m_AreaS_NES; } }
         private static AreaRef m_AreaS_NES = new AreaRef("TRA", "notificationemailsignature", "s_nes");
+        public static AreaRef AreaBROKER { get { return m_AreaBROKER; } }
+        private static AreaRef m_AreaBROKER = new AreaRef("TRA", "trabroker", "broker");
         public static AreaRef AreaS_APR { get { return m_AreaS_APR; } }
         private static AreaRef m_AreaS_APR = new AreaRef("TRA", "asyncprocess", "s_apr");
         public static AreaRef AreaS_PAX { get { return m_AreaS_PAX; } }
@@ -71,9 +75,11 @@ namespace CSGenio.business
             new List<string>() {
             "s_arg",
             "s_nm",
+            "property",
             "agent",
             "s_ua",
             "s_nes",
+            "broker",
             "s_apr",
             "s_pax",
             "psw",
