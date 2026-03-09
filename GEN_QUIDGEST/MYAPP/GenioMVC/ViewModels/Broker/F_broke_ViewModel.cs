@@ -35,7 +35,7 @@ namespace GenioMVC.ViewModels.Broker
 		/// <summary>
 		/// Title: "Photo" | Type: "IJ"
 		/// </summary>
-		[ImageThumbnailJsonConverter(100, 50)]
+		[ImageThumbnailJsonConverter(30, 50)]
 		public GenioMVC.Models.ImageModel ValPhoto { get; set; }
 		/// <summary>
 		/// Title: "Name" | Type: "C"

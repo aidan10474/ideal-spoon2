@@ -153,7 +153,7 @@
 						</base-input-structure>
 					</q-col>
 				</q-row>
-				<q-row v-if="controls.F_BROKE__BROKER__EMAIL.isVisible">
+				<q-row v-if="controls.F_BROKE__BROKER__EMAIL.isVisible || controls.F_BROKE__BROKER__PHONE_NUMBER.isVisible">
 					<q-col
 						v-if="controls.F_BROKE__BROKER__EMAIL.isVisible"
 						cols="auto">
@@ -169,6 +169,24 @@
 								v-bind="controls.F_BROKE__BROKER__EMAIL.props"
 								@blur="onBlur(controls.F_BROKE__BROKER__EMAIL, model.ValEmail.value)"
 								@change="model.ValEmail.fnUpdateValueOnChange" />
+						</base-input-structure>
+					</q-col>
+					<q-col
+						v-if="controls.F_BROKE__BROKER__PHONE_NUMBER.isVisible"
+						cols="auto">
+						<base-input-structure
+							v-if="controls.F_BROKE__BROKER__PHONE_NUMBER.isVisible"
+							class="i-text"
+							v-bind="controls.F_BROKE__BROKER__PHONE_NUMBER"
+							v-on="controls.F_BROKE__BROKER__PHONE_NUMBER.handlers"
+							:loading="controls.F_BROKE__BROKER__PHONE_NUMBER.props.loading"
+							:reporting-mode-on="reportingModeCAV"
+							:suggestion-mode-on="suggestionModeOn">
+							<q-mask
+								v-if="controls.F_BROKE__BROKER__PHONE_NUMBER.isVisible"
+								v-bind="controls.F_BROKE__BROKER__PHONE_NUMBER"
+								:model-value="model.ValPhone_number.value"
+								@change="model.ValPhone_number.fnUpdateValueOnChange" />
 						</base-input-structure>
 					</q-col>
 				</q-row>
@@ -528,7 +546,7 @@
 						placeholder: '',
 						labelPosition: computed(() => this.labelAlignment.topleft),
 						height: 50,
-						width: 100,
+						width: 30,
 						dataTitle: computed(() => genericFunctions.formatString(vm.Resources.IMAGEM_UTILIZADA_PAR17299, vm.Resources.PHOTO51874)),
 						maxFileSize: 10485760, // In bytes.
 						maxFileSizeLabel: '10 MB',
