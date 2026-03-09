@@ -39,6 +39,9 @@
   <msg id="Phone number" code="PHONE_NUMBER20774">
     <ENUS>Phone number</ENUS>
   </msg>
+  <msg id="Broker.name" code="BROKER_NAME24456">
+    <ENUS>Broker.name</ENUS>
+  </msg>
   <msg id="Async process arguments" code="ASYNC_PROCESS_ARGUME13794">
     <ENUS>Async process arguments</ENUS>
   </msg>
@@ -368,6 +371,9 @@
   </msg>
   <msg id="Changed by" code="CHANGED_BY08967">
     <ENUS>Changed by</ENUS>
+  </msg>
+  <msg id="Price 0000000000,00" code="PRICE_0000000000_0058065">
+    <ENUS>Price 0000000000,00</ENUS>
   </msg>
   <msg id="a:" code="A_47238">
     <ENUS>to:</ENUS>

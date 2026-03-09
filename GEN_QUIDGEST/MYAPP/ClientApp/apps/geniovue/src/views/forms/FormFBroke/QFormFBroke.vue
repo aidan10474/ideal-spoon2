@@ -545,6 +545,7 @@
 						placeholder: '',
 						labelPosition: computed(() => this.labelAlignment.topleft),
 						maxLength: 50,
+						mustBeFilled: true,
 						controlLimits: [
 						],
 					}, this),
@@ -571,6 +572,20 @@
 						placeholder: '',
 						labelPosition: computed(() => this.labelAlignment.topleft),
 						maxLength: 256,
+						mustBeFilled: true,
+						controlLimits: [
+						],
+					}, this),
+					F_BROKE__BROKER__PHONE_NUMBER: new fieldControlClass.MaskControl({
+						modelField: 'ValPhone_number',
+						valueChangeEvent: 'fieldChange:broker.phone_number',
+						id: 'F_BROKE__BROKER__PHONE_NUMBER',
+						name: 'PHONE_NUMBER',
+						size: 'medium',
+						label: computed(() => this.Resources.PHONE_NUMBER20774),
+						placeholder: '',
+						labelPosition: computed(() => this.labelAlignment.topleft),
+						maxLength: 12,
 						controlLimits: [
 						],
 					}, this),
@@ -603,6 +618,8 @@
 						set ValEmail(value) { vm.model.ValEmail.updateValue(value) },
 						get ValName() { return vm.model.ValName.value },
 						set ValName(value) { vm.model.ValName.updateValue(value) },
+						get ValPhone_number() { return vm.model.ValPhone_number.value },
+						set ValPhone_number(value) { vm.model.ValPhone_number.updateValue(value) },
 						get ValPhoto() { return vm.model.ValPhoto.value },
 						set ValPhoto(value) { vm.model.ValPhoto.updateValue(value) },
 					},

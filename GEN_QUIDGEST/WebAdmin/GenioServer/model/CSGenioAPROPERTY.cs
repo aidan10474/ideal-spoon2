@@ -66,21 +66,32 @@ namespace CSGenio.business
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "title", FieldType.TEXT);
 			Qfield.FieldDescription = "Title";
-			Qfield.FieldSize =  50;
+			Qfield.FieldSize =  80;
 			Qfield.MQueue = false;
 			Qfield.CavDesignation = "TITLE21885";
 
+            Qfield.NotNull = true;
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "price", FieldType.CURRENCY);
-			Qfield.FieldDescription = "Price";
+			Qfield.FieldDescription = "Price 0000000000,00";
 			Qfield.FieldSize =  15;
 			Qfield.MQueue = false;
 			Qfield.IntegerDigits = 10;
 			Qfield.Decimals = 4;
-			Qfield.CavDesignation = "PRICE06900";
+			Qfield.CavDesignation = "PRICE_0000000000_0058065";
+
+			Qfield.Dupmsg = "";
+			info.RegisterFieldDB(Qfield);
+
+			//- - - - - - - - - - - - - - - - - - -
+			Qfield = new Field(info.Alias, "broker_fk", FieldType.KEY_INT);
+			Qfield.FieldDescription = "";
+			Qfield.FieldSize =  8;
+			Qfield.MQueue = false;
+			Qfield.CavDesignation = "";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
@@ -103,6 +114,7 @@ namespace CSGenio.business
 			// Mother Relations
 			//------------------------------
 			info.ParentTables = new Dictionary<string, Relation>();
+			info.ParentTables.Add("broker", new Relation("TRA", "traproperty", "property", "primary_property", "broker_fk", "TRA", "trabroker", "broker", "codbroker", "codbroker"));
 		}
 
 		/// <summary>
@@ -112,7 +124,8 @@ namespace CSGenio.business
 		{
 			// Pathways
 			//------------------------------
-			info.Pathways = new Dictionary<string, string>(0);
+			info.Pathways = new Dictionary<string, string>(1);
+			info.Pathways.Add("broker","broker");
 		}
 
 		/// <summary>
@@ -151,7 +164,7 @@ namespace CSGenio.business
 			info.ShadowTabKeyName="";
 
 			info.PrimaryKeyName="primary_property";
-			info.HumanKeyName="";
+			info.HumanKeyName="title,price,".TrimEnd(',');
 			info.Alias="property";
 			info.IsDomain = true;
 			info.PersistenceType = PersistenceType.Database;
@@ -265,15 +278,26 @@ namespace CSGenio.business
 			set { insertNameValueField(FldTitle, value); }
 		}
 
-		/// <summary>Field : "Price" Tipo: "$" Formula:  ""</summary>
+		/// <summary>Field : "Price 0000000000,00" Tipo: "$" Formula:  ""</summary>
 		public static FieldRef FldPrice { get { return m_fldPrice; } }
 		private static FieldRef m_fldPrice = new FieldRef("property", "price");
 
-		/// <summary>Field : "Price" Tipo: "$" Formula:  ""</summary>
+		/// <summary>Field : "Price 0000000000,00" Tipo: "$" Formula:  ""</summary>
 		public decimal ValPrice
 		{
 			get { return (decimal)returnValueField(FldPrice); }
 			set { insertNameValueField(FldPrice, value); }
+		}
+
+		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		public static FieldRef FldBroker_fk { get { return m_fldBroker_fk; } }
+		private static FieldRef m_fldBroker_fk = new FieldRef("property", "broker_fk");
+
+		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		public string ValBroker_fk
+		{
+			get { return (string)returnValueField(FldBroker_fk); }
+			set { insertNameValueField(FldBroker_fk, value); }
 		}
 
 		/// <summary>Field : "ZZSTATE" Type: "INT" Formula:  ""</summary>
@@ -373,7 +397,7 @@ namespace CSGenio.business
 		// USE /[MANUAL TRA TABAUX PROPERTY]/
 
  
-     
+      
 
 	}
 }

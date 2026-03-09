@@ -70,6 +70,7 @@ namespace CSGenio.business
 			Qfield.MQueue = false;
 			Qfield.CavDesignation = "NAME31974";
 
+            Qfield.NotNull = true;
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
@@ -90,7 +91,25 @@ namespace CSGenio.business
 			Qfield.MQueue = false;
 			Qfield.CavDesignation = "EMAIL25170";
 
+            Qfield.NotNull = true;
 			Qfield.Dupmsg = "";
+            Qfield.NotDup = true;
+			info.RegisterFieldDB(Qfield);
+
+			//- - - - - - - - - - - - - - - - - - -
+			Qfield = new Field(info.Alias, "phone_number", FieldType.TEXT);
+			Qfield.FieldDescription = "Phone number";
+			Qfield.FieldSize =  12;
+			Qfield.MQueue = false;
+			Qfield.CavDesignation = "PHONE_NUMBER20774";
+
+			Qfield.Dupmsg = "";
+			Qfield.FillingRule = (rule) =>
+			{
+				string mask = "00000 000000";
+				string validation = "00000 000000";
+				return Validation.validateMP(rule, mask, validation);
+			};
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
@@ -107,6 +126,8 @@ namespace CSGenio.business
 		{
 			// Daughters Relations
 			//------------------------------
+			info.ChildTable = new ChildRelation[1];
+			info.ChildTable[0]= new ChildRelation("property", new String[] {"broker_fk"}, DeleteProc.NA);
 
 			// Mother Relations
 			//------------------------------
@@ -295,6 +316,17 @@ namespace CSGenio.business
 			set { insertNameValueField(FldEmail, value); }
 		}
 
+		/// <summary>Field : "Phone number" Tipo: "C" Formula:  ""</summary>
+		public static FieldRef FldPhone_number { get { return m_fldPhone_number; } }
+		private static FieldRef m_fldPhone_number = new FieldRef("broker", "phone_number");
+
+		/// <summary>Field : "Phone number" Tipo: "C" Formula:  ""</summary>
+		public string ValPhone_number
+		{
+			get { return (string)returnValueField(FldPhone_number); }
+			set { insertNameValueField(FldPhone_number, value); }
+		}
+
 		/// <summary>Field : "ZZSTATE" Type: "INT" Formula:  ""</summary>
 		public static FieldRef FldZzstate { get { return m_fldZzstate; } }
 		private static FieldRef m_fldZzstate = new FieldRef("broker", "zzstate");
@@ -392,7 +424,7 @@ namespace CSGenio.business
 		// USE /[MANUAL TRA TABAUX BROKER]/
 
  
-      
+       
 
 	}
 }

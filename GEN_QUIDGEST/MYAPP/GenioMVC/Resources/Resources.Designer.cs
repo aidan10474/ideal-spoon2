@@ -180,6 +180,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Broker.name"
+		/// </summary>
+		public static string BROKER_NAME24456 {
+			get {
+				return ResourceManager.GetString("BROKER_NAME24456", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Async process arguments"
 		/// </summary>
 		public static string ASYNC_PROCESS_ARGUME13794 {
@@ -1166,6 +1175,15 @@ namespace GenioMVC.Resources
 		public static string CHANGED_BY08967 {
 			get {
 				return ResourceManager.GetString("CHANGED_BY08967", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to "Price 0000000000,00"
+		/// </summary>
+		public static string PRICE_0000000000_0058065 {
+			get {
+				return ResourceManager.GetString("PRICE_0000000000_0058065", resourceCulture);
 			}
 		}
 

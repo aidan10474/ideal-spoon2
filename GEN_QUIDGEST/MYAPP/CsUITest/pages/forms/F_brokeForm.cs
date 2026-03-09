@@ -27,6 +27,11 @@ public class F_brokeForm : Form
 	/// </summary>
 	public BaseInputControl BrokerEmail => new BaseInputControl(driver, ContainerLocator, "container-F_BROKE__BROKER__EMAIL", "#F_BROKE__BROKER__EMAIL");
 
+	/// <summary>
+	/// Phone number
+	/// </summary>
+	public BaseInputControl BrokerPhone_number => new BaseInputControl(driver, ContainerLocator, "container-F_BROKE__BROKER__PHONE_NUMBER", "#F_BROKE__BROKER__PHONE_NUMBER");
+
 	public F_brokeForm(IWebDriver driver, FORM_MODE mode, By? containerLocator = null)
 		: base(driver, mode, "F_BROKE", containerLocator: containerLocator) { }
 }
