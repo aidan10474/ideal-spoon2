@@ -422,6 +422,36 @@
 						</q-accordion>
 					</q-col>
 				</q-row>
+				<q-row v-if="controls.F_PROPERTY__PSEUD__PROPERTY_GRID.isVisible">
+					<q-col v-if="controls.F_PROPERTY__PSEUD__PROPERTY_GRID.isVisible">
+						<q-table
+							v-if="controls.F_PROPERTY__PSEUD__PROPERTY_GRID.isVisible"
+							v-bind="controls.F_PROPERTY__PSEUD__PROPERTY_GRID"
+							v-on="controls.F_PROPERTY__PSEUD__PROPERTY_GRID.handlers">
+							<template #header>
+								<q-table-config
+									:table-ctrl="controls.F_PROPERTY__PSEUD__PROPERTY_GRID"
+									v-on="controls.F_PROPERTY__PSEUD__PROPERTY_GRID.handlers" />
+							</template>
+							<!-- USE /[MANUAL TRA CUSTOM_TABLE F_PROPERTY__PSEUD__PROPERTY_GRID]/ -->
+						</q-table>
+					</q-col>
+				</q-row>
+				<q-row v-if="controls.F_PROPERTY__PSEUD__CONTACT_GRID.isVisible">
+					<q-col v-if="controls.F_PROPERTY__PSEUD__CONTACT_GRID.isVisible">
+						<q-table
+							v-if="controls.F_PROPERTY__PSEUD__CONTACT_GRID.isVisible"
+							v-bind="controls.F_PROPERTY__PSEUD__CONTACT_GRID"
+							v-on="controls.F_PROPERTY__PSEUD__CONTACT_GRID.handlers">
+							<template #header>
+								<q-table-config
+									:table-ctrl="controls.F_PROPERTY__PSEUD__CONTACT_GRID"
+									v-on="controls.F_PROPERTY__PSEUD__CONTACT_GRID.handlers" />
+							</template>
+							<!-- USE /[MANUAL TRA CUSTOM_TABLE F_PROPERTY__PSEUD__CONTACT_GRID]/ -->
+						</q-table>
+					</q-col>
+				</q-row>
 			</template>
 		</q-container>
 	</teleport>
@@ -1092,6 +1122,281 @@
 						controlLimits: [
 						],
 					}, this),
+					F_PROPERTY__PSEUD__PROPERTY_GRID: new fieldControlClass.TableListControl({
+						id: 'F_PROPERTY__PSEUD__PROPERTY_GRID',
+						name: 'PROPERTY_GRID',
+						size: 'block',
+						label: computed(() => this.Resources.PROPERTIES34868),
+						placeholder: '',
+						labelPosition: computed(() => this.labelAlignment.topleft),
+						controller: 'PROPERTY',
+						action: 'F_property_ValProperty_grid',
+						hasDependencies: false,
+						isInCollapsible: false,
+						columnsOriginal: [
+							new listColumnTypes.ImageColumn({
+								order: 1,
+								name: 'ValMain_photo',
+								area: 'PROPERTY',
+								field: 'MAIN_PHOTO',
+								label: computed(() => this.Resources.MAIN_PHOTO18723),
+								dataTitle: computed(() => genericFunctions.formatString(vm.Resources.IMAGEM_UTILIZADA_PAR58591, vm.Resources.MAIN_PHOTO18723)),
+								scrollData: 3,
+								sortable: false,
+								searchable: false,
+								export: 1,
+							}, computed(() => vm.model), computed(() => vm.internalEvents)),
+							new listColumnTypes.TextColumn({
+								order: 2,
+								name: 'ValTitle',
+								area: 'PROPERTY',
+								field: 'TITLE',
+								label: computed(() => this.Resources.TITLE21885),
+								dataLength: 80,
+								scrollData: 30,
+								export: 1,
+							}, computed(() => vm.model), computed(() => vm.internalEvents)),
+						],
+						config: {
+							name: 'ValProperty_grid',
+							serverMode: true,
+							pkColumn: 'ValCodproperty',
+							tableAlias: 'PROPERTY',
+							tableNamePlural: computed(() => this.Resources.PROPERTIES34868),
+							viewManagement: '',
+							showLimitsInfo: true,
+							tableTitle: computed(() => this.Resources.PROPERTIES34868),
+							showAlternatePagination: true,
+							permissions: {
+							},
+							searchBarConfig: {
+								visibility: false
+							},
+							allowColumnFilters: false,
+							allowColumnSort: true,
+							generalCustomActions: [
+							],
+							groupActions: [
+							],
+							customActions: [
+							],
+							MCActions: [
+							],
+							rowClickAction: {
+							},
+							formsDefinition: {
+							},
+							defaultSearchColumnName: 'ValTitle',
+							defaultSearchColumnNameOriginal: 'ValTitle',
+							defaultColumnSorting: {
+								columnName: '',
+								sortOrder: 'asc'
+							}
+						},
+						globalEvents: ['changed-BROKER', 'changed-CITY', 'changed-PROPERTY'],
+						uuid: 'F_property_ValProperty_grid',
+						allSelectedRows: 'false',
+						controlLimits: [
+							{
+								identifier: ['id', 'property'],
+								dependencyEvents: ['fieldChange:property.codproperty'],
+								dependencyField: 'PROPERTY.CODProperty',
+								fnValueSelector: (model) => model.ValCodproperty.value
+							},
+						],
+					}, this),
+					F_PROPERTY__PSEUD__CONTACT_GRID: new fieldControlClass.TableListControl({
+						id: 'F_PROPERTY__PSEUD__CONTACT_GRID',
+						name: 'CONTACT_GRID',
+						size: 'block',
+						label: computed(() => this.Resources.CONTACTS55742),
+						placeholder: '',
+						labelPosition: computed(() => this.labelAlignment.topleft),
+						controller: 'PROPERTY',
+						action: 'F_property_ValContact_grid',
+						hasDependencies: false,
+						isInCollapsible: false,
+						columnsOriginal: [
+							new listColumnTypes.DateColumn({
+								order: 1,
+								name: 'ValDate',
+								area: 'CONTACT',
+								field: 'DATE',
+								label: computed(() => this.Resources.DATE18475),
+								scrollData: 8,
+								dateTimeType: 'date',
+								export: 1,
+							}, computed(() => vm.model), computed(() => vm.internalEvents)),
+							new listColumnTypes.TextColumn({
+								order: 2,
+								name: 'ValClient_name',
+								area: 'CONTACT',
+								field: 'CLIENT_NAME',
+								label: computed(() => this.Resources.NAME31974),
+								dataLength: 50,
+								scrollData: 30,
+								export: 1,
+							}, computed(() => vm.model), computed(() => vm.internalEvents)),
+							new listColumnTypes.TextColumn({
+								order: 3,
+								name: 'ValDescription',
+								area: 'CONTACT',
+								field: 'DESCRIPTION',
+								label: computed(() => this.Resources.DESCRIPTION07383),
+								dataLength: 50,
+								scrollData: 30,
+								export: 1,
+							}, computed(() => vm.model), computed(() => vm.internalEvents)),
+						],
+						config: {
+							name: 'ValContact_grid',
+							serverMode: true,
+							pkColumn: 'ValCodcontact',
+							tableAlias: 'CONTACT',
+							tableNamePlural: computed(() => this.Resources.CONTACTS55742),
+							viewManagement: '',
+							showLimitsInfo: true,
+							tableTitle: computed(() => this.Resources.CONTACTS55742),
+							showAlternatePagination: true,
+							permissions: {
+							},
+							searchBarConfig: {
+								visibility: false
+							},
+							allowColumnFilters: false,
+							allowColumnSort: true,
+							crudActions: [
+								{
+									id: 'show',
+									name: 'show',
+									title: computed(() => this.Resources.CONSULTAR57388),
+									icon: {
+										icon: 'view'
+									},
+									isInReadOnly: true,
+									params: {
+										action: vm.openFormAction,
+										type: 'form',
+										formName: 'F_CONTACT',
+										mode: 'SHOW',
+										isControlled: true
+									}
+								},
+								{
+									id: 'edit',
+									name: 'edit',
+									title: computed(() => this.Resources.EDITAR11616),
+									icon: {
+										icon: 'pencil'
+									},
+									isInReadOnly: false,
+									params: {
+										action: vm.openFormAction,
+										type: 'form',
+										formName: 'F_CONTACT',
+										mode: 'EDIT',
+										isControlled: true
+									}
+								},
+								{
+									id: 'duplicate',
+									name: 'duplicate',
+									title: computed(() => this.Resources.DUPLICAR09748),
+									icon: {
+										icon: 'duplicate'
+									},
+									isInReadOnly: false,
+									params: {
+										action: vm.openFormAction,
+										type: 'form',
+										formName: 'F_CONTACT',
+										mode: 'DUPLICATE',
+										isControlled: true
+									}
+								},
+								{
+									id: 'delete',
+									name: 'delete',
+									title: computed(() => this.Resources.ELIMINAR21155),
+									icon: {
+										icon: 'delete'
+									},
+									isInReadOnly: false,
+									params: {
+										action: vm.openFormAction,
+										type: 'form',
+										formName: 'F_CONTACT',
+										mode: 'DELETE',
+										isControlled: true
+									}
+								}
+							],
+							generalActions: [
+								{
+									id: 'insert',
+									name: 'insert',
+									title: computed(() => this.Resources.INSERIR43365),
+									icon: {
+										icon: 'add'
+									},
+									isInReadOnly: false,
+									params: {
+										action: vm.openFormAction,
+										type: 'form',
+										formName: 'F_CONTACT',
+										mode: 'NEW',
+										repeatInsertion: false,
+										isControlled: true
+									}
+								},
+							],
+							generalCustomActions: [
+							],
+							groupActions: [
+							],
+							customActions: [
+							],
+							MCActions: [
+							],
+							rowClickAction: {
+								id: 'RCA__F_CONTACT',
+								name: '_F_CONTACT',
+								title: '',
+								isInReadOnly: true,
+								params: {
+									isRoute: true,
+									action: vm.openFormAction,
+									type: 'form',
+									formName: 'F_CONTACT',
+									mode: 'SHOW',
+									isControlled: true
+								}
+							},
+							formsDefinition: {
+								'F_CONTACT': {
+									fnKeySelector: (row) => row.Fields.ValCodcontact,
+									isPopup: true
+								},
+							},
+							defaultSearchColumnName: 'ValClient_name',
+							defaultSearchColumnNameOriginal: 'ValClient_name',
+							defaultColumnSorting: {
+								columnName: '',
+								sortOrder: 'asc'
+							}
+						},
+						globalEvents: ['changed-PROPERTY', 'changed-CONTACT'],
+						uuid: 'F_property_ValContact_grid',
+						allSelectedRows: 'false',
+						controlLimits: [
+							{
+								identifier: ['id', 'property'],
+								dependencyEvents: ['fieldChange:property.codproperty'],
+								dependencyField: 'PROPERTY.CODProperty',
+								fnValueSelector: (model) => model.ValCodproperty.value
+							},
+						],
+					}, this),
 				},
 
 				model: new FormViewModel(this, {
@@ -1110,6 +1415,8 @@
 				]),
 
 				tableFields: readonly([
+					'F_PROPERTY__PSEUD__PROPERTY_GRID',
+					'F_PROPERTY__PSEUD__CONTACT_GRID',
 				]),
 
 				timelineFields: readonly([
