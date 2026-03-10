@@ -63,10 +63,22 @@ namespace GenioMVC.ViewModels.Property
 		[ValidateSetAccess]
 		public TableDBEdit<GenioMVC.Models.City> TableCityCity { get; set; }
 		/// <summary>
-		/// Title: "Broker.name" | Type: "C"
+		/// Title: "Country" | Type: "C"
 		/// </summary>
 		[ValidateSetAccess]
-		public TableDBEdit<GenioMVC.Models.Broker> TableBrokerName { get; set; }
+		public string CityCountryValCountry
+		{
+			get
+			{
+				return funcCityCountryValCountry != null ? funcCityCountryValCountry() : _auxCityCountryValCountry;
+			}
+			set { funcCityCountryValCountry = () => value; }
+		}
+
+		[JsonIgnore]
+		public Func<string> funcCityCountryValCountry { get; set; }
+
+		private string _auxCityCountryValCountry { get; set; }
 		/// <summary>
 		/// Title: "Date" | Type: "D"
 		/// </summary>
@@ -79,6 +91,46 @@ namespace GenioMVC.ViewModels.Property
 		/// Title: "Bathrooms" | Type: "C"
 		/// </summary>
 		public string ValBathroom_number { get; set; }
+		/// <summary>
+		/// Title: "Broker.name" | Type: "C"
+		/// </summary>
+		[ValidateSetAccess]
+		public TableDBEdit<GenioMVC.Models.Broker> TableBrokerName { get; set; }
+		/// <summary>
+		/// Title: "Email" | Type: "C"
+		/// </summary>
+		[ValidateSetAccess]
+		public string BrokerValEmail
+		{
+			get
+			{
+				return funcBrokerValEmail != null ? funcBrokerValEmail() : _auxBrokerValEmail;
+			}
+			set { funcBrokerValEmail = () => value; }
+		}
+
+		[JsonIgnore]
+		public Func<string> funcBrokerValEmail { get; set; }
+
+		private string _auxBrokerValEmail { get; set; }
+		/// <summary>
+		/// Title: "Photo" | Type: "IJ"
+		/// </summary>
+		[ImageThumbnailJsonConverter(30, 0)]
+		[ValidateSetAccess]
+		public GenioMVC.Models.ImageModel BrokerValPhoto
+		{
+			get
+			{
+				return funcBrokerValPhoto != null ? funcBrokerValPhoto() : _auxBrokerValPhoto;
+			}
+			set { funcBrokerValPhoto = () => value; }
+		}
+
+		[JsonIgnore]
+		public Func<GenioMVC.Models.ImageModel> funcBrokerValPhoto { get; set; }
+
+		private GenioMVC.Models.ImageModel _auxBrokerValPhoto { get; set; }
 
 		#region Navigations
 		#endregion
@@ -219,6 +271,8 @@ namespace GenioMVC.ViewModels.Property
 				ValDate_construction = ViewModelConversion.ToDateTime(m.ValDate_construction);
 				ValSize = ViewModelConversion.ToString(m.ValSize);
 				ValBathroom_number = ViewModelConversion.ToString(m.ValBathroom_number);
+				funcBrokerValEmail = () => ViewModelConversion.ToString(m.Broker.ValEmail);
+				funcBrokerValPhoto = () => ViewModelConversion.ToImage(m.Broker.ValPhoto);
 				ValCodproperty = ViewModelConversion.ToString(m.ValCodproperty);
 			}
 			catch (Exception)
@@ -256,6 +310,14 @@ namespace GenioMVC.ViewModels.Property
 				m.ValSize = ViewModelConversion.ToString(ValSize);
 				m.ValBathroom_number = ViewModelConversion.ToString(ValBathroom_number);
 				m.ValCodproperty = ViewModelConversion.ToString(ValCodproperty);
+
+				/*
+					At this moment, in the case of runtime calculation of server-side formulas, to improve performance and reduce database load,
+						the values coming from the client-side will be accepted as valid, since they will not be saved and are only being used for calculation.
+				*/
+				if (!HasDisabledUserValuesSecurity)
+					return;
+
 			}
 			catch (Exception)
 			{
@@ -438,8 +500,10 @@ namespace GenioMVC.ViewModels.Property
 
 			validator.Required("ValTitle", Resources.Resources.TITLE21885, ViewModelConversion.ToString(ValTitle), FieldType.TEXT.GetFormatting());
 			validator.StringLength("ValDescription", Resources.Resources.DESCRIPTION07383, ValDescription, 50);
+			validator.StringLength("CityCountryValCountry", Resources.Resources.COUNTRY64133, CityCountryValCountry, 50);
 			validator.StringLength("ValSize", Resources.Resources.SIZE10299, ValSize, 50);
 			validator.StringLength("ValBathroom_number", Resources.Resources.BATHROOMS54249, ValBathroom_number, 50);
+			validator.StringLength("BrokerValEmail", Resources.Resources.EMAIL25170, BrokerValEmail, 256);
 
 
 			return validator.GetResult();
@@ -583,7 +647,7 @@ namespace GenioMVC.ViewModels.Property
 		/// <param name="PKey">Primary Key of City</param>
 		public ConcurrentDictionary<string, object> GetDependant_F_propertyTableCityCity(string PKey)
 		{
-			FieldRef[] refDependantFields = [CSGenioAcity.FldCodcity, CSGenioAcity.FldCity];
+			FieldRef[] refDependantFields = [CSGenioAcity.FldCodcity, CSGenioAcity.FldCity, CSGenioAcountry.FldCodcountry, CSGenioAcountry.FldCountry];
 
 			var returnEmptyDependants = false;
 			CriteriaSet wherecodition = CriteriaSet.And();
@@ -632,6 +696,7 @@ namespace GenioMVC.ViewModels.Property
 			var row = GetDependant_F_propertyTableCityCity(this.ValCodcity);
 			try
 			{
+				this.funcCityCountryValCountry = () => (string)row["country.country"];
 
 				// Fill List fields
 				this.ValCodcity = ViewModelConversion.ToString(row["city.codcity"]);
@@ -773,7 +838,7 @@ namespace GenioMVC.ViewModels.Property
 		/// <param name="PKey">Primary Key of Broker</param>
 		public ConcurrentDictionary<string, object> GetDependant_F_propertyTableBrokerName(string PKey)
 		{
-			FieldRef[] refDependantFields = [CSGenioAbroker.FldCodbroker, CSGenioAbroker.FldName];
+			FieldRef[] refDependantFields = [CSGenioAbroker.FldCodbroker, CSGenioAbroker.FldName, CSGenioAbroker.FldEmail, CSGenioAbroker.FldPhoto];
 
 			var returnEmptyDependants = false;
 			CriteriaSet wherecodition = CriteriaSet.And();
@@ -822,6 +887,8 @@ namespace GenioMVC.ViewModels.Property
 			var row = GetDependant_F_propertyTableBrokerName(this.ValCodagent);
 			try
 			{
+				this.funcBrokerValEmail = () => (string)row["broker.email"];
+				this.funcBrokerValPhoto = () => (GenioMVC.Models.ImageModel)row["broker.photo"];
 
 				// Fill List fields
 				this.ValCodagent = ViewModelConversion.ToString(row["broker.codbroker"]);
@@ -866,12 +933,16 @@ namespace GenioMVC.ViewModels.Property
 				"property.title" => ViewModelConversion.ToString(modelValue),
 				"property.price" => ViewModelConversion.ToNumeric(modelValue),
 				"property.description" => ViewModelConversion.ToString(modelValue),
+				"country.country" => ViewModelConversion.ToString(modelValue),
 				"property.date_construction" => ViewModelConversion.ToDateTime(modelValue),
 				"property.size" => ViewModelConversion.ToString(modelValue),
 				"property.bathroom_number" => ViewModelConversion.ToString(modelValue),
+				"broker.email" => ViewModelConversion.ToString(modelValue),
+				"broker.photo" => ViewModelConversion.ToImage(modelValue),
 				"property.codproperty" => ViewModelConversion.ToString(modelValue),
 				"city.codcity" => ViewModelConversion.ToString(modelValue),
 				"city.city" => ViewModelConversion.ToString(modelValue),
+				"country.codcountry" => ViewModelConversion.ToString(modelValue),
 				"broker.codbroker" => ViewModelConversion.ToString(modelValue),
 				"broker.name" => ViewModelConversion.ToString(modelValue),
 				_ => modelValue
@@ -883,6 +954,8 @@ namespace GenioMVC.ViewModels.Property
 		{
 			if (ValMain_photo != null)
 				ValMain_photo.Ticket = Helpers.Helpers.GetFileTicket(m_userContext.User, CSGenio.business.Area.AreaPROPERTY, CSGenioAproperty.FldMain_photo.Field, null, ValCodproperty);
+			if (BrokerValPhoto != null)
+				BrokerValPhoto.Ticket = Helpers.Helpers.GetFileTicket(m_userContext.User, CSGenio.business.Area.AreaBROKER, CSGenioAbroker.FldPhoto.Field, null, ValCodagent);
 		}
 
 		#region Charts
