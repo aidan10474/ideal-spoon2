@@ -85,14 +85,24 @@ public class F_propertyForm : Form
 	public DateInputControl PropertyDateconstruction => new DateInputControl(driver, ContainerLocator, "#F_PROPERTY__PROPERTY__DATECONSTRUCTION");
 
 	/// <summary>
-	/// Size
+	/// Building type
 	/// </summary>
-	public BaseInputControl PropertySize => new BaseInputControl(driver, ContainerLocator, "container-F_PROPERTY__PROPERTY__SIZE", "#F_PROPERTY__PROPERTY__SIZE");
+	public EnumControl PropertyBuildingtype => new EnumControl(driver, ContainerLocator, "container-F_PROPERTY__PROPERTY__BUILDINGTYPE");
 
 	/// <summary>
 	/// Bathrooms
 	/// </summary>
 	public BaseInputControl PropertyBathroomsnumber => new BaseInputControl(driver, ContainerLocator, "container-F_PROPERTY__PROPERTY__BATHROOMSNUMBER", "#F_PROPERTY__PROPERTY__BATHROOMSNUMBER");
+
+	/// <summary>
+	/// Typology
+	/// </summary>
+	public RadiobuttonControl PropertyTypology => new RadiobuttonControl(driver, ContainerLocator, "container-F_PROPERTY__PROPERTY__TYPOLOGY");
+
+	/// <summary>
+	/// Size
+	/// </summary>
+	public BaseInputControl PropertySize => new BaseInputControl(driver, ContainerLocator, "container-F_PROPERTY__PROPERTY__SIZE", "#F_PROPERTY__PROPERTY__SIZE");
 
 	public F_propertyForm(IWebDriver driver, FORM_MODE mode, By? containerLocator = null)
 		: base(driver, mode, "F_PROPERTY", containerLocator: containerLocator) { }

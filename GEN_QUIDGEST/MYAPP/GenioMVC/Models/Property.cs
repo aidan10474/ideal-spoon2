@@ -108,6 +108,22 @@ namespace GenioMVC.Models
 		[ShouldSerialize("Property.ValDescription")]
 		public string ValDescription { get { return klass.ValDescription; } set { klass.ValDescription = value; } }
 
+		[DisplayName("Building type")]
+		/// <summary>Field : "Building type" Tipo: "AC" Formula:  ""</summary>
+		[ShouldSerialize("Property.ValBuildingtype")]
+		[DataArray("Buildingtype", GenioMVC.Helpers.ArrayType.Character)]
+		public string ValBuildingtype { get { return klass.ValBuildingtype; } set { klass.ValBuildingtype = value; } }
+		[JsonIgnore]
+		public SelectList ArrayValbuildingtype { get { return new SelectList(CSGenio.business.ArrayBuildingtype.GetDictionary(), "Key", "Value", ValBuildingtype); } set { ValBuildingtype = value.SelectedValue as string; } }
+
+		[DisplayName("Typology")]
+		/// <summary>Field : "Typology" Tipo: "AN" Formula:  ""</summary>
+		[ShouldSerialize("Property.ValTypology")]
+		[DataArray("Typology", GenioMVC.Helpers.ArrayType.Numeric)]
+		public decimal ValTypology { get { return klass.ValTypology; } set { klass.ValTypology = value; } }
+		[JsonIgnore]
+		public SelectList ArrayValtypology { get { return new SelectList(CSGenio.business.ArrayTypology.GetDictionary(), "Key", "Value", ValTypology); } set { ValTypology = Convert.ToDecimal(value.SelectedValue); } }
+
 		[DisplayName("ZZSTATE")]
 		[ShouldSerialize("Property.ValZzstate")]
 		/// <summary>Field: "ZZSTATE", Type: "INT", Formula: ""</summary>

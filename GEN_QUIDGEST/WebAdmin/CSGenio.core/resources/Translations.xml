@@ -63,6 +63,9 @@
   <msg id="Document" code="DOCUMENT00695">
     <ENUS>Document</ENUS>
   </msg>
+  <msg id="Apartment" code="APARTMENT12665">
+    <ENUS>Apartment</ENUS>
+  </msg>
   <msg id="Manual destination" code="MANUAL_DESTINATION21892">
     <ENUS>Manual destination</ENUS>
   </msg>
@@ -95,6 +98,9 @@
   </msg>
   <msg id="Process ID" code="PROCESS_ID11161">
     <ENUS>Process ID</ENUS>
+  </msg>
+  <msg id="2 bedrooms" code="_2_BEDROOMS32459">
+    <ENUS>2 bedrooms</ENUS>
   </msg>
   <msg id="A cancelar" code="A_CANCELAR43988">
     <ENUS>A cancelar</ENUS>
@@ -171,6 +177,9 @@
   <msg id="Has login?" code="HAS_LOGIN_58044">
     <ENUS>Has login?</ENUS>
   </msg>
+  <msg id="Typology" code="TYPOLOGY11991">
+    <ENUS>Typology</ENUS>
+  </msg>
   <msg id="Salt" code="SALT05277">
     <ENUS>Salt</ENUS>
   </msg>
@@ -189,11 +198,17 @@
   <msg id="Password" code="PASSWORD09467">
     <ENUS>Password</ENUS>
   </msg>
+  <msg id="Other" code="OTHER37293">
+    <ENUS>Other</ENUS>
+  </msg>
   <msg id="System" code="SYSTEM02957">
     <ENUS>System</ENUS>
   </msg>
   <msg id="Image" code="IMAGE65174">
     <ENUS>Image</ENUS>
+  </msg>
+  <msg id="Building type" code="BUILDING_TYPE57152">
+    <ENUS>Building type</ENUS>
   </msg>
   <msg id="Roles" code="ROLES61449">
     <ENUS>Roles</ENUS>
@@ -285,6 +300,9 @@
   <msg id="City" code="CITY42505">
     <ENUS>City</ENUS>
   </msg>
+  <msg id="1 bedroom" code="_1_BEDROOM54787">
+    <ENUS>1 bedroom</ENUS>
+  </msg>
   <msg id="Phone" code="PHONE56703">
     <ENUS>Phone</ENUS>
   </msg>
@@ -330,6 +348,12 @@
   <msg id="Cancelado" code="CANCELADO05982">
     <ENUS>Cancelado</ENUS>
   </msg>
+  <msg id="No bedrooms" code="NO_BEDROOMS23406">
+    <ENUS>No bedrooms</ENUS>
+  </msg>
+  <msg id="House" code="HOUSE01993">
+    <ENUS>House</ENUS>
+  </msg>
   <msg id="Title" code="TITLE21885">
     <ENUS>Title</ENUS>
   </msg>
@@ -341,6 +365,9 @@
   </msg>
   <msg id="Process Types" code="PROCESS_TYPES19050">
     <ENUS>Process Types</ENUS>
+  </msg>
+  <msg id="more" code="MORE43445">
+    <ENUS>more</ENUS>
   </msg>
   <msg id="Login attempts" code="LOGIN_ATTEMPTS62337">
     <ENUS>Login attempts</ENUS>
@@ -399,6 +426,9 @@
   <msg id="Global" code="GLOBAL58588">
     <ENUS>Global</ENUS>
   </msg>
+  <msg id="building type" code="BUILDING_TYPE34158">
+    <ENUS>building type</ENUS>
+  </msg>
   <msg id="Finished" code="FINISHED26993">
     <ENUS>Finished</ENUS>
   </msg>
@@ -422,6 +452,9 @@
   </msg>
   <msg id="Unidade orgânica" code="UNIDADE_ORGANICA38383">
     <ENUS>Unidade orgânica</ENUS>
+  </msg>
+  <msg id="3 bedrooms" code="_3_BEDROOMS27305">
+    <ENUS>3 bedrooms</ENUS>
   </msg>
   <msg id="Async process attachment" code="ASYNC_PROCESS_ATTACH34417">
     <ENUS>Async process attachment</ENUS>

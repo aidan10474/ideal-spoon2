@@ -180,15 +180,16 @@ export default class ViewModel extends FormViewModelBase
 		}).cloneFrom(values?.ValDate_construction))
 		this.stopWatchers.push(watch(() => this.ValDate_construction.value, (newValue, oldValue) => this.onUpdate('property.date_construction', this.ValDate_construction, newValue, oldValue)))
 
-		this.ValSize = reactive(new modelFieldType.String({
-			id: 'ValSize',
-			originId: 'ValSize',
+		this.ValBuildingtype = reactive(new modelFieldType.String({
+			id: 'ValBuildingtype',
+			originId: 'ValBuildingtype',
 			area: 'PROPERTY',
-			field: 'SIZE',
-			maxLength: 50,
-			description: computed(() => this.Resources.SIZE10299),
-		}).cloneFrom(values?.ValSize))
-		this.stopWatchers.push(watch(() => this.ValSize.value, (newValue, oldValue) => this.onUpdate('property.size', this.ValSize, newValue, oldValue)))
+			field: 'BUILDINGTYPE',
+			maxLength: 1,
+			arrayOptions: computed(() => new qProjArrays.QArrayBuildingtype(vm.$getResource).elements),
+			description: computed(() => this.Resources.BUILDING_TYPE57152),
+		}).cloneFrom(values?.ValBuildingtype))
+		this.stopWatchers.push(watch(() => this.ValBuildingtype.value, (newValue, oldValue) => this.onUpdate('property.buildingtype', this.ValBuildingtype, newValue, oldValue)))
 
 		this.ValBathroom_number = reactive(new modelFieldType.String({
 			id: 'ValBathroom_number',
@@ -199,6 +200,28 @@ export default class ViewModel extends FormViewModelBase
 			description: computed(() => this.Resources.BATHROOMS54249),
 		}).cloneFrom(values?.ValBathroom_number))
 		this.stopWatchers.push(watch(() => this.ValBathroom_number.value, (newValue, oldValue) => this.onUpdate('property.bathroom_number', this.ValBathroom_number, newValue, oldValue)))
+
+		this.ValTypology = reactive(new modelFieldType.Number({
+			id: 'ValTypology',
+			originId: 'ValTypology',
+			area: 'PROPERTY',
+			field: 'TYPOLOGY',
+			maxDigits: 1,
+			decimalDigits: 0,
+			arrayOptions: computed(() => new qProjArrays.QArrayTypology(vm.$getResource).elements),
+			description: computed(() => this.Resources.TYPOLOGY11991),
+		}).cloneFrom(values?.ValTypology))
+		this.stopWatchers.push(watch(() => this.ValTypology.value, (newValue, oldValue) => this.onUpdate('property.typology', this.ValTypology, newValue, oldValue)))
+
+		this.ValSize = reactive(new modelFieldType.String({
+			id: 'ValSize',
+			originId: 'ValSize',
+			area: 'PROPERTY',
+			field: 'SIZE',
+			maxLength: 50,
+			description: computed(() => this.Resources.SIZE10299),
+		}).cloneFrom(values?.ValSize))
+		this.stopWatchers.push(watch(() => this.ValSize.value, (newValue, oldValue) => this.onUpdate('property.size', this.ValSize, newValue, oldValue)))
 	}
 
 	/**

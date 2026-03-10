@@ -180,6 +180,9 @@
 	<data name="DOCUMENT00695" xml:space="preserve">
 		<value>Document</value>
 	</data>
+	<data name="APARTMENT12665" xml:space="preserve">
+		<value>Apartment</value>
+	</data>
 	<data name="MANUAL_DESTINATION21892" xml:space="preserve">
 		<value>Manual destination</value>
 	</data>
@@ -212,6 +215,9 @@
 	</data>
 	<data name="PROCESS_ID11161" xml:space="preserve">
 		<value>Process ID</value>
+	</data>
+	<data name="_2_BEDROOMS32459" xml:space="preserve">
+		<value>2 bedrooms</value>
 	</data>
 	<data name="A_CANCELAR43988" xml:space="preserve">
 		<value>A cancelar</value>
@@ -288,6 +294,9 @@
 	<data name="HAS_LOGIN_58044" xml:space="preserve">
 		<value>Has login?</value>
 	</data>
+	<data name="TYPOLOGY11991" xml:space="preserve">
+		<value>Typology</value>
+	</data>
 	<data name="SALT05277" xml:space="preserve">
 		<value>Salt</value>
 	</data>
@@ -306,11 +315,17 @@
 	<data name="PASSWORD09467" xml:space="preserve">
 		<value>Password</value>
 	</data>
+	<data name="OTHER37293" xml:space="preserve">
+		<value>Other</value>
+	</data>
 	<data name="SYSTEM02957" xml:space="preserve">
 		<value>System</value>
 	</data>
 	<data name="IMAGE65174" xml:space="preserve">
 		<value>Image</value>
+	</data>
+	<data name="BUILDING_TYPE57152" xml:space="preserve">
+		<value>Building type</value>
 	</data>
 	<data name="ROLES61449" xml:space="preserve">
 		<value>Roles</value>
@@ -402,6 +417,9 @@
 	<data name="CITY42505" xml:space="preserve">
 		<value>City</value>
 	</data>
+	<data name="_1_BEDROOM54787" xml:space="preserve">
+		<value>1 bedroom</value>
+	</data>
 	<data name="PHONE56703" xml:space="preserve">
 		<value>Phone</value>
 	</data>
@@ -447,6 +465,12 @@
 	<data name="CANCELADO05982" xml:space="preserve">
 		<value>Cancelado</value>
 	</data>
+	<data name="NO_BEDROOMS23406" xml:space="preserve">
+		<value>No bedrooms</value>
+	</data>
+	<data name="HOUSE01993" xml:space="preserve">
+		<value>House</value>
+	</data>
 	<data name="TITLE21885" xml:space="preserve">
 		<value>Title</value>
 	</data>
@@ -458,6 +482,9 @@
 	</data>
 	<data name="PROCESS_TYPES19050" xml:space="preserve">
 		<value>Process Types</value>
+	</data>
+	<data name="MORE43445" xml:space="preserve">
+		<value>more</value>
 	</data>
 	<data name="LOGIN_ATTEMPTS62337" xml:space="preserve">
 		<value>Login attempts</value>
@@ -516,6 +543,9 @@
 	<data name="GLOBAL58588" xml:space="preserve">
 		<value>Global</value>
 	</data>
+	<data name="BUILDING_TYPE34158" xml:space="preserve">
+		<value>building type</value>
+	</data>
 	<data name="FINISHED26993" xml:space="preserve">
 		<value>Finished</value>
 	</data>
@@ -539,6 +569,9 @@
 	</data>
 	<data name="UNIDADE_ORGANICA38383" xml:space="preserve">
 		<value>Unidade orgânica</value>
+	</data>
+	<data name="_3_BEDROOMS27305" xml:space="preserve">
+		<value>3 bedrooms</value>
 	</data>
 	<data name="ASYNC_PROCESS_ATTACH34417" xml:space="preserve">
 		<value>Async process attachment</value>

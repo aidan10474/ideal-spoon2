@@ -250,6 +250,15 @@ namespace Administration.Resources {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "Apartment"
+        /// </summary>
+        public static string APARTMENT12665 {
+            get {
+                return ResourceManager.GetString("APARTMENT12665", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "Manual destination"
         /// </summary>
         public static string MANUAL_DESTINATION21892 {
@@ -345,6 +354,15 @@ namespace Administration.Resources {
         public static string PROCESS_ID11161 {
             get {
                 return ResourceManager.GetString("PROCESS_ID11161", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "2 bedrooms"
+        /// </summary>
+        public static string _2_BEDROOMS32459 {
+            get {
+                return ResourceManager.GetString("_2_BEDROOMS32459", resourceCulture);
             }
         }
 
@@ -574,6 +592,15 @@ namespace Administration.Resources {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "Typology"
+        /// </summary>
+        public static string TYPOLOGY11991 {
+            get {
+                return ResourceManager.GetString("TYPOLOGY11991", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "Salt"
         /// </summary>
         public static string SALT05277 {
@@ -628,6 +655,15 @@ namespace Administration.Resources {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "Other"
+        /// </summary>
+        public static string OTHER37293 {
+            get {
+                return ResourceManager.GetString("OTHER37293", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "System"
         /// </summary>
         public static string SYSTEM02957 {
@@ -642,6 +678,15 @@ namespace Administration.Resources {
         public static string IMAGE65174 {
             get {
                 return ResourceManager.GetString("IMAGE65174", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "Building type"
+        /// </summary>
+        public static string BUILDING_TYPE57152 {
+            get {
+                return ResourceManager.GetString("BUILDING_TYPE57152", resourceCulture);
             }
         }
 
@@ -916,6 +961,15 @@ namespace Administration.Resources {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "1 bedroom"
+        /// </summary>
+        public static string _1_BEDROOM54787 {
+            get {
+                return ResourceManager.GetString("_1_BEDROOM54787", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "Phone"
         /// </summary>
         public static string PHONE56703 {
@@ -1051,6 +1105,24 @@ namespace Administration.Resources {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "No bedrooms"
+        /// </summary>
+        public static string NO_BEDROOMS23406 {
+            get {
+                return ResourceManager.GetString("NO_BEDROOMS23406", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "House"
+        /// </summary>
+        public static string HOUSE01993 {
+            get {
+                return ResourceManager.GetString("HOUSE01993", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "Title"
         /// </summary>
         public static string TITLE21885 {
@@ -1083,6 +1155,15 @@ namespace Administration.Resources {
         public static string PROCESS_TYPES19050 {
             get {
                 return ResourceManager.GetString("PROCESS_TYPES19050", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "more"
+        /// </summary>
+        public static string MORE43445 {
+            get {
+                return ResourceManager.GetString("MORE43445", resourceCulture);
             }
         }
 
@@ -1258,6 +1339,15 @@ namespace Administration.Resources {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "building type"
+        /// </summary>
+        public static string BUILDING_TYPE34158 {
+            get {
+                return ResourceManager.GetString("BUILDING_TYPE34158", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "Finished"
         /// </summary>
         public static string FINISHED26993 {
@@ -1326,6 +1416,15 @@ namespace Administration.Resources {
         public static string UNIDADE_ORGANICA38383 {
             get {
                 return ResourceManager.GetString("UNIDADE_ORGANICA38383", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "3 bedrooms"
+        /// </summary>
+        public static string _3_BEDROOMS27305 {
+            get {
+                return ResourceManager.GetString("_3_BEDROOMS27305", resourceCulture);
             }
         }
 

@@ -124,13 +124,21 @@ namespace GenioMVC.ViewModels.Property
 		/// </summary>
 		public DateTime? ValDate_construction { get; set; }
 		/// <summary>
-		/// Title: "Size" | Type: "C"
+		/// Title: "Building type" | Type: "AC"
 		/// </summary>
-		public string ValSize { get; set; }
+		public string ValBuildingtype { get; set; }
 		/// <summary>
 		/// Title: "Bathrooms" | Type: "C"
 		/// </summary>
 		public string ValBathroom_number { get; set; }
+		/// <summary>
+		/// Title: "Typology" | Type: "AN"
+		/// </summary>
+		public decimal ValTypology { get; set; }
+		/// <summary>
+		/// Title: "Size" | Type: "C"
+		/// </summary>
+		public string ValSize { get; set; }
 
 		#region Navigations
 		#endregion
@@ -271,8 +279,10 @@ namespace GenioMVC.ViewModels.Property
 				funcBrokerValEmail = () => ViewModelConversion.ToString(m.Broker.ValEmail);
 				funcBrokerValPhoto = () => ViewModelConversion.ToImage(m.Broker.ValPhoto);
 				ValDate_construction = ViewModelConversion.ToDateTime(m.ValDate_construction);
-				ValSize = ViewModelConversion.ToString(m.ValSize);
+				ValBuildingtype = ViewModelConversion.ToString(m.ValBuildingtype);
 				ValBathroom_number = ViewModelConversion.ToString(m.ValBathroom_number);
+				ValTypology = ViewModelConversion.ToNumeric(m.ValTypology);
+				ValSize = ViewModelConversion.ToString(m.ValSize);
 				ValCodproperty = ViewModelConversion.ToString(m.ValCodproperty);
 			}
 			catch (Exception)
@@ -307,8 +317,10 @@ namespace GenioMVC.ViewModels.Property
 				m.ValPrice = ViewModelConversion.ToNumeric(ValPrice);
 				m.ValDescription = ViewModelConversion.ToString(ValDescription);
 				m.ValDate_construction = ViewModelConversion.ToDateTime(ValDate_construction);
-				m.ValSize = ViewModelConversion.ToString(ValSize);
+				m.ValBuildingtype = ViewModelConversion.ToString(ValBuildingtype);
 				m.ValBathroom_number = ViewModelConversion.ToString(ValBathroom_number);
+				m.ValTypology = ViewModelConversion.ToNumeric(ValTypology);
+				m.ValSize = ViewModelConversion.ToString(ValSize);
 				m.ValCodproperty = ViewModelConversion.ToString(ValCodproperty);
 
 				/*
@@ -363,11 +375,17 @@ namespace GenioMVC.ViewModels.Property
 					case "property.date_construction":
 						this.ValDate_construction = ViewModelConversion.ToDateTime(_value);
 						break;
-					case "property.size":
-						this.ValSize = ViewModelConversion.ToString(_value);
+					case "property.buildingtype":
+						this.ValBuildingtype = ViewModelConversion.ToString(_value);
 						break;
 					case "property.bathroom_number":
 						this.ValBathroom_number = ViewModelConversion.ToString(_value);
+						break;
+					case "property.typology":
+						this.ValTypology = ViewModelConversion.ToNumeric(_value);
+						break;
+					case "property.size":
+						this.ValSize = ViewModelConversion.ToString(_value);
 						break;
 					case "property.codproperty":
 						this.ValCodproperty = ViewModelConversion.ToString(_value);
@@ -502,8 +520,8 @@ namespace GenioMVC.ViewModels.Property
 			validator.StringLength("ValDescription", Resources.Resources.DESCRIPTION07383, ValDescription, 50);
 			validator.StringLength("BrokerValEmail", Resources.Resources.EMAIL25170, BrokerValEmail, 256);
 			validator.StringLength("CityCountryValCountry", Resources.Resources.COUNTRY64133, CityCountryValCountry, 50);
-			validator.StringLength("ValSize", Resources.Resources.SIZE10299, ValSize, 50);
 			validator.StringLength("ValBathroom_number", Resources.Resources.BATHROOMS54249, ValBathroom_number, 50);
+			validator.StringLength("ValSize", Resources.Resources.SIZE10299, ValSize, 50);
 
 
 			return validator.GetResult();
@@ -937,8 +955,10 @@ namespace GenioMVC.ViewModels.Property
 				"broker.photo" => ViewModelConversion.ToImage(modelValue),
 				"country.country" => ViewModelConversion.ToString(modelValue),
 				"property.date_construction" => ViewModelConversion.ToDateTime(modelValue),
-				"property.size" => ViewModelConversion.ToString(modelValue),
+				"property.buildingtype" => ViewModelConversion.ToString(modelValue),
 				"property.bathroom_number" => ViewModelConversion.ToString(modelValue),
+				"property.typology" => ViewModelConversion.ToNumeric(modelValue),
+				"property.size" => ViewModelConversion.ToString(modelValue),
 				"property.codproperty" => ViewModelConversion.ToString(modelValue),
 				"broker.codbroker" => ViewModelConversion.ToString(modelValue),
 				"broker.name" => ViewModelConversion.ToString(modelValue),

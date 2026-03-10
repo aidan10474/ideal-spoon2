@@ -312,7 +312,7 @@
 								value="F_PROPERTY__PSEUD__NEWGRP02"
 								:title="controls.F_PROPERTY__PSEUD__NEWGRP02.label">
 								<!-- Start F_PROPERTY__PSEUD__NEWGRP02 -->
-								<q-row v-if="controls.F_PROPERTY__PROPERTY__DATECONSTRUCTION.isVisible || controls.F_PROPERTY__PROPERTY__SIZE.isVisible || controls.F_PROPERTY__PROPERTY__BATHROOMSNUMBER.isVisible">
+								<q-row v-if="controls.F_PROPERTY__PROPERTY__DATECONSTRUCTION.isVisible">
 									<q-col
 										v-if="controls.F_PROPERTY__PROPERTY__DATECONSTRUCTION.isVisible"
 										cols="auto">
@@ -332,23 +332,27 @@
 												@update:model-value="model.ValDate_construction.fnUpdateValue($event ?? '')" />
 										</base-input-structure>
 									</q-col>
+								</q-row>
+								<q-row v-if="controls.F_PROPERTY__PROPERTY__BUILDINGTYPE.isVisible">
 									<q-col
-										v-if="controls.F_PROPERTY__PROPERTY__SIZE.isVisible"
+										v-if="controls.F_PROPERTY__PROPERTY__BUILDINGTYPE.isVisible"
 										cols="auto">
 										<base-input-structure
-											v-if="controls.F_PROPERTY__PROPERTY__SIZE.isVisible"
+											v-if="controls.F_PROPERTY__PROPERTY__BUILDINGTYPE.isVisible"
 											class="i-text"
-											v-bind="controls.F_PROPERTY__PROPERTY__SIZE"
-											v-on="controls.F_PROPERTY__PROPERTY__SIZE.handlers"
-											:loading="controls.F_PROPERTY__PROPERTY__SIZE.props.loading"
+											v-bind="controls.F_PROPERTY__PROPERTY__BUILDINGTYPE"
+											v-on="controls.F_PROPERTY__PROPERTY__BUILDINGTYPE.handlers"
+											:loading="controls.F_PROPERTY__PROPERTY__BUILDINGTYPE.props.loading"
 											:reporting-mode-on="reportingModeCAV"
 											:suggestion-mode-on="suggestionModeOn">
-											<q-text-field
-												v-bind="controls.F_PROPERTY__PROPERTY__SIZE.props"
-												@blur="onBlur(controls.F_PROPERTY__PROPERTY__SIZE, model.ValSize.value)"
-												@change="model.ValSize.fnUpdateValueOnChange" />
+											<q-select
+												v-if="controls.F_PROPERTY__PROPERTY__BUILDINGTYPE.isVisible"
+												v-bind="controls.F_PROPERTY__PROPERTY__BUILDINGTYPE.props"
+												@update:model-value="model.ValBuildingtype.fnUpdateValue" />
 										</base-input-structure>
 									</q-col>
+								</q-row>
+								<q-row v-if="controls.F_PROPERTY__PROPERTY__BATHROOMSNUMBER.isVisible">
 									<q-col
 										v-if="controls.F_PROPERTY__PROPERTY__BATHROOMSNUMBER.isVisible"
 										cols="auto">
@@ -364,6 +368,51 @@
 												v-bind="controls.F_PROPERTY__PROPERTY__BATHROOMSNUMBER.props"
 												@blur="onBlur(controls.F_PROPERTY__PROPERTY__BATHROOMSNUMBER, model.ValBathroom_number.value)"
 												@change="model.ValBathroom_number.fnUpdateValueOnChange" />
+										</base-input-structure>
+									</q-col>
+								</q-row>
+								<q-row v-if="controls.F_PROPERTY__PROPERTY__TYPOLOGY.isVisible">
+									<q-col
+										v-if="controls.F_PROPERTY__PROPERTY__TYPOLOGY.isVisible"
+										cols="auto">
+										<base-input-structure
+											v-if="controls.F_PROPERTY__PROPERTY__TYPOLOGY.isVisible"
+											class="i-radio-container"
+											v-bind="controls.F_PROPERTY__PROPERTY__TYPOLOGY"
+											v-on="controls.F_PROPERTY__PROPERTY__TYPOLOGY.handlers"
+											:label-position="labelAlignment.topleft"
+											:loading="controls.F_PROPERTY__PROPERTY__TYPOLOGY.props.loading"
+											:reporting-mode-on="reportingModeCAV"
+											:suggestion-mode-on="suggestionModeOn">
+											<q-radio-group
+												v-if="controls.F_PROPERTY__PROPERTY__TYPOLOGY.isVisible"
+												v-bind="controls.F_PROPERTY__PROPERTY__TYPOLOGY.props"
+												v-on="controls.F_PROPERTY__PROPERTY__TYPOLOGY.handlers">
+												<q-radio-button
+													v-for="radio in controls.F_PROPERTY__PROPERTY__TYPOLOGY.items"
+													:key="radio.key"
+													:label="radio.value"
+													:value="radio.key" />
+											</q-radio-group>
+										</base-input-structure>
+									</q-col>
+								</q-row>
+								<q-row v-if="controls.F_PROPERTY__PROPERTY__SIZE.isVisible">
+									<q-col
+										v-if="controls.F_PROPERTY__PROPERTY__SIZE.isVisible"
+										cols="auto">
+										<base-input-structure
+											v-if="controls.F_PROPERTY__PROPERTY__SIZE.isVisible"
+											class="i-text"
+											v-bind="controls.F_PROPERTY__PROPERTY__SIZE"
+											v-on="controls.F_PROPERTY__PROPERTY__SIZE.handlers"
+											:loading="controls.F_PROPERTY__PROPERTY__SIZE.props.loading"
+											:reporting-mode-on="reportingModeCAV"
+											:suggestion-mode-on="suggestionModeOn">
+											<q-text-field
+												v-bind="controls.F_PROPERTY__PROPERTY__SIZE.props"
+												@blur="onBlur(controls.F_PROPERTY__PROPERTY__SIZE, model.ValSize.value)"
+												@change="model.ValSize.fnUpdateValueOnChange" />
 										</base-input-structure>
 									</q-col>
 								</q-row>
@@ -964,7 +1013,7 @@
 						isInAccordion: true,
 						isCollapsible: true,
 						anchored: false,
-						directChildren: ['F_PROPERTY__PROPERTY__DATECONSTRUCTION', 'F_PROPERTY__PROPERTY__SIZE', 'F_PROPERTY__PROPERTY__BATHROOMSNUMBER'],
+						directChildren: ['F_PROPERTY__PROPERTY__DATECONSTRUCTION', 'F_PROPERTY__PROPERTY__BUILDINGTYPE', 'F_PROPERTY__PROPERTY__BATHROOMSNUMBER', 'F_PROPERTY__PROPERTY__TYPOLOGY', 'F_PROPERTY__PROPERTY__SIZE'],
 						controlLimits: [
 						],
 					}, this),
@@ -982,17 +1031,20 @@
 						controlLimits: [
 						],
 					}, this),
-					F_PROPERTY__PROPERTY__SIZE: new fieldControlClass.StringControl({
-						modelField: 'ValSize',
-						valueChangeEvent: 'fieldChange:property.size',
-						id: 'F_PROPERTY__PROPERTY__SIZE',
-						name: 'SIZE',
-						size: 'xxlarge',
-						label: computed(() => this.Resources.SIZE10299),
+					F_PROPERTY__PROPERTY__BUILDINGTYPE: new fieldControlClass.ArrayStringControl({
+						modelField: 'ValBuildingtype',
+						valueChangeEvent: 'fieldChange:property.buildingtype',
+						id: 'F_PROPERTY__PROPERTY__BUILDINGTYPE',
+						name: 'BUILDINGTYPE',
+						size: 'mini',
+						label: computed(() => this.Resources.BUILDING_TYPE57152),
 						placeholder: '',
 						labelPosition: computed(() => this.labelAlignment.topleft),
 						container: 'F_PROPERTY__PSEUD__NEWGRP02',
-						maxLength: 50,
+						maxLength: 1,
+						arrayName: 'buildingtype',
+						helpShortItem: 'None',
+						helpDetailedItem: 'None',
 						controlLimits: [
 						],
 					}, this),
@@ -1003,6 +1055,36 @@
 						name: 'BATHROOMSNUMBER',
 						size: 'xxlarge',
 						label: computed(() => this.Resources.BATHROOMS54249),
+						placeholder: '',
+						labelPosition: computed(() => this.labelAlignment.topleft),
+						container: 'F_PROPERTY__PSEUD__NEWGRP02',
+						maxLength: 50,
+						controlLimits: [
+						],
+					}, this),
+					F_PROPERTY__PROPERTY__TYPOLOGY: new fieldControlClass.RadioGroupControl({
+						modelField: 'ValTypology',
+						valueChangeEvent: 'fieldChange:property.typology',
+						id: 'F_PROPERTY__PROPERTY__TYPOLOGY',
+						name: 'TYPOLOGY',
+						label: computed(() => this.Resources.TYPOLOGY11991),
+						placeholder: '',
+						labelPosition: computed(() => this.labelAlignment.topleft),
+						container: 'F_PROPERTY__PSEUD__NEWGRP02',
+						maxIntegers: 1,
+						maxDecimals: 0,
+						arrayName: 'Typology',
+						columns: 5,
+						controlLimits: [
+						],
+					}, this),
+					F_PROPERTY__PROPERTY__SIZE: new fieldControlClass.StringControl({
+						modelField: 'ValSize',
+						valueChangeEvent: 'fieldChange:property.size',
+						id: 'F_PROPERTY__PROPERTY__SIZE',
+						name: 'SIZE',
+						size: 'xxlarge',
+						label: computed(() => this.Resources.SIZE10299),
 						placeholder: '',
 						labelPosition: computed(() => this.labelAlignment.topleft),
 						container: 'F_PROPERTY__PSEUD__NEWGRP02',
@@ -1056,6 +1138,8 @@
 					Property: {
 						get ValBathroom_number() { return vm.model.ValBathroom_number.value },
 						set ValBathroom_number(value) { vm.model.ValBathroom_number.updateValue(value) },
+						get ValBuildingtype() { return vm.model.ValBuildingtype.value },
+						set ValBuildingtype(value) { vm.model.ValBuildingtype.updateValue(value) },
 						get ValCodagent() { return vm.model.ValCodagent.value },
 						set ValCodagent(value) { vm.model.ValCodagent.updateValue(value) },
 						get ValCodcity() { return vm.model.ValCodcity.value },
@@ -1072,6 +1156,8 @@
 						set ValSize(value) { vm.model.ValSize.updateValue(value) },
 						get ValTitle() { return vm.model.ValTitle.value },
 						set ValTitle(value) { vm.model.ValTitle.updateValue(value) },
+						get ValTypology() { return vm.model.ValTypology.value },
+						set ValTypology(value) { vm.model.ValTypology.updateValue(value) },
 					},
 					keys: {
 						/** The primary key of the PROPERTY table */
