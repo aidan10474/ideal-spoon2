@@ -113,7 +113,7 @@ namespace CSGenio.business
 			//------------------------------
 			info.Pathways = new Dictionary<string, string>(4);
 			info.Pathways.Add("property","property");
-			info.Pathways.Add("agent","property");
+			info.Pathways.Add("broker","property");
 			info.Pathways.Add("city","property");
 			info.Pathways.Add("country","property");
 		}

@@ -171,7 +171,7 @@
 							}, computed(() => vm.model), computed(() => vm.internalEvents)),
 							new listColumnTypes.TextColumn({
 								order: 3,
-								name: '.ValName',
+								name: 'Broker.ValName',
 								area: 'BROKER',
 								field: 'NAME',
 								label: computed(() => this.Resources.NAME31974),
@@ -330,7 +330,7 @@
 								sortOrder: 'asc'
 							}
 						},
-						globalEvents: ['changed-AGENT', 'changed-CITY', 'changed-PROPERTY'],
+						globalEvents: ['changed-BROKER', 'changed-CITY', 'changed-PROPERTY'],
 						uuid: '887437e6-55fa-4ae1-829a-955d8a779459',
 						allSelectedRows: 'false',
 						headerLevel: 1,

@@ -1,7 +1,7 @@
 ﻿<template>
 	<teleport
 		v-if="isReady"
-		to="#q-modal-see-more-f-contact-property-title-body">
+		to="#q-modal-see-more-f-property-broker-name-body">
 		<q-row>
 			<q-table
 				v-bind="listCtrl"
@@ -46,10 +46,10 @@
 
 	import ViewModelBase from '@/mixins/viewModelBase.js'
 
-	const requiredTextResources = ['F_CONTACT__PROPERTY__TITLE_SeeMore', 'hardcoded', 'messages']
+	const requiredTextResources = ['F_PROPERTY__BROKER__NAME_SeeMore', 'hardcoded', 'messages']
 
 	export default {
-		name: 'FContactPropertyTitleSeeMore',
+		name: 'FPropertyBrokerNameSeeMore',
 
 		inheritAttrs: false,
 
@@ -94,18 +94,18 @@
 			return {
 				isReady: false,
 
-				componentOnLoadProc: asyncProcM.getProcListMonitor('F_CONTACT__PROPERTY__TITLE_SeeMore', false),
+				componentOnLoadProc: asyncProcM.getProcListMonitor('F_PROPERTY__BROKER__NAME_SeeMore', false),
 
 				interfaceMetadata: {
-					id: 'F_CONTACT__PROPERTY__TITLE_SeeMore', // Used for resources
+					id: 'F_PROPERTY__BROKER__NAME_SeeMore', // Used for resources
 					requiredTextResources
 				},
 
 				menuInfo: {
-					acronym: 'F_CONTACT__PROPERTY__TITLE_SeeMore',
-					name: 'F_CONTACT__PROPERTY__TITLE_SeeMore',
-					controller: 'CONTACT',
-					action: 'F_CONTACT_PropertyValTitle'
+					acronym: 'F_PROPERTY__BROKER__NAME_SeeMore',
+					name: 'F_PROPERTY__BROKER__NAME_SeeMore',
+					controller: 'PROPERTY',
+					action: 'F_PROPERTY_BrokerValName'
 				},
 
 				listCtrl: new TableListControl(this.getListConfig(), this),
@@ -134,13 +134,13 @@
 			this.$eventHub.onMany(this.listCtrl.globalEvents, this.onTableDBDataChanged)
 
 			const modalProps = {
-				id: 'see-more-f-contact-property-title',
+				id: 'see-more-f-property-broker-name',
 				dismissAction: this.close,
-				returnElement: 'F_CONTACT__PROPERTY__TITLE_see-more_button'
+				returnElement: 'F_PROPERTY__BROKER__NAME_see-more_button'
 			}
 			const props = {
 				class: 'q-dialog-see-more',
-				title: computed(() => this.Resources.PROPERTIES34868),
+				title: computed(() => this.Resources.BROKER49181),
 				buttons: [
 					{
 						id: 'dialog-button-close',
@@ -163,7 +163,7 @@
 			this.listCtrl.destroy()
 			this.componentOnLoadProc.destroy()
 
-			removeModal('see-more-f-contact-property-title')
+			removeModal('see-more-f-property-broker-name')
 		},
 
 		methods: {
@@ -214,39 +214,28 @@
 				const vm = this
 				const listProps = {
 					configuration: {
-						controller: 'CONTACT',
-						action: 'F_contact_PropertyValTitle',
+						controller: 'PROPERTY',
+						action: 'F_property_BrokerValName',
 						hasDependencies: false,
 						isInCollapsible: false,
 						columnsOriginal: [
-							new listColumnTypes.CurrencyColumn({
-								order: 1,
-								name: 'ValPrice',
-								area: 'PROPERTY',
-								field: 'PRICE',
-								label: computed(() => this.Resources.PRICE_0000000000_0058065),
-								scrollData: 15,
-								maxDigits: 10,
-								decimalPlaces: 4,
-								export: 1,
-							}, computed(() => vm.model), computed(() => vm.internalEvents)),
 							new listColumnTypes.TextColumn({
-								order: 2,
-								name: 'ValTitle',
-								area: 'PROPERTY',
-								field: 'TITLE',
-								label: computed(() => this.Resources.TITLE21885),
-								dataLength: 80,
-								scrollData: 80,
+								order: 1,
+								name: 'ValName',
+								area: 'BROKER',
+								field: 'NAME',
+								label: computed(() => this.Resources.NAME31974),
+								dataLength: 50,
+								scrollData: 50,
 								export: 1,
 							}, computed(() => vm.model), computed(() => vm.internalEvents)),
 						],
 						config: {
-							name: 'F_contact_PropertyValTitle',
+							name: 'F_property_BrokerValName',
 							serverMode: true,
-							pkColumn: 'ValCodproperty',
-							tableAlias: 'PROPERTY',
-							tableNamePlural: computed(() => this.Resources.PROPERTIES34868),
+							pkColumn: 'ValCodbroker',
+							tableAlias: 'BROKER',
+							tableNamePlural: computed(() => this.Resources.BROKER49181),
 							viewManagement: '',
 							showLimitsInfo: true,
 							tableTitle: '',
@@ -272,15 +261,15 @@
 							},
 							formsDefinition: {
 							},
-							defaultSearchColumnName: 'ValTitle',
-							defaultSearchColumnNameOriginal: 'ValTitle',
+							defaultSearchColumnName: 'ValName',
+							defaultSearchColumnNameOriginal: 'ValName',
 							defaultColumnSorting: {
-								columnName: 'ValTitle',
+								columnName: 'ValName',
 								sortOrder: 'asc'
 							}
 						},
-						globalEvents: ['changed-BROKER', 'changed-CITY', 'changed-PROPERTY'],
-						uuid: 'F_contact_F_contact_PropertyValTitle',
+						globalEvents: ['changed-BROKER'],
+						uuid: 'F_property_F_property_BrokerValName',
 						allSelectedRows: 'false',
 						handlers: {
 							rowAction: vm.handleRowAction

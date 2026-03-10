@@ -279,7 +279,7 @@
 								sortOrder: 'asc'
 							}
 						},
-						globalEvents: ['changed-AGENT', 'changed-CITY', 'changed-PROPERTY'],
+						globalEvents: ['changed-BROKER', 'changed-CITY', 'changed-PROPERTY'],
 						uuid: 'F_photo_album_F_photo_album_PropertyValTitle',
 						allSelectedRows: 'false',
 						handlers: {

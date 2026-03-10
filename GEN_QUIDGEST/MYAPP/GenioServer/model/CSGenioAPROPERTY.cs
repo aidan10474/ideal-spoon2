@@ -167,7 +167,7 @@ namespace CSGenio.business
 			// Mother Relations
 			//------------------------------
 			info.ParentTables = new Dictionary<string, Relation>();
-			info.ParentTables.Add("agent", new Relation("TRA", "traproperty", "property", "codproperty", "codagent", "TRA", "traagent", "agent", "codagent", "codagent"));
+			info.ParentTables.Add("broker", new Relation("TRA", "traproperty", "property", "codproperty", "codagent", "TRA", "trabroker", "broker", "codbroker", "codbroker"));
 			info.ParentTables.Add("city", new Relation("TRA", "traproperty", "property", "codproperty", "codcity", "TRA", "tracity", "city", "codcity", "codcity"));
 		}
 
@@ -179,7 +179,7 @@ namespace CSGenio.business
 			// Pathways
 			//------------------------------
 			info.Pathways = new Dictionary<string, string>(3);
-			info.Pathways.Add("agent","agent");
+			info.Pathways.Add("broker","broker");
 			info.Pathways.Add("city","city");
 			info.Pathways.Add("country","city");
 		}

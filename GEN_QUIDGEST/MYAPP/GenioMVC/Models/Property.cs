@@ -32,19 +32,19 @@ namespace GenioMVC.Models
 		[ShouldSerialize("Property.ValCodagent")]
 		public string ValCodagent { get { return klass.ValCodagent; } set { klass.ValCodagent = value; } }
 
-		private Agent _agent;
-		[DisplayName("Agent")]
-		[ShouldSerialize("Agent")]
-		public virtual Agent Agent
+		private Broker _broker;
+		[DisplayName("Broker")]
+		[ShouldSerialize("Broker")]
+		public virtual Broker Broker
 		{
 			get
 			{
-				if (!isEmptyModel && (_agent == null || (!string.IsNullOrEmpty(ValCodagent) && (_agent.isEmptyModel || _agent.klass.QPrimaryKey != ValCodagent))))
-					_agent = Models.Agent.Find(ValCodagent, m_userContext, Identifier, _fieldsToSerialize);
-				_agent ??= new Models.Agent(m_userContext, true, _fieldsToSerialize);
-				return _agent;
+				if (!isEmptyModel && (_broker == null || (!string.IsNullOrEmpty(ValCodagent) && (_broker.isEmptyModel || _broker.klass.QPrimaryKey != ValCodagent))))
+					_broker = Models.Broker.Find(ValCodagent, m_userContext, Identifier, _fieldsToSerialize);
+				_broker ??= new Models.Broker(m_userContext, true, _fieldsToSerialize);
+				return _broker;
 			}
-			set { _agent = value; }
+			set { _broker = value; }
 		}
 
 		[DisplayName("City")]
@@ -139,9 +139,9 @@ namespace GenioMVC.Models
 			{
 				switch (Qfield.Area)
 				{
-					case "agent":
-						_agent ??= new Agent(m_userContext, true, _fieldsToSerialize);
-						_agent.klass.insertNameValueField(Qfield.FullName, Qfield.Value);
+					case "broker":
+						_broker ??= new Broker(m_userContext, true, _fieldsToSerialize);
+						_broker.klass.insertNameValueField(Qfield.FullName, Qfield.Value);
 						break;
 					case "city":
 						_city ??= new City(m_userContext, true, _fieldsToSerialize);
