@@ -781,6 +781,15 @@ namespace Administration.Resources {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "brokers information"
+        /// </summary>
+        public static string BROKERS_INFORMATION64793 {
+            get {
+                return ResourceManager.GetString("BROKERS_INFORMATION64793", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "Notification ID"
         /// </summary>
         public static string NOTIFICATION_ID25507 {

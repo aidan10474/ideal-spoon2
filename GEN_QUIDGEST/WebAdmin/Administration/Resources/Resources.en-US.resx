@@ -357,6 +357,9 @@
   <data name="INDIVIDUAL42893" xml:space="preserve">
     <value>Individual</value>
   </data>
+  <data name="BROKERS_INFORMATION64793" xml:space="preserve">
+    <value>brokers information</value>
+  </data>
   <data name="NOTIFICATION_ID25507" xml:space="preserve">
     <value>Notification ID</value>
   </data>

@@ -240,6 +240,9 @@
   <msg id="Individual" code="INDIVIDUAL42893">
     <ENUS>Individual</ENUS>
   </msg>
+  <msg id="brokers information" code="BROKERS_INFORMATION64793">
+    <ENUS>brokers information</ENUS>
+  </msg>
   <msg id="Notification ID" code="NOTIFICATION_ID25507">
     <ENUS>Notification ID</ENUS>
   </msg>

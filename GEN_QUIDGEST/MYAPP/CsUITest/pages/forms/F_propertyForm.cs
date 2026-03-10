@@ -33,6 +33,27 @@ public class F_propertyForm : Form
 	public BaseInputControl PropertyDescription => new BaseInputControl(driver, ContainerLocator, "container-F_PROPERTY__PROPERTY__DESCRIPTION", "#F_PROPERTY__PROPERTY__DESCRIPTION");
 
 	/// <summary>
+	/// brokers information
+	/// </summary>
+	public CollapsibleZoneControl PseudNewgrp04 => new CollapsibleZoneControl(driver, ContainerLocator, "#F_PROPERTY__PSEUD__NEWGRP04-container");
+
+	/// <summary>
+	/// Broker.name
+	/// </summary>
+	public LookupControl BrokerName => new LookupControl(driver, ContainerLocator, "container-F_PROPERTY__BROKER__NAME");
+	public SeeMorePage BrokerNameSeeMorePage => new SeeMorePage(driver, "F_PROPERTY", "F_PROPERTY__BROKER__NAME");
+
+	/// <summary>
+	/// Email
+	/// </summary>
+	public IWebElement BrokerEmail => throw new NotImplementedException();
+
+	/// <summary>
+	/// Photo
+	/// </summary>
+	public IWebElement BrokerPhoto => throw new NotImplementedException();
+
+	/// <summary>
 	/// Localization
 	/// </summary>
 	public CollapsibleZoneControl PseudNewgrp03 => new CollapsibleZoneControl(driver, ContainerLocator, "#F_PROPERTY__PSEUD__NEWGRP03-container");
@@ -67,22 +88,6 @@ public class F_propertyForm : Form
 	/// Bathrooms
 	/// </summary>
 	public BaseInputControl PropertyBathroomsnumber => new BaseInputControl(driver, ContainerLocator, "container-F_PROPERTY__PROPERTY__BATHROOMSNUMBER", "#F_PROPERTY__PROPERTY__BATHROOMSNUMBER");
-
-	/// <summary>
-	/// Broker.name
-	/// </summary>
-	public LookupControl BrokerName => new LookupControl(driver, ContainerLocator, "container-F_PROPERTY__BROKER__NAME");
-	public SeeMorePage BrokerNameSeeMorePage => new SeeMorePage(driver, "F_PROPERTY", "F_PROPERTY__BROKER__NAME");
-
-	/// <summary>
-	/// Email
-	/// </summary>
-	public IWebElement BrokerEmail => throw new NotImplementedException();
-
-	/// <summary>
-	/// Photo
-	/// </summary>
-	public IWebElement BrokerPhoto => throw new NotImplementedException();
 
 	public F_propertyForm(IWebDriver driver, FORM_MODE mode, By? containerLocator = null)
 		: base(driver, mode, "F_PROPERTY", containerLocator: containerLocator) { }
