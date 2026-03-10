@@ -90,6 +90,9 @@
   <msg id="Start time" code="START_TIME30037">
     <ENUS>Start time</ENUS>
   </msg>
+  <msg id="details" code="DETAILS43714">
+    <ENUS>details</ENUS>
+  </msg>
   <msg id="Process ID" code="PROCESS_ID11161">
     <ENUS>Process ID</ENUS>
   </msg>
@@ -116,6 +119,9 @@
   </msg>
   <msg id="Desautorizado" code="DESAUTORIZADO34584">
     <ENUS>Desautorizado</ENUS>
+  </msg>
+  <msg id="BROKERS INFORMATION" code="BROKERS_INFORMATION25954">
+    <ENUS>BROKERS INFORMATION</ENUS>
   </msg>
   <msg id="Value" code="VALUE10285">
     <ENUS>Value</ENUS>
@@ -267,6 +273,12 @@
   <msg id="Client ip address" code="CLIENT_IP_ADDRESS62089">
     <ENUS>Client ip address</ENUS>
   </msg>
+  <msg id="Localization" code="LOCALIZATION34148">
+    <ENUS>Localization</ENUS>
+  </msg>
+  <msg id="CITY" code="CITY52406">
+    <ENUS>CITY</ENUS>
+  </msg>
   <msg id="City" code="CITY42505">
     <ENUS>City</ENUS>
   </msg>
@@ -392,6 +404,9 @@
   </msg>
   <msg id="Email" code="EMAIL25170">
     <ENUS>Email</ENUS>
+  </msg>
+  <msg id="MAIN INFO" code="MAIN_INFO40201">
+    <ENUS>MAIN INFO</ENUS>
   </msg>
   <msg id="Main Photo" code="MAIN_PHOTO18723">
     <ENUS>Main Photo</ENUS>

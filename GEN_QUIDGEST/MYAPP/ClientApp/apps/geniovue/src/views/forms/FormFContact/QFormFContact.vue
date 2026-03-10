@@ -343,7 +343,7 @@
 				},
 
 				formInfo: {
-					type: 'normal',
+					type: 'popup',
 					name: 'F_CONTACT',
 					route: 'form-F_CONTACT',
 					area: 'CONTACT',

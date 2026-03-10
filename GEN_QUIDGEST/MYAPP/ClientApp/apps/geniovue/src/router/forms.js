@@ -36,7 +36,7 @@ export default function getFormsRoutes()
 				routeType: 'form',
 				baseArea: 'CONTACT',
 				humanKeyFields: ['ValClient_name'],
-				isPopup: false
+				isPopup: true
 			}
 		},
 		{

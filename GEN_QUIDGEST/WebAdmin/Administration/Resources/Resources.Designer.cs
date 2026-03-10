@@ -331,6 +331,15 @@ namespace Administration.Resources {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "details"
+        /// </summary>
+        public static string DETAILS43714 {
+            get {
+                return ResourceManager.GetString("DETAILS43714", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "Process ID"
         /// </summary>
         public static string PROCESS_ID11161 {
@@ -408,6 +417,15 @@ namespace Administration.Resources {
         public static string DESAUTORIZADO34584 {
             get {
                 return ResourceManager.GetString("DESAUTORIZADO34584", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "BROKERS INFORMATION"
+        /// </summary>
+        public static string BROKERS_INFORMATION25954 {
+            get {
+                return ResourceManager.GetString("BROKERS_INFORMATION25954", resourceCulture);
             }
         }
 
@@ -862,6 +880,24 @@ namespace Administration.Resources {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "Localization"
+        /// </summary>
+        public static string LOCALIZATION34148 {
+            get {
+                return ResourceManager.GetString("LOCALIZATION34148", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "CITY"
+        /// </summary>
+        public static string CITY52406 {
+            get {
+                return ResourceManager.GetString("CITY52406", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "City"
         /// </summary>
         public static string CITY42505 {
@@ -1236,6 +1272,15 @@ namespace Administration.Resources {
         public static string EMAIL25170 {
             get {
                 return ResourceManager.GetString("EMAIL25170", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "MAIN INFO"
+        /// </summary>
+        public static string MAIN_INFO40201 {
+            get {
+                return ResourceManager.GetString("MAIN_INFO40201", resourceCulture);
             }
         }
 

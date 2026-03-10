@@ -8,6 +8,11 @@ namespace quidgest.uitests.pages.forms;
 public class F_brokeForm : Form
 {
 	/// <summary>
+	/// BROKERS INFORMATION
+	/// </summary>
+	public CollapsibleZoneControl PseudNewgrp01 => new CollapsibleZoneControl(driver, ContainerLocator, "#F_BROKE_PSEUDNEWGRP01-container");
+
+	/// <summary>
 	/// Photo
 	/// </summary>
 	public BaseInputControl BrokerPhoto => new BaseInputControl(driver, ContainerLocator, "container-F_BROKE__BROKER__PHOTO", "#F_BROKE__BROKER__PHOTO");

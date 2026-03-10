@@ -5,7 +5,7 @@
 namespace quidgest.uitests.pages.forms;
 
 [System.CodeDom.Compiler.GeneratedCode("Genio", "")]
-public class F_contactForm : Form
+public class F_contactForm : PopupForm
 {
 	/// <summary>
 	/// Title
@@ -39,5 +39,5 @@ public class F_contactForm : Form
 	public BaseInputControl ContactDescription => new BaseInputControl(driver, ContainerLocator, "container-F_CONTACT__CONTACT__DESCRIPTION", "#F_CONTACT__CONTACT__DESCRIPTION");
 
 	public F_contactForm(IWebDriver driver, FORM_MODE mode, By? containerLocator = null)
-		: base(driver, mode, "F_CONTACT", containerLocator: containerLocator) { }
+		: base(driver, mode, "F_CONTACT") { }
 }

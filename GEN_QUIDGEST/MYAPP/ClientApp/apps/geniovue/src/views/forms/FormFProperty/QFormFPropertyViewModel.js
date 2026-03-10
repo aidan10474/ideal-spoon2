@@ -53,19 +53,17 @@ export default class ViewModel extends FormViewModelBase
 		}).cloneFrom(values?.ValCodproperty))
 		this.stopWatchers.push(watch(() => this.ValCodproperty.value, (newValue, oldValue) => this.onUpdate('property.codproperty', this.ValCodproperty, newValue, oldValue)))
 
-		/** The hidden foreign keys. */
+		/** The used foreign keys. */
 		this.ValCodcity = reactive(new modelFieldType.ForeignKey({
 			id: 'ValCodcity',
 			originId: 'ValCodcity',
 			area: 'PROPERTY',
 			field: 'CODCITY',
 			relatedArea: 'CITY',
-			isFixed: true,
 			description: computed(() => this.Resources.CITY42505),
 		}).cloneFrom(values?.ValCodcity))
 		this.stopWatchers.push(watch(() => this.ValCodcity.value, (newValue, oldValue) => this.onUpdate('property.codcity', this.ValCodcity, newValue, oldValue)))
 
-		/** The used foreign keys. */
 		this.ValCodagent = reactive(new modelFieldType.ForeignKey({
 			id: 'ValCodagent',
 			originId: 'ValCodagent',
@@ -107,6 +105,28 @@ export default class ViewModel extends FormViewModelBase
 		}).cloneFrom(values?.ValPrice))
 		this.stopWatchers.push(watch(() => this.ValPrice.value, (newValue, oldValue) => this.onUpdate('property.price', this.ValPrice, newValue, oldValue)))
 
+		this.ValDescription = reactive(new modelFieldType.String({
+			id: 'ValDescription',
+			originId: 'ValDescription',
+			area: 'PROPERTY',
+			field: 'DESCRIPTION',
+			maxLength: 50,
+			description: computed(() => this.Resources.DESCRIPTION07383),
+		}).cloneFrom(values?.ValDescription))
+		this.stopWatchers.push(watch(() => this.ValDescription.value, (newValue, oldValue) => this.onUpdate('property.description', this.ValDescription, newValue, oldValue)))
+
+		this.TableCityCity = reactive(new modelFieldType.String({
+			type: 'Lookup',
+			id: 'TableCityCity',
+			originId: 'ValCity',
+			area: 'CITY',
+			field: 'CITY',
+			maxLength: 50,
+			description: computed(() => this.Resources.CITY42505),
+			ignoreFldSubmit: true,
+		}).cloneFrom(values?.TableCityCity))
+		this.stopWatchers.push(watch(() => this.TableCityCity.value, (newValue, oldValue) => this.onUpdate('city.city', this.TableCityCity, newValue, oldValue)))
+
 		this.TableBrokerName = reactive(new modelFieldType.String({
 			type: 'Lookup',
 			id: 'TableBrokerName',
@@ -118,6 +138,15 @@ export default class ViewModel extends FormViewModelBase
 			ignoreFldSubmit: true,
 		}).cloneFrom(values?.TableBrokerName))
 		this.stopWatchers.push(watch(() => this.TableBrokerName.value, (newValue, oldValue) => this.onUpdate('broker.name', this.TableBrokerName, newValue, oldValue)))
+
+		this.ValDate_construction = reactive(new modelFieldType.Date({
+			id: 'ValDate_construction',
+			originId: 'ValDate_construction',
+			area: 'PROPERTY',
+			field: 'DATECONSTRUCTION',
+			description: computed(() => this.Resources.DATE18475),
+		}).cloneFrom(values?.ValDate_construction))
+		this.stopWatchers.push(watch(() => this.ValDate_construction.value, (newValue, oldValue) => this.onUpdate('property.date_construction', this.ValDate_construction, newValue, oldValue)))
 
 		this.ValSize = reactive(new modelFieldType.String({
 			id: 'ValSize',
@@ -138,25 +167,6 @@ export default class ViewModel extends FormViewModelBase
 			description: computed(() => this.Resources.BATHROOMS54249),
 		}).cloneFrom(values?.ValBathroom_number))
 		this.stopWatchers.push(watch(() => this.ValBathroom_number.value, (newValue, oldValue) => this.onUpdate('property.bathroom_number', this.ValBathroom_number, newValue, oldValue)))
-
-		this.ValDate_construction = reactive(new modelFieldType.Date({
-			id: 'ValDate_construction',
-			originId: 'ValDate_construction',
-			area: 'PROPERTY',
-			field: 'DATECONSTRUCTION',
-			description: computed(() => this.Resources.DATE18475),
-		}).cloneFrom(values?.ValDate_construction))
-		this.stopWatchers.push(watch(() => this.ValDate_construction.value, (newValue, oldValue) => this.onUpdate('property.date_construction', this.ValDate_construction, newValue, oldValue)))
-
-		this.ValDescription = reactive(new modelFieldType.String({
-			id: 'ValDescription',
-			originId: 'ValDescription',
-			area: 'PROPERTY',
-			field: 'DESCRIPTION',
-			maxLength: 50,
-			description: computed(() => this.Resources.DESCRIPTION07383),
-		}).cloneFrom(values?.ValDescription))
-		this.stopWatchers.push(watch(() => this.ValDescription.value, (newValue, oldValue) => this.onUpdate('property.description', this.ValDescription, newValue, oldValue)))
 	}
 
 	/**

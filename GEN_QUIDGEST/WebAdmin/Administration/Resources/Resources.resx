@@ -207,6 +207,9 @@
   <data name="START_TIME30037" xml:space="preserve">
     <value>Start time</value>
   </data>
+  <data name="DETAILS43714" xml:space="preserve">
+    <value>details</value>
+  </data>
   <data name="PROCESS_ID11161" xml:space="preserve">
     <value>Process ID</value>
   </data>
@@ -233,6 +236,9 @@
   </data>
   <data name="DESAUTORIZADO34584" xml:space="preserve">
     <value>Desautorizado</value>
+  </data>
+  <data name="BROKERS_INFORMATION25954" xml:space="preserve">
+    <value>BROKERS INFORMATION</value>
   </data>
   <data name="VALUE10285" xml:space="preserve">
     <value>Value</value>
@@ -384,6 +390,12 @@
   <data name="CLIENT_IP_ADDRESS62089" xml:space="preserve">
     <value>Client ip address</value>
   </data>
+  <data name="LOCALIZATION34148" xml:space="preserve">
+    <value>Localization</value>
+  </data>
+  <data name="CITY52406" xml:space="preserve">
+    <value>CITY</value>
+  </data>
   <data name="CITY42505" xml:space="preserve">
     <value>City</value>
   </data>
@@ -509,6 +521,9 @@
   </data>
   <data name="EMAIL25170" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="MAIN_INFO40201" xml:space="preserve">
+    <value>MAIN INFO</value>
   </data>
   <data name="MAIN_PHOTO18723" xml:space="preserve">
     <value>Main Photo</value>
