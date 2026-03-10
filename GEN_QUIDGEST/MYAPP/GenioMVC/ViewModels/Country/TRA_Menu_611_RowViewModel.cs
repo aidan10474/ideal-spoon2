@@ -4,18 +4,18 @@ using CSGenio.business;
 using CSGenio.framework;
 using GenioMVC.Models.Navigation;
 
-namespace GenioMVC.ViewModels.Contact;
+namespace GenioMVC.ViewModels.Country;
 
-public class TRA_Menu_61_RowViewModel : Models.Contact
+public class TRA_Menu_611_RowViewModel : Models.Country
 {
 	#region Constructors
 
-	public TRA_Menu_61_RowViewModel(UserContext userContext, bool isEmpty = false, string[]? fieldsToSerialize = null) : base(userContext, isEmpty, fieldsToSerialize)
+	public TRA_Menu_611_RowViewModel(UserContext userContext, bool isEmpty = false, string[]? fieldsToSerialize = null) : base(userContext, isEmpty, fieldsToSerialize)
 	{
 		InitRowProperties();
 	}
 
-	public TRA_Menu_61_RowViewModel(UserContext userContext, CSGenioAcontact val, bool isEmpty = false, string[]? fieldsToSerialize = null) : base(userContext, val, isEmpty, fieldsToSerialize)
+	public TRA_Menu_611_RowViewModel(UserContext userContext, CSGenioAcountry val, bool isEmpty = false, string[]? fieldsToSerialize = null) : base(userContext, val, isEmpty, fieldsToSerialize)
 	{
 		InitRowProperties();
 	}
@@ -36,38 +36,8 @@ public class TRA_Menu_61_RowViewModel : Models.Contact
 			new ListColumn()
 			{
 				Order = 1,
-				Area = "CONTACT",
-				Field = "DATE",
-			},
-			new ListColumn()
-			{
-				Order = 2,
-				Area = "CONTACT",
-				Field = "DESCRIPTION",
-			},
-			new ListColumn()
-			{
-				Order = 3,
-				Area = "CONTACT",
-				Field = "CLIENT_NAME",
-			},
-			new ListColumn()
-			{
-				Order = 4,
-				Area = "CONTACT",
-				Field = "PHONE_CONTACT",
-			},
-			new ListColumn()
-			{
-				Order = 5,
-				Area = "CONTACT",
-				Field = "EMAIL_CONTACT",
-			},
-			new ListColumn()
-			{
-				Order = 6,
-				Area = "PROPERTY",
-				Field = "TITLE",
+				Area = "COUNTRY",
+				Field = "COUNTRY",
 			},
 		];
 	}

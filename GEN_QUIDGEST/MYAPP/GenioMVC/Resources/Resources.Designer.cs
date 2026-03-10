@@ -108,6 +108,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Phone Contact"
+		/// </summary>
+		public static string PHONE_CONTACT15195 {
+			get {
+				return ResourceManager.GetString("PHONE_CONTACT15195", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Real time status"
 		/// </summary>
 		public static string REAL_TIME_STATUS00476 {
@@ -518,6 +527,15 @@ namespace GenioMVC.Resources
 		public static string PASSWORDS52247 {
 			get {
 				return ResourceManager.GetString("PASSWORDS52247", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to "Countries"
+		/// </summary>
+		public static string COUNTRIES64527 {
+			get {
+				return ResourceManager.GetString("COUNTRIES64527", resourceCulture);
 			}
 		}
 
@@ -959,6 +977,15 @@ namespace GenioMVC.Resources
 		public static string CITY42505 {
 			get {
 				return ResourceManager.GetString("CITY42505", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to "Location"
+		/// </summary>
+		public static string LOCATION54790 {
+			get {
+				return ResourceManager.GetString("LOCATION54790", resourceCulture);
 			}
 		}
 

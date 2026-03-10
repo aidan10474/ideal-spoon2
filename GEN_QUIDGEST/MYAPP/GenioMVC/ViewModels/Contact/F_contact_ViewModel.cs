@@ -42,23 +42,23 @@ namespace GenioMVC.ViewModels.Contact
 		[ValidateSetAccess]
 		public TableDBEdit<GenioMVC.Models.Property> TablePropertyTitle { get; set; }
 		/// <summary>
-		/// Title: "" | Type: "D"
+		/// Title: "Date" | Type: "D"
 		/// </summary>
 		public DateTime? ValDate { get; set; }
 		/// <summary>
-		/// Title: "" | Type: "C"
+		/// Title: "Name" | Type: "C"
 		/// </summary>
 		public string ValClient_name { get; set; }
 		/// <summary>
-		/// Title: "" | Type: "C"
+		/// Title: "Email" | Type: "C"
 		/// </summary>
 		public string ValEmail_contact { get; set; }
 		/// <summary>
-		/// Title: "" | Type: "N"
+		/// Title: "Phone Contact" | Type: "N"
 		/// </summary>
 		public decimal? ValPhone_contact { get; set; }
 		/// <summary>
-		/// Title: "" | Type: "C"
+		/// Title: "Description" | Type: "C"
 		/// </summary>
 		public string ValDescription { get; set; }
 
@@ -399,13 +399,13 @@ namespace GenioMVC.ViewModels.Contact
 		{
 			CrudViewModelFieldValidator validator = new(m_userContext.User.Language);
 
-			validator.StringLength("ValClient_name", "ValClient_name", ValClient_name, 50);
+			validator.StringLength("ValClient_name", Resources.Resources.NAME31974, ValClient_name, 50);
 
-			validator.Required("ValClient_name", "ValClient_name", ViewModelConversion.ToString(ValClient_name), FieldType.TEXT.GetFormatting());
-			validator.StringLength("ValEmail_contact", "ValEmail_contact", ValEmail_contact, 50);
+			validator.Required("ValClient_name", Resources.Resources.NAME31974, ViewModelConversion.ToString(ValClient_name), FieldType.TEXT.GetFormatting());
+			validator.StringLength("ValEmail_contact", Resources.Resources.EMAIL25170, ValEmail_contact, 50);
 
-			validator.Required("ValEmail_contact", "ValEmail_contact", ViewModelConversion.ToString(ValEmail_contact), FieldType.TEXT.GetFormatting());
-			validator.StringLength("ValDescription", "ValDescription", ValDescription, 50);
+			validator.Required("ValEmail_contact", Resources.Resources.EMAIL25170, ViewModelConversion.ToString(ValEmail_contact), FieldType.TEXT.GetFormatting());
+			validator.StringLength("ValDescription", Resources.Resources.DESCRIPTION07383, ValDescription, 50);
 
 
 			return validator.GetResult();

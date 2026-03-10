@@ -132,6 +132,9 @@
   <data name="RESULTADOS20000" xml:space="preserve">
     <value>Resultados</value>
   </data>
+  <data name="PHONE_CONTACT15195" xml:space="preserve">
+    <value>Phone Contact</value>
+  </data>
   <data name="REAL_TIME_STATUS00476" xml:space="preserve">
     <value>Real time status</value>
   </data>
@@ -269,6 +272,9 @@
   </data>
   <data name="PASSWORDS52247" xml:space="preserve">
     <value>Passwords</value>
+  </data>
+  <data name="COUNTRIES64527" xml:space="preserve">
+    <value>Countries</value>
   </data>
   <data name="ROUTINE58306" xml:space="preserve">
     <value>Routine</value>
@@ -416,6 +422,9 @@
   </data>
   <data name="CITY42505" xml:space="preserve">
     <value>City</value>
+  </data>
+  <data name="LOCATION54790" xml:space="preserve">
+    <value>Location</value>
   </data>
   <data name="_1_BEDROOM54787" xml:space="preserve">
     <value>1 bedroom</value>

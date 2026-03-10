@@ -15,6 +15,9 @@
   <msg id="Resultados" code="RESULTADOS20000">
     <ENUS>Resultados</ENUS>
   </msg>
+  <msg id="Phone Contact" code="PHONE_CONTACT15195">
+    <ENUS>Phone Contact</ENUS>
+  </msg>
   <msg id="Real time status" code="REAL_TIME_STATUS00476">
     <ENUS>Real time status</ENUS>
   </msg>
@@ -152,6 +155,9 @@
   </msg>
   <msg id="Passwords" code="PASSWORDS52247">
     <ENUS>Passwords</ENUS>
+  </msg>
+  <msg id="Countries" code="COUNTRIES64527">
+    <ENUS>Countries</ENUS>
   </msg>
   <msg id="Routine" code="ROUTINE58306">
     <ENUS>Routine</ENUS>
@@ -299,6 +305,9 @@
   </msg>
   <msg id="City" code="CITY42505">
     <ENUS>City</ENUS>
+  </msg>
+  <msg id="Location" code="LOCATION54790">
+    <ENUS>Location</ENUS>
   </msg>
   <msg id="1 bedroom" code="_1_BEDROOM54787">
     <ENUS>1 bedroom</ENUS>

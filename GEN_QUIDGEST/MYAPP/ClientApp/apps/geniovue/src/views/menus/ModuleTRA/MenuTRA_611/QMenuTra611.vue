@@ -15,7 +15,7 @@
 							:table-ctrl="controls.menu"
 							v-on="controls.menu.handlers" />
 					</template>
-					<!-- USE /[MANUAL TRA CUSTOM_TABLE TRA_Menu_61]/ -->
+					<!-- USE /[MANUAL TRA CUSTOM_TABLE TRA_Menu_611]/ -->
 				</q-table>
 			</q-row-container>
 		</form>
@@ -72,17 +72,17 @@
 	import qProjArrays from '@/api/genio/projectArrays.js'
 	/* eslint-enable @typescript-eslint/no-unused-vars */
 
-	import MenuViewModel from './QMenuTRA_61ViewModel.js'
+	import MenuViewModel from './QMenuTRA_611ViewModel.js'
 
-	const requiredTextResources = ['QMenuTRA_61', 'hardcoded', 'messages']
+	const requiredTextResources = ['QMenuTRA_611', 'hardcoded', 'messages']
 
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA FORM_INCLUDEJS TRA_MENU_61]/
+// USE /[MANUAL TRA FORM_INCLUDEJS TRA_MENU_611]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 
 	export default {
-		name: 'QMenuTra61',
+		name: 'QMenuTra611',
 
 		mixins: [
 			MenuHandlers
@@ -111,23 +111,23 @@
 			// eslint-disable-next-line
 			const vm = this
 			return {
-				componentOnLoadProc: asyncProcM.getProcListMonitor('QMenuTRA_61', false),
+				componentOnLoadProc: asyncProcM.getProcListMonitor('QMenuTRA_611', false),
 
 				interfaceMetadata: {
-					id: 'QMenuTRA_61', // Used for resources
+					id: 'QMenuTRA_611', // Used for resources
 					requiredTextResources
 				},
 
 				menuInfo: {
-					id: '61',
+					id: '611',
 					isMenuList: true,
-					designation: computed(() => this.Resources.CONTACTS55742),
-					acronym: 'TRA_61',
-					name: 'CONTACT',
-					route: 'menu-TRA_61',
-					order: '61',
-					controller: 'CONTACT',
-					action: 'TRA_Menu_61',
+					designation: computed(() => this.Resources.COUNTRIES03108),
+					acronym: 'TRA_611',
+					name: 'COUNTRY',
+					route: 'menu-TRA_611',
+					order: '611',
+					controller: 'COUNTRY',
+					action: 'TRA_Menu_611',
 					isPopup: false
 				},
 
@@ -136,9 +136,9 @@
 				controls: {
 					menu: new controlClass.TableListControl({
 						fnHydrateViewModel: (data) => vm.model.hydrate(data),
-						id: 'TRA_Menu_61',
-						controller: 'CONTACT',
-						action: 'TRA_Menu_61',
+						id: 'TRA_Menu_611',
+						controller: 'COUNTRY',
+						action: 'TRA_Menu_611',
 						hasDependencies: false,
 						isInCollapsible: false,
 						tableModeClasses: [
@@ -146,73 +146,26 @@
 							'page-full-height'
 						],
 						columnsOriginal: [
-							new listColumnTypes.DateColumn({
+							new listColumnTypes.TextColumn({
 								order: 1,
-								name: 'ValDate',
-								area: 'CONTACT',
-								field: 'DATE',
-								scrollData: 8,
-								dateTimeType: 'date',
-								export: 1,
-							}, computed(() => vm.model), computed(() => vm.internalEvents)),
-							new listColumnTypes.TextColumn({
-								order: 2,
-								name: 'ValDescription',
-								area: 'CONTACT',
-								field: 'DESCRIPTION',
+								name: 'ValCountry',
+								area: 'COUNTRY',
+								field: 'COUNTRY',
+								label: computed(() => this.Resources.COUNTRY64133),
 								dataLength: 50,
 								scrollData: 30,
 								export: 1,
-							}, computed(() => vm.model), computed(() => vm.internalEvents)),
-							new listColumnTypes.TextColumn({
-								order: 3,
-								name: 'ValClient_name',
-								area: 'CONTACT',
-								field: 'CLIENT_NAME',
-								dataLength: 50,
-								scrollData: 30,
-								export: 1,
-							}, computed(() => vm.model), computed(() => vm.internalEvents)),
-							new listColumnTypes.NumericColumn({
-								order: 4,
-								name: 'ValPhone_contact',
-								area: 'CONTACT',
-								field: 'PHONE_CONTACT',
-								scrollData: 15,
-								maxDigits: 12,
-								decimalPlaces: 2,
-								export: 1,
-							}, computed(() => vm.model), computed(() => vm.internalEvents)),
-							new listColumnTypes.TextColumn({
-								order: 5,
-								name: 'ValEmail_contact',
-								area: 'CONTACT',
-								field: 'EMAIL_CONTACT',
-								dataLength: 50,
-								scrollData: 30,
-								export: 1,
-							}, computed(() => vm.model), computed(() => vm.internalEvents)),
-							new listColumnTypes.TextColumn({
-								order: 6,
-								name: 'Property.ValTitle',
-								area: 'PROPERTY',
-								field: 'TITLE',
-								label: computed(() => this.Resources.TITLE21885),
-								dataLength: 80,
-								scrollData: 30,
-								export: 1,
-								pkColumn: 'ValCodproperty',
 							}, computed(() => vm.model), computed(() => vm.internalEvents)),
 						],
 						config: {
-							name: 'TRA_Menu_61',
+							name: 'TRA_Menu_611',
 							serverMode: true,
-							pkColumn: 'ValCodcontact',
-							tableAlias: 'CONTACT',
-							tableNamePlural: computed(() => this.Resources.CONTACTS55742),
+							pkColumn: 'ValCodcountry',
+							tableAlias: 'COUNTRY',
+							tableNamePlural: computed(() => this.Resources.COUNTRIES03108),
 							viewManagement: '',
 							showLimitsInfo: true,
-							tableTitle: computed(() => this.Resources.CONTACTS55742),
+							tableTitle: computed(() => this.Resources.COUNTRIES03108),
 							showAlternatePagination: true,
 							permissions: {
 							},
@@ -233,7 +186,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_CONTACT',
+										formName: 'F_COUNTRY',
 										mode: 'SHOW',
 										isControlled: true
 									}
@@ -249,7 +202,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_CONTACT',
+										formName: 'F_COUNTRY',
 										mode: 'EDIT',
 										isControlled: true
 									}
@@ -265,7 +218,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_CONTACT',
+										formName: 'F_COUNTRY',
 										mode: 'DUPLICATE',
 										isControlled: true
 									}
@@ -281,7 +234,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_CONTACT',
+										formName: 'F_COUNTRY',
 										mode: 'DELETE',
 										isControlled: true
 									}
@@ -299,7 +252,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_CONTACT',
+										formName: 'F_COUNTRY',
 										mode: 'NEW',
 										repeatInsertion: false,
 										isControlled: true
@@ -315,36 +268,36 @@
 							MCActions: [
 							],
 							rowClickAction: {
-								id: 'RCA_TRA_611',
-								name: 'form-F_CONTACT',
+								id: 'RCA_TRA_6111',
+								name: 'form-F_COUNTRY',
 								isVisible: true,
 								params: {
 									isRoute: true,
 									limits: [
 										{
 											identifier: 'id',
-											fnValueSelector: (row) => row.ValCodcontact
+											fnValueSelector: (row) => row.ValCodcountry
 										},
 									],
 									isControlled: true,
-									action: vm.openFormAction, type: 'form', mode: 'SHOW', formName: 'F_CONTACT'
+									action: vm.openFormAction, type: 'form', mode: 'SHOW', formName: 'F_COUNTRY'
 								}
 							},
 							formsDefinition: {
-								'F_CONTACT': {
-									fnKeySelector: (row) => row.Fields.ValCodcontact,
-									isPopup: true
+								'F_COUNTRY': {
+									fnKeySelector: (row) => row.Fields.ValCodcountry,
+									isPopup: false
 								},
 							},
-							defaultSearchColumnName: 'ValClient_name',
-							defaultSearchColumnNameOriginal: 'ValClient_name',
+							defaultSearchColumnName: '',
+							defaultSearchColumnNameOriginal: '',
 							defaultColumnSorting: {
-								columnName: 'ValDate',
+								columnName: 'ValCountry',
 								sortOrder: 'asc'
 							}
 						},
-						globalEvents: ['changed-PROPERTY', 'changed-CONTACT'],
-						uuid: '60b14a24-ea59-48ed-b77c-06d5172e5026',
+						globalEvents: ['changed-COUNTRY'],
+						uuid: 'bf298ec9-38c3-4465-8730-b6c914e42e33',
 						allSelectedRows: 'false',
 						headerLevel: 1,
 						isActiveControl: computed(() => this.isActiveMenu)
@@ -370,7 +323,7 @@
 		mounted()
 		{
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA FORM_CODEJS TRA_MENU_61]/
+// USE /[MANUAL TRA FORM_CODEJS TRA_MENU_611]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 		},
@@ -378,18 +331,18 @@
 		beforeUnmount()
 		{
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA COMPONENT_BEFORE_UNMOUNT TRA_MENU_61]/
+// USE /[MANUAL TRA COMPONENT_BEFORE_UNMOUNT TRA_MENU_611]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 		},
 
 		methods: {
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA FUNCTIONS_JS TRA_61]/
+// USE /[MANUAL TRA FUNCTIONS_JS TRA_611]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA LISTING_CODEJS TRA_MENU_61]/
+// USE /[MANUAL TRA LISTING_CODEJS TRA_MENU_611]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 		}
