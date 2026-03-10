@@ -15,23 +15,23 @@ using GenioMVC.Models.Navigation;
 using Quidgest.Persistence;
 using Quidgest.Persistence.GenericQuery;
 
-namespace GenioMVC.ViewModels.Country
+namespace GenioMVC.ViewModels.Photo_album
 {
-	public class TRA_Menu_61_ViewModel : MenuListViewModel<Models.Country>
+	public class TRA_Menu_41_ViewModel : MenuListViewModel<Models.Photo_album>
 	{
 		/// <summary>
 		/// Gets or sets the object that represents the table and its elements.
 		/// </summary>
 		[JsonPropertyName("table")]
-		public TablePartial<TRA_Menu_61_RowViewModel> Menu { get; set; }
+		public TablePartial<TRA_Menu_41_RowViewModel> Menu { get; set; }
 
 		/// <inheritdoc/>
 		[JsonIgnore]
-		public override string TableAlias => "country";
+		public override string TableAlias => "photo_album";
 
 		/// <inheritdoc/>
 		[JsonPropertyName("uuid")]
-		public override string Uuid => "029048a2-7568-48d7-ab82-5d2d6a355505";
+		public override string Uuid => "0c1bb75c-e6e8-41a8-ac02-1a8645340115";
 
 		/// <inheritdoc/>
 		protected override string[] FieldsToSerialize => _fieldsToSerialize;
@@ -82,7 +82,7 @@ namespace GenioMVC.ViewModels.Country
 
 		public override CriteriaSet GetCustomizedStaticLimits(CriteriaSet crs)
 		{
-// USE /[MANUAL TRA LIST_LIMITS 61]/
+// USE /[MANUAL TRA LIST_LIMITS 41]/
 
 			return crs;
 		}
@@ -90,19 +90,19 @@ namespace GenioMVC.ViewModels.Country
 		public override int GetCount(User user)
 		{
 			CSGenio.persistence.PersistentSupport sp = m_userContext.PersistentSupport;
-			var areaBase = CSGenio.business.Area.createArea("country", user, "TRA");
+			var areaBase = CSGenio.business.Area.createArea("photo_album", user, "TRA");
 
 			//gets eph conditions to be applied in listing
-			CriteriaSet conditions = CSGenio.business.Listing.CalculateConditionsEphGeneric(areaBase, "ML61");
-			conditions.Equal(CSGenioAcountry.FldZzstate, 0); //valid zzstate only
+			CriteriaSet conditions = CSGenio.business.Listing.CalculateConditionsEphGeneric(areaBase, "ML41");
+			conditions.Equal(CSGenioAphoto_album.FldZzstate, 0); //valid zzstate only
 
 			// Fixed limits and relations:
 			conditions.SubSets.Add(GetCustomizedStaticLimits(StaticLimits));
 
 			// Checks for foreign tables in fields and conditions
-			FieldRef[] fields = new FieldRef[] { CSGenioAcountry.FldCodcountry, CSGenioAcountry.FldZzstate, CSGenioAcountry.FldCountry };
+			FieldRef[] fields = new FieldRef[] { CSGenioAphoto_album.FldCodphoto_album, CSGenioAphoto_album.FldZzstate, CSGenioAphoto_album.FldTitle, CSGenioAphoto_album.FldCodproperty, CSGenioAproperty.FldCodproperty, CSGenioAproperty.FldTitle, CSGenioAphoto_album.FldPhoto };
 
-			ListingMVC<CSGenioAcountry> listing = new(fields, null, 1, 1, false, user, true, string.Empty, false);
+			ListingMVC<CSGenioAphoto_album> listing = new(fields, null, 1, 1, false, user, true, string.Empty, false);
 			SelectQuery qs = sp.getSelectQueryFromListingMVC(conditions, listing);
 
 			// Menu relations:
@@ -119,23 +119,23 @@ namespace GenioMVC.ViewModels.Country
 		/// FOR DESERIALIZATION ONLY
 		/// </summary>
 		[Obsolete("For deserialization only")]
-		public TRA_Menu_61_ViewModel() : base(null!) { }
+		public TRA_Menu_41_ViewModel() : base(null!) { }
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="TRA_Menu_61_ViewModel" /> class.
+		/// Initializes a new instance of the <see cref="TRA_Menu_41_ViewModel" /> class.
 		/// </summary>
 		/// <param name="userContext">The current user request context</param>
-		public TRA_Menu_61_ViewModel(UserContext userContext) : base(userContext)
+		public TRA_Menu_41_ViewModel(UserContext userContext) : base(userContext)
 		{
 			this.RoleToShow = CSGenio.framework.Role.ROLE_1;
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="TRA_Menu_61_ViewModel" /> class.
+		/// Initializes a new instance of the <see cref="TRA_Menu_41_ViewModel" /> class.
 		/// </summary>
 		/// <param name="userContext">The current user request context</param>
 		/// <param name="parentCtx">The context of the parent</param>
-		public TRA_Menu_61_ViewModel(UserContext userContext, Models.ModelBase parentCtx) : this(userContext)
+		public TRA_Menu_41_ViewModel(UserContext userContext, Models.ModelBase parentCtx) : this(userContext)
 		{
 			ParentCtx = parentCtx;
 		}
@@ -145,17 +145,18 @@ namespace GenioMVC.ViewModels.Country
 		{
 			return
 			[
-				new Exports.QColumn(CSGenioAcountry.FldCountry, FieldType.TEXT, Resources.Resources.COUNTRY64133, 30, 0, true),
+				new Exports.QColumn(CSGenioAphoto_album.FldTitle, FieldType.TEXT, string.Empty, 30, 0, true),
+				new Exports.QColumn(CSGenioAproperty.FldTitle, FieldType.TEXT, Resources.Resources.TITLE21885, 30, 0, true),
 			];
 		}
 
-		public void LoadToExport(out ListingMVC<CSGenioAcountry> listing, out CriteriaSet conditions, out List<Exports.QColumn> columns, NameValueCollection requestValues, bool ajaxRequest = false)
+		public void LoadToExport(out ListingMVC<CSGenioAphoto_album> listing, out CriteriaSet conditions, out List<Exports.QColumn> columns, NameValueCollection requestValues, bool ajaxRequest = false)
 		{
 			CSGenio.core.framework.table.TableConfiguration tableConfig = new();
 			LoadToExport(out listing, out conditions, out columns, tableConfig, requestValues, ajaxRequest);
 		}
 
-		public void LoadToExport(out ListingMVC<CSGenioAcountry> listing, out CriteriaSet conditions, out List<Exports.QColumn> columns, CSGenio.core.framework.table.TableConfiguration tableConfig, NameValueCollection requestValues, bool ajaxRequest = false)
+		public void LoadToExport(out ListingMVC<CSGenioAphoto_album> listing, out CriteriaSet conditions, out List<Exports.QColumn> columns, CSGenio.core.framework.table.TableConfiguration tableConfig, NameValueCollection requestValues, bool ajaxRequest = false)
 		{
 			listing = null;
 			conditions = null;
@@ -186,7 +187,7 @@ namespace GenioMVC.ViewModels.Country
 
 			crs ??= CriteriaSet.And();
 
-			Menu ??= new TablePartial<TRA_Menu_61_RowViewModel>();
+			Menu ??= new TablePartial<TRA_Menu_41_RowViewModel>();
 			// Set table name (used in getting searchable column names)
 			Menu.TableName = TableAlias;
 
@@ -209,25 +210,25 @@ namespace GenioMVC.ViewModels.Country
 			if (isToExport)
 			{
 				// EPH
-				crs = Models.Country.AddEPH<CSGenioAcountry>(ref u, crs, "ML61");
+				crs = Models.Photo_album.AddEPH<CSGenioAphoto_album>(ref u, crs, "ML41");
 
 				// Export only records with ZZState == 0
-				crs.Equal(CSGenioAcountry.FldZzstate, 0);
+				crs.Equal(CSGenioAphoto_album.FldZzstate, 0);
 
 				return crs;
 			}
 
 			// Limitation by Zzstate
-			if (!Navigation.checkFormMode("COUNTRY", FormMode.New)) // TODO: Check in Duplicate mode
-				crs = extendWithZzstateCondition(crs, CSGenioAcountry.FldZzstate, null);
+			if (!Navigation.checkFormMode("PHOTO_ALBUM", FormMode.New)) // TODO: Check in Duplicate mode
+				crs = extendWithZzstateCondition(crs, CSGenioAphoto_album.FldZzstate, null);
 
 
 			if (tableReload)
 			{
-				string QMVC_POS_RECORD = Navigation.GetStrValue("QMVC_POS_RECORD_country");
-				Navigation.DestroyEntry("QMVC_POS_RECORD_country");
+				string QMVC_POS_RECORD = Navigation.GetStrValue("QMVC_POS_RECORD_photo_album");
+				Navigation.DestroyEntry("QMVC_POS_RECORD_photo_album");
 				if (!string.IsNullOrEmpty(QMVC_POS_RECORD))
-					crs.Equals(Models.Country.AddEPH<CSGenioAcountry>(ref u, null, "ML61"));
+					crs.Equals(Models.Photo_album.AddEPH<CSGenioAphoto_album>(ref u, null, "ML41"));
 			}
 
 			return crs;
@@ -252,7 +253,7 @@ namespace GenioMVC.ViewModels.Country
 		/// <param name="conditions">The conditions.</param>
 		public void Load(int numberListItems, NameValueCollection requestValues, bool ajaxRequest = false, CriteriaSet conditions = null)
 		{
-			ListingMVC<CSGenioAcountry> listing = null;
+			ListingMVC<CSGenioAphoto_album> listing = null;
 
 			Load(numberListItems, requestValues, ajaxRequest, false, ref listing, ref conditions);
 		}
@@ -266,7 +267,7 @@ namespace GenioMVC.ViewModels.Country
 		/// <param name="isToExport">Whether the list is being loaded to be exported</param>
 		/// <param name="Qlisting">The rows.</param>
 		/// <param name="conditions">The conditions.</param>
-		public void Load(int numberListItems, NameValueCollection requestValues, bool ajaxRequest, bool isToExport, ref ListingMVC<CSGenioAcountry> Qlisting, ref CriteriaSet conditions)
+		public void Load(int numberListItems, NameValueCollection requestValues, bool ajaxRequest, bool isToExport, ref ListingMVC<CSGenioAphoto_album> Qlisting, ref CriteriaSet conditions)
 		{
 			CSGenio.core.framework.table.TableConfiguration tableConfig = new();
 
@@ -285,7 +286,7 @@ namespace GenioMVC.ViewModels.Country
 		/// <param name="conditions">The conditions.</param>
 		public void Load(CSGenio.core.framework.table.TableConfiguration tableConfig, NameValueCollection requestValues, bool ajaxRequest, bool isToExport = false, CriteriaSet conditions = null)
 		{
-			ListingMVC<CSGenioAcountry> listing = null;
+			ListingMVC<CSGenioAphoto_album> listing = null;
 
 			Load(tableConfig, requestValues, ajaxRequest, isToExport, ref listing, ref conditions);
 		}
@@ -299,16 +300,18 @@ namespace GenioMVC.ViewModels.Country
 		/// <param name="isToExport">Whether the list is being loaded to be exported</param>
 		/// <param name="Qlisting">The rows.</param>
 		/// <param name="conditions">The conditions.</param>
-		public void Load(CSGenio.core.framework.table.TableConfiguration tableConfig, NameValueCollection requestValues, bool ajaxRequest, bool isToExport, ref ListingMVC<CSGenioAcountry> Qlisting, ref CriteriaSet conditions)
+		public void Load(CSGenio.core.framework.table.TableConfiguration tableConfig, NameValueCollection requestValues, bool ajaxRequest, bool isToExport, ref ListingMVC<CSGenioAphoto_album> Qlisting, ref CriteriaSet conditions)
 		{
 			User u = m_userContext.User;
-			Menu = new TablePartial<TRA_Menu_61_RowViewModel>();
+			Menu = new TablePartial<TRA_Menu_41_RowViewModel>();
 
-			CriteriaSet tra_menu_61Conds = CriteriaSet.And();
+			CriteriaSet tra_menu_41Conds = CriteriaSet.And();
 			bool tableReload = true;
 
 			//FOR: MENU LIST SORTING
 			Dictionary<string, OrderedDictionary> allSortOrders = new Dictionary<string, OrderedDictionary>();
+			allSortOrders.Add("PHOTO_ALBUM.TITLE", new OrderedDictionary());
+			allSortOrders["PHOTO_ALBUM.TITLE"].Add("PHOTO_ALBUM.TITLE", "A");
 
 
 			int numberListItems = tableConfig.RowsPerPage;
@@ -318,10 +321,16 @@ namespace GenioMVC.ViewModels.Country
 			if (pageNumber < 1)
 				pageNumber = 1;
 
-			List<ColumnSort> sorts = GetRequestSorts(this.Menu, tableConfig, "country", allSortOrders);
+			List<ColumnSort> sorts = GetRequestSorts(this.Menu, tableConfig, "photo_album", allSortOrders);
 
+			if (sorts == null || sorts.Count == 0)
+			{
+				sorts = new List<ColumnSort>();
+				sorts.Add(new ColumnSort(new ColumnReference(CSGenioAphoto_album.FldTitle), SortOrder.Ascending));
 
-			FieldRef[] fields = new FieldRef[] { CSGenioAcountry.FldCodcountry, CSGenioAcountry.FldZzstate, CSGenioAcountry.FldCountry };
+			}
+
+			FieldRef[] fields = new FieldRef[] { CSGenioAphoto_album.FldCodphoto_album, CSGenioAphoto_album.FldZzstate, CSGenioAphoto_album.FldTitle, CSGenioAphoto_album.FldCodproperty, CSGenioAproperty.FldCodproperty, CSGenioAproperty.FldTitle, CSGenioAphoto_album.FldPhoto };
 
 
 			// Totalizers
@@ -333,7 +342,7 @@ namespace GenioMVC.ViewModels.Country
 			{
 				firstVisibleColumn = tableConfig?.GetFirstVisibleColumn(TableAlias);
 
-				firstVisibleColumn ??= new FieldRef("country", "country");
+				firstVisibleColumn ??= new FieldRef("photo_album", "title");
 			}
 			// Limitations
 			this.TableLimits ??= [];
@@ -344,8 +353,8 @@ namespace GenioMVC.ViewModels.Country
 			{
 				Limit limit = new Limit();
 				limit.TipoLimite = LimitType.EPH;
-				CSGenioAcountry model_limit_area = new CSGenioAcountry(m_userContext.User);
-				List<Limit> area_EPH_limits = EPH_Limit_Filler(ref limit, model_limit_area, "ML61");
+				CSGenioAphoto_album model_limit_area = new CSGenioAphoto_album(m_userContext.User);
+				List<Limit> area_EPH_limits = EPH_Limit_Filler(ref limit, model_limit_area, "ML41");
 				if (area_EPH_limits.Count > 0)
 					this.TableLimits.AddRange(area_EPH_limits);
 			}
@@ -354,11 +363,11 @@ namespace GenioMVC.ViewModels.Country
 			if (conditions == null)
 				conditions = CriteriaSet.And();
 
-			conditions.SubSets.Add(tra_menu_61Conds);
-			tra_menu_61Conds = BuildCriteriaSet(tableConfig, requestValues, out bool hasAllRequiredLimits, conditions, isToExport);
+			conditions.SubSets.Add(tra_menu_41Conds);
+			tra_menu_41Conds = BuildCriteriaSet(tableConfig, requestValues, out bool hasAllRequiredLimits, conditions, isToExport);
 			tableReload &= hasAllRequiredLimits;
 
-// USE /[MANUAL TRA OVERRQ 61]/
+// USE /[MANUAL TRA OVERRQ 41]/
 
 			bool distinct = false;
 
@@ -370,29 +379,29 @@ namespace GenioMVC.ViewModels.Country
 				var exportColumns = GetExportColumns(tableConfig.ColumnConfigurations);
 				var exportFieldRefs = exportColumns.Select(eCol => eCol.Field).Where(fldRef => fldRef != null).ToArray();
 
-				Qlisting = Models.ModelBase.BuildListingForExport<CSGenioAcountry>(m_userContext, false, ref tra_menu_61Conds, exportFieldRefs, (pageNumber - 1) * numberListItems, numberListItems, sorts, "ML61", true, firstVisibleColumn: firstVisibleColumn);
+				Qlisting = Models.ModelBase.BuildListingForExport<CSGenioAphoto_album>(m_userContext, false, ref tra_menu_41Conds, exportFieldRefs, (pageNumber - 1) * numberListItems, numberListItems, sorts, "ML41", true, firstVisibleColumn: firstVisibleColumn);
 
-// USE /[MANUAL TRA OVERRQLSTEXP 61]/
+// USE /[MANUAL TRA OVERRQLSTEXP 41]/
 
 				return;
 			}
 
 			if (tableReload)
 			{
-// USE /[MANUAL TRA OVERRQLIST 61]/
+// USE /[MANUAL TRA OVERRQLIST 41]/
 
-				string QMVC_POS_RECORD = Navigation.GetStrValue("QMVC_POS_RECORD_country");
-				Navigation.DestroyEntry("QMVC_POS_RECORD_country");
+				string QMVC_POS_RECORD = Navigation.GetStrValue("QMVC_POS_RECORD_photo_album");
+				Navigation.DestroyEntry("QMVC_POS_RECORD_photo_album");
 				CriteriaSet m_PagingPosEPHs = null;
 
 				if (!string.IsNullOrEmpty(QMVC_POS_RECORD))
 				{
-					var m_iCurPag = m_userContext.PersistentSupport.getPagingPos(CSGenioAcountry.GetInformation(), QMVC_POS_RECORD, sorts, tra_menu_61Conds, m_PagingPosEPHs, firstVisibleColumn: firstVisibleColumn);
+					var m_iCurPag = m_userContext.PersistentSupport.getPagingPos(CSGenioAphoto_album.GetInformation(), QMVC_POS_RECORD, sorts, tra_menu_41Conds, m_PagingPosEPHs, firstVisibleColumn: firstVisibleColumn);
 					if (m_iCurPag != -1)
 						pageNumber = ((m_iCurPag - 1) / numberListItems) + 1;
 				}
 
-				ListingMVC<CSGenioAcountry> listing = Models.ModelBase.Where<CSGenioAcountry>(m_userContext, distinct, tra_menu_61Conds, fields, (pageNumber - 1) * numberListItems, numberListItems, sorts, "ML61", true, false, QMVC_POS_RECORD, m_PagingPosEPHs, firstVisibleColumn, fieldsWithTotalizers, tableConfig.SelectedRows);
+				ListingMVC<CSGenioAphoto_album> listing = Models.ModelBase.Where<CSGenioAphoto_album>(m_userContext, distinct, tra_menu_41Conds, fields, (pageNumber - 1) * numberListItems, numberListItems, sorts, "ML41", true, false, QMVC_POS_RECORD, m_PagingPosEPHs, firstVisibleColumn, fieldsWithTotalizers, tableConfig.SelectedRows);
 
 				if (listing.CurrentPage > 0)
 					pageNumber = listing.CurrentPage;
@@ -404,15 +413,15 @@ namespace GenioMVC.ViewModels.Country
 				//Set document field values to objects
 				SetDocumentFields(listing);
 
-				Menu.Elements = MapTRA_Menu_61(listing);
+				Menu.Elements = MapTRA_Menu_41(listing);
 
-				Menu.Identifier = "ML61";
+				Menu.Identifier = "ML41";
 				Menu.Slots = new Dictionary<string, List<object>>();
 
 				// Last updated by [CJP] at [2015.02.03]
 				// Adds the identifier to each element
 				foreach (var element in Menu.Elements)
-					element.Identifier = "ML61";
+					element.Identifier = "ML41";
 
 				Menu.SetPagination(pageNumber, listing.NumRegs, listing.HasMore, listing.GetTotal, listing.TotalRecords);
 
@@ -431,9 +440,9 @@ namespace GenioMVC.ViewModels.Country
 			LoadUserTableConfigNameProperties();
 		}
 
-		private List<TRA_Menu_61_RowViewModel> MapTRA_Menu_61(ListingMVC<CSGenioAcountry> Qlisting)
+		private List<TRA_Menu_41_RowViewModel> MapTRA_Menu_41(ListingMVC<CSGenioAphoto_album> Qlisting)
 		{
-			List<TRA_Menu_61_RowViewModel> Elements = [];
+			List<TRA_Menu_41_RowViewModel> Elements = [];
 			int i = 0;
 
 			if (Qlisting.Rows != null)
@@ -442,7 +451,7 @@ namespace GenioMVC.ViewModels.Country
 				{
 					if (Qlisting.NumRegs > 0 && i >= Qlisting.NumRegs) // Copiado da versão antiga do RowsToViewModels
 						break;
-					Elements.Add(MapTRA_Menu_61(row));
+					Elements.Add(MapTRA_Menu_41(row));
 					i++;
 				}
 			}
@@ -451,13 +460,13 @@ namespace GenioMVC.ViewModels.Country
 		}
 
 		/// <summary>
-		/// Maps a single CSGenioAcountry row
-		/// to a TRA_Menu_61_RowViewModel object.
+		/// Maps a single CSGenioAphoto_album row
+		/// to a TRA_Menu_41_RowViewModel object.
 		/// </summary>
 		/// <param name="row">The row.</param>
-		private TRA_Menu_61_RowViewModel MapTRA_Menu_61(CSGenioAcountry row)
+		private TRA_Menu_41_RowViewModel MapTRA_Menu_41(CSGenioAphoto_album row)
 		{
-			var model = new TRA_Menu_61_RowViewModel(m_userContext, true, _fieldsToSerialize);
+			var model = new TRA_Menu_41_RowViewModel(m_userContext, true, _fieldsToSerialize);
 			if (row == null)
 				return model;
 
@@ -465,8 +474,10 @@ namespace GenioMVC.ViewModels.Country
 			{
 				switch (Qfield.Area)
 				{
-					case "country":
+					case "photo_album":
 						model.klass.insertNameValueField(Qfield.FullName, Qfield.Value); break;
+					case "property":
+						model.Property.klass.insertNameValueField(Qfield.FullName, Qfield.Value); break;
 					default:
 						break;
 				}
@@ -474,6 +485,7 @@ namespace GenioMVC.ViewModels.Country
 
 			model.InitRowData();
 
+			SetTicketToImageFields(model);
 			return model;
 		}
 
@@ -492,19 +504,19 @@ namespace GenioMVC.ViewModels.Country
 		/// Sets the document field values to objects.
 		/// </summary>
 		/// <param name="listing">The rows</param>
-		private void SetDocumentFields(ListingMVC<CSGenioAcountry> listing)
+		private void SetDocumentFields(ListingMVC<CSGenioAphoto_album> listing)
 		{
 		}
 
 		#region Mapper
 
 		/// <inheritdoc />
-		public override void MapFromModel(Models.Country m)
+		public override void MapFromModel(Models.Photo_album m)
 		{
 		}
 
 		/// <inheritdoc />
-		public override void MapToModel(Models.Country m)
+		public override void MapToModel(Models.Photo_album m)
 		{
 		}
 
@@ -512,18 +524,26 @@ namespace GenioMVC.ViewModels.Country
 
 		#region Custom code
 
-// USE /[MANUAL TRA VIEWMODEL_CUSTOM TRA_MENU_61]/
+// USE /[MANUAL TRA VIEWMODEL_CUSTOM TRA_MENU_41]/
 
 		#endregion
 
 		private static readonly string[] _fieldsToSerialize =
 		[
-			"Country", "Country.ValCodcountry", "Country.ValZzstate", "Country.ValCountry"
+			"Photo_album", "Photo_album.ValCodphoto_album", "Photo_album.ValZzstate", "Photo_album.ValTitle", "Property", "Property.ValTitle", "Photo_album.ValPhoto", "Photo_album.ValCodproperty"
 		];
 
 		private static readonly List<TableSearchColumn> _searchableColumns =
 		[
-			new TableSearchColumn("ValCountry", CSGenioAcountry.FldCountry, typeof(string)),
+			new TableSearchColumn("ValTitle", CSGenioAphoto_album.FldTitle, typeof(string), defaultSearch : true),
+			new TableSearchColumn("Property_ValTitle", CSGenioAproperty.FldTitle, typeof(string)),
 		];
+		protected void SetTicketToImageFields(Models.Photo_album row)
+		{
+			if (row == null)
+				return;
+
+			row.ValPhotoQTicket = Helpers.Helpers.GetFileTicket(m_userContext.User, CSGenio.business.Area.AreaPHOTO_ALBUM, CSGenioAphoto_album.FldPhoto.Field, null, row.ValCodphoto_album);
+		}
 	}
 }

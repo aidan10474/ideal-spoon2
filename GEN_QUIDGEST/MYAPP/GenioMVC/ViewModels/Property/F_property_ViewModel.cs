@@ -44,7 +44,7 @@ namespace GenioMVC.ViewModels.Property
 		/// <summary>
 		/// Title: "Main Photo" | Type: "IJ"
 		/// </summary>
-		[ImageThumbnailJsonConverter(100, 50)]
+		[ImageThumbnailJsonConverter(30, 50)]
 		public GenioMVC.Models.ImageModel ValMain_photo { get; set; }
 		/// <summary>
 		/// Title: "Title" | Type: "C"
@@ -59,6 +59,22 @@ namespace GenioMVC.ViewModels.Property
 		/// </summary>
 		[ValidateSetAccess]
 		public TableDBEdit<GenioMVC.Models.Broker> TableBrokerName { get; set; }
+		/// <summary>
+		/// Title: "Size" | Type: "C"
+		/// </summary>
+		public string ValSize { get; set; }
+		/// <summary>
+		/// Title: "Bathrooms" | Type: "C"
+		/// </summary>
+		public string ValBathroom_number { get; set; }
+		/// <summary>
+		/// Title: "Date" | Type: "D"
+		/// </summary>
+		public DateTime? ValDate_construction { get; set; }
+		/// <summary>
+		/// Title: "Description" | Type: "C"
+		/// </summary>
+		public string ValDescription { get; set; }
 
 		#region Navigations
 		#endregion
@@ -195,6 +211,10 @@ namespace GenioMVC.ViewModels.Property
 				ValMain_photo = ViewModelConversion.ToImage(m.ValMain_photo);
 				ValTitle = ViewModelConversion.ToString(m.ValTitle);
 				ValPrice = ViewModelConversion.ToNumeric(m.ValPrice);
+				ValSize = ViewModelConversion.ToString(m.ValSize);
+				ValBathroom_number = ViewModelConversion.ToString(m.ValBathroom_number);
+				ValDate_construction = ViewModelConversion.ToDateTime(m.ValDate_construction);
+				ValDescription = ViewModelConversion.ToString(m.ValDescription);
 				ValCodproperty = ViewModelConversion.ToString(m.ValCodproperty);
 			}
 			catch (Exception)
@@ -226,6 +246,10 @@ namespace GenioMVC.ViewModels.Property
 					m.ValMain_photo = ViewModelConversion.ToImage(ValMain_photo);
 				m.ValTitle = ViewModelConversion.ToString(ValTitle);
 				m.ValPrice = ViewModelConversion.ToNumeric(ValPrice);
+				m.ValSize = ViewModelConversion.ToString(ValSize);
+				m.ValBathroom_number = ViewModelConversion.ToString(ValBathroom_number);
+				m.ValDate_construction = ViewModelConversion.ToDateTime(ValDate_construction);
+				m.ValDescription = ViewModelConversion.ToString(ValDescription);
 				m.ValCodproperty = ViewModelConversion.ToString(ValCodproperty);
 
 				/*
@@ -271,6 +295,18 @@ namespace GenioMVC.ViewModels.Property
 						break;
 					case "property.price":
 						this.ValPrice = ViewModelConversion.ToNumeric(_value);
+						break;
+					case "property.size":
+						this.ValSize = ViewModelConversion.ToString(_value);
+						break;
+					case "property.bathroom_number":
+						this.ValBathroom_number = ViewModelConversion.ToString(_value);
+						break;
+					case "property.date_construction":
+						this.ValDate_construction = ViewModelConversion.ToDateTime(_value);
+						break;
+					case "property.description":
+						this.ValDescription = ViewModelConversion.ToString(_value);
 						break;
 					case "property.codproperty":
 						this.ValCodproperty = ViewModelConversion.ToString(_value);
@@ -401,6 +437,9 @@ namespace GenioMVC.ViewModels.Property
 			validator.StringLength("ValTitle", Resources.Resources.TITLE21885, ValTitle, 80);
 
 			validator.Required("ValTitle", Resources.Resources.TITLE21885, ViewModelConversion.ToString(ValTitle), FieldType.TEXT.GetFormatting());
+			validator.StringLength("ValSize", Resources.Resources.SIZE10299, ValSize, 50);
+			validator.StringLength("ValBathroom_number", Resources.Resources.BATHROOMS54249, ValBathroom_number, 50);
+			validator.StringLength("ValDescription", Resources.Resources.DESCRIPTION07383, ValDescription, 50);
 
 
 			return validator.GetResult();
@@ -637,6 +676,10 @@ namespace GenioMVC.ViewModels.Property
 				"property.main_photo" => ViewModelConversion.ToImage(modelValue),
 				"property.title" => ViewModelConversion.ToString(modelValue),
 				"property.price" => ViewModelConversion.ToNumeric(modelValue),
+				"property.size" => ViewModelConversion.ToString(modelValue),
+				"property.bathroom_number" => ViewModelConversion.ToString(modelValue),
+				"property.date_construction" => ViewModelConversion.ToDateTime(modelValue),
+				"property.description" => ViewModelConversion.ToString(modelValue),
 				"property.codproperty" => ViewModelConversion.ToString(modelValue),
 				"broker.codbroker" => ViewModelConversion.ToString(modelValue),
 				"broker.name" => ViewModelConversion.ToString(modelValue),

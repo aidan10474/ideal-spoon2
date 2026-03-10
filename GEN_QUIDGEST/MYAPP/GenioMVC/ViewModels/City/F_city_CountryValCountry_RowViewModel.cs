@@ -4,18 +4,18 @@ using CSGenio.business;
 using CSGenio.framework;
 using GenioMVC.Models.Navigation;
 
-namespace GenioMVC.ViewModels.Agent;
+namespace GenioMVC.ViewModels.City;
 
-public class TRA_Menu_31_RowViewModel : Models.Agent
+public class F_city_CountryValCountry_RowViewModel : Models.Country
 {
 	#region Constructors
 
-	public TRA_Menu_31_RowViewModel(UserContext userContext, bool isEmpty = false, string[]? fieldsToSerialize = null) : base(userContext, isEmpty, fieldsToSerialize)
+	public F_city_CountryValCountry_RowViewModel(UserContext userContext, bool isEmpty = false, string[]? fieldsToSerialize = null) : base(userContext, isEmpty, fieldsToSerialize)
 	{
 		InitRowProperties();
 	}
 
-	public TRA_Menu_31_RowViewModel(UserContext userContext, CSGenioAagent val, bool isEmpty = false, string[]? fieldsToSerialize = null) : base(userContext, val, isEmpty, fieldsToSerialize)
+	public F_city_CountryValCountry_RowViewModel(UserContext userContext, CSGenioAcountry val, bool isEmpty = false, string[]? fieldsToSerialize = null) : base(userContext, val, isEmpty, fieldsToSerialize)
 	{
 		InitRowProperties();
 	}
@@ -36,32 +36,8 @@ public class TRA_Menu_31_RowViewModel : Models.Agent
 			new ListColumn()
 			{
 				Order = 1,
-				Area = "AGENT",
-				Field = "PHOTO",
-			},
-			new ListColumn()
-			{
-				Order = 2,
-				Area = "AGENT",
-				Field = "BIRTHDATE",
-			},
-			new ListColumn()
-			{
-				Order = 3,
-				Area = "AGENT",
-				Field = "TELEPHONE",
-			},
-			new ListColumn()
-			{
-				Order = 4,
-				Area = "AGENT",
-				Field = "NAME",
-			},
-			new ListColumn()
-			{
-				Order = 5,
-				Area = "AGENT",
-				Field = "EMAIL",
+				Area = "COUNTRY",
+				Field = "COUNTRY",
 			},
 		];
 	}
@@ -76,10 +52,6 @@ public class TRA_Menu_31_RowViewModel : Models.Agent
 		bool canDelete = true;
 		bool canDuplicate = true;
 		bool canInsert = true;
-
-		using (new CSGenio.persistence.ScopedPersistentSupport(m_userContext.PersistentSupport))
-		{
-		}
 
 		BtnPermission = new TableRowCrudButtonPermissions()
 		{

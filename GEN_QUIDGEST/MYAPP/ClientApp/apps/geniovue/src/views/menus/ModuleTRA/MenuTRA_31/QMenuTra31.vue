@@ -121,12 +121,12 @@
 				menuInfo: {
 					id: '31',
 					isMenuList: true,
-					designation: computed(() => this.Resources.AGENTS29376),
+					designation: computed(() => this.Resources.CITIES41573),
 					acronym: 'TRA_31',
-					name: 'AGENT',
+					name: 'CITY',
 					route: 'menu-TRA_31',
 					order: '31',
-					controller: 'AGENT',
+					controller: 'CITY',
 					action: 'TRA_Menu_31',
 					isPopup: false
 				},
@@ -137,7 +137,7 @@
 					menu: new controlClass.TableListControl({
 						fnHydrateViewModel: (data) => vm.model.hydrate(data),
 						id: 'TRA_Menu_31',
-						controller: 'AGENT',
+						controller: 'CITY',
 						action: 'TRA_Menu_31',
 						hasDependencies: false,
 						isInCollapsible: false,
@@ -146,69 +146,39 @@
 							'page-full-height'
 						],
 						columnsOriginal: [
-							new listColumnTypes.ImageColumn({
+							new listColumnTypes.TextColumn({
 								order: 1,
-								name: 'ValPhoto',
-								area: 'AGENT',
-								field: 'PHOTO',
-								label: computed(() => this.Resources.PHOTO51874),
-								dataTitle: computed(() => genericFunctions.formatString(vm.Resources.IMAGEM_UTILIZADA_PAR58591, vm.Resources.PHOTO51874)),
-								scrollData: 3,
-								sortable: false,
-								searchable: false,
+								name: '.ValTitle',
+								area: 'PROPERTY',
+								field: 'TITLE',
+								label: computed(() => this.Resources.TITLE21885),
+								dataLength: 80,
+								scrollData: 30,
 								export: 1,
-							}, computed(() => vm.model), computed(() => vm.internalEvents)),
-							new listColumnTypes.DateColumn({
-								order: 2,
-								name: 'ValBirthdate',
-								area: 'AGENT',
-								field: 'BIRTHDATE',
-								label: computed(() => this.Resources.BIRTHDATE22743),
-								scrollData: 8,
-								dateTimeType: 'date',
-								export: 1,
-							}, computed(() => vm.model), computed(() => vm.internalEvents)),
-							new listColumnTypes.NumericColumn({
-								order: 3,
-								name: 'ValTelephone',
-								area: 'AGENT',
-								field: 'TELEPHONE',
-								label: computed(() => this.Resources.TELEPHONE28697),
-								scrollData: 11,
-								maxDigits: 11,
-								decimalPlaces: 0,
-								export: 1,
+								pkColumn: 'ValCodproperty',
 							}, computed(() => vm.model), computed(() => vm.internalEvents)),
 							new listColumnTypes.TextColumn({
-								order: 4,
-								name: 'ValName',
-								area: 'AGENT',
-								field: 'NAME',
-								label: computed(() => this.Resources.NAME31974),
+								order: 2,
+								name: 'ValCity',
+								area: 'CITY',
+								field: 'CITY',
+								label: computed(() => this.Resources.CITY42505),
 								dataLength: 50,
 								scrollData: 30,
-								export: 1,
-							}, computed(() => vm.model), computed(() => vm.internalEvents)),
-							new listColumnTypes.TextColumn({
-								order: 5,
-								name: 'ValEmail',
-								area: 'AGENT',
-								field: 'EMAIL',
-								label: computed(() => this.Resources.EMAIL25170),
-								dataLength: 256,
-								scrollData: 30,
+								sortable: false,
+								searchable: false,
 								export: 1,
 							}, computed(() => vm.model), computed(() => vm.internalEvents)),
 						],
 						config: {
 							name: 'TRA_Menu_31',
 							serverMode: true,
-							pkColumn: 'ValCodagent',
-							tableAlias: 'AGENT',
-							tableNamePlural: computed(() => this.Resources.AGENTS29376),
+							pkColumn: 'ValCodcity',
+							tableAlias: 'CITY',
+							tableNamePlural: computed(() => this.Resources.CITIES41573),
 							viewManagement: '',
 							showLimitsInfo: true,
-							tableTitle: computed(() => this.Resources.AGENTS29376),
+							tableTitle: computed(() => this.Resources.CITIES41573),
 							showAlternatePagination: true,
 							permissions: {
 							},
@@ -229,7 +199,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_AGENT',
+										formName: 'F_CITY',
 										mode: 'SHOW',
 										isControlled: true
 									}
@@ -245,7 +215,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_AGENT',
+										formName: 'F_CITY',
 										mode: 'EDIT',
 										isControlled: true
 									}
@@ -261,7 +231,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_AGENT',
+										formName: 'F_CITY',
 										mode: 'DUPLICATE',
 										isControlled: true
 									}
@@ -277,7 +247,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_AGENT',
+										formName: 'F_CITY',
 										mode: 'DELETE',
 										isControlled: true
 									}
@@ -295,7 +265,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_AGENT',
+										formName: 'F_CITY',
 										mode: 'NEW',
 										repeatInsertion: false,
 										isControlled: true
@@ -312,35 +282,35 @@
 							],
 							rowClickAction: {
 								id: 'RCA_TRA_311',
-								name: 'form-F_AGENT',
+								name: 'form-F_CITY',
 								isVisible: true,
 								params: {
 									isRoute: true,
 									limits: [
 										{
 											identifier: 'id',
-											fnValueSelector: (row) => row.ValCodagent
+											fnValueSelector: (row) => row.ValCodcity
 										},
 									],
 									isControlled: true,
-									action: vm.openFormAction, type: 'form', mode: 'SHOW', formName: 'F_AGENT'
+									action: vm.openFormAction, type: 'form', mode: 'SHOW', formName: 'F_CITY'
 								}
 							},
 							formsDefinition: {
-								'F_AGENT': {
-									fnKeySelector: (row) => row.Fields.ValCodagent,
+								'F_CITY': {
+									fnKeySelector: (row) => row.Fields.ValCodcity,
 									isPopup: false
 								},
 							},
-							defaultSearchColumnName: 'ValName',
-							defaultSearchColumnNameOriginal: 'ValName',
+							defaultSearchColumnName: '',
+							defaultSearchColumnNameOriginal: '',
 							defaultColumnSorting: {
-								columnName: 'ValBirthdate',
+								columnName: '',
 								sortOrder: 'asc'
 							}
 						},
-						globalEvents: ['changed-AGENT'],
-						uuid: '0abe4487-683c-425d-b01f-c17a01ea371f',
+						globalEvents: ['changed-COUNTRY', 'changed-CITY'],
+						uuid: '0fab610a-550c-46d7-8dcb-9e6c3920df59',
 						allSelectedRows: 'false',
 						headerLevel: 1,
 						isActiveControl: computed(() => this.isActiveMenu)

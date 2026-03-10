@@ -121,12 +121,12 @@
 				menuInfo: {
 					id: '61',
 					isMenuList: true,
-					designation: computed(() => this.Resources.COUNTRIES03108),
+					designation: computed(() => this.Resources.CONTACTS55742),
 					acronym: 'TRA_61',
-					name: 'COUNTRY',
+					name: 'CONTACT',
 					route: 'menu-TRA_61',
 					order: '61',
-					controller: 'COUNTRY',
+					controller: 'CONTACT',
 					action: 'TRA_Menu_61',
 					isPopup: false
 				},
@@ -137,7 +137,7 @@
 					menu: new controlClass.TableListControl({
 						fnHydrateViewModel: (data) => vm.model.hydrate(data),
 						id: 'TRA_Menu_61',
-						controller: 'COUNTRY',
+						controller: 'CONTACT',
 						action: 'TRA_Menu_61',
 						hasDependencies: false,
 						isInCollapsible: false,
@@ -146,28 +146,73 @@
 							'page-full-height'
 						],
 						columnsOriginal: [
-							new listColumnTypes.TextColumn({
+							new listColumnTypes.DateColumn({
 								order: 1,
-								name: 'ValCountry',
-								area: 'COUNTRY',
-								field: 'COUNTRY',
-								label: computed(() => this.Resources.COUNTRY64133),
+								name: 'ValDate',
+								area: 'CONTACT',
+								field: 'DATE',
+								scrollData: 8,
+								dateTimeType: 'date',
+								export: 1,
+							}, computed(() => vm.model), computed(() => vm.internalEvents)),
+							new listColumnTypes.TextColumn({
+								order: 2,
+								name: 'ValDescription',
+								area: 'CONTACT',
+								field: 'DESCRIPTION',
 								dataLength: 50,
 								scrollData: 30,
-								sortable: false,
-								searchable: false,
 								export: 1,
+							}, computed(() => vm.model), computed(() => vm.internalEvents)),
+							new listColumnTypes.TextColumn({
+								order: 3,
+								name: 'ValClient_name',
+								area: 'CONTACT',
+								field: 'CLIENT_NAME',
+								dataLength: 50,
+								scrollData: 30,
+								export: 1,
+							}, computed(() => vm.model), computed(() => vm.internalEvents)),
+							new listColumnTypes.NumericColumn({
+								order: 4,
+								name: 'ValPhone_contact',
+								area: 'CONTACT',
+								field: 'PHONE_CONTACT',
+								scrollData: 15,
+								maxDigits: 12,
+								decimalPlaces: 2,
+								export: 1,
+							}, computed(() => vm.model), computed(() => vm.internalEvents)),
+							new listColumnTypes.TextColumn({
+								order: 5,
+								name: 'ValEmail_contact',
+								area: 'CONTACT',
+								field: 'EMAIL_CONTACT',
+								dataLength: 50,
+								scrollData: 30,
+								export: 1,
+							}, computed(() => vm.model), computed(() => vm.internalEvents)),
+							new listColumnTypes.TextColumn({
+								order: 6,
+								name: 'Property.ValTitle',
+								area: 'PROPERTY',
+								field: 'TITLE',
+								label: computed(() => this.Resources.TITLE21885),
+								dataLength: 80,
+								scrollData: 30,
+								export: 1,
+								pkColumn: 'ValCodproperty',
 							}, computed(() => vm.model), computed(() => vm.internalEvents)),
 						],
 						config: {
 							name: 'TRA_Menu_61',
 							serverMode: true,
-							pkColumn: 'ValCodcountry',
-							tableAlias: 'COUNTRY',
-							tableNamePlural: computed(() => this.Resources.COUNTRIES03108),
+							pkColumn: 'ValCodcontact',
+							tableAlias: 'CONTACT',
+							tableNamePlural: computed(() => this.Resources.CONTACTS55742),
 							viewManagement: '',
 							showLimitsInfo: true,
-							tableTitle: computed(() => this.Resources.COUNTRIES03108),
+							tableTitle: computed(() => this.Resources.CONTACTS55742),
 							showAlternatePagination: true,
 							permissions: {
 							},
@@ -188,7 +233,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_COUNTRY',
+										formName: 'F_CONTACT',
 										mode: 'SHOW',
 										isControlled: true
 									}
@@ -204,7 +249,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_COUNTRY',
+										formName: 'F_CONTACT',
 										mode: 'EDIT',
 										isControlled: true
 									}
@@ -220,7 +265,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_COUNTRY',
+										formName: 'F_CONTACT',
 										mode: 'DUPLICATE',
 										isControlled: true
 									}
@@ -236,7 +281,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_COUNTRY',
+										formName: 'F_CONTACT',
 										mode: 'DELETE',
 										isControlled: true
 									}
@@ -254,7 +299,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_COUNTRY',
+										formName: 'F_CONTACT',
 										mode: 'NEW',
 										repeatInsertion: false,
 										isControlled: true
@@ -271,35 +316,35 @@
 							],
 							rowClickAction: {
 								id: 'RCA_TRA_611',
-								name: 'form-F_COUNTRY',
+								name: 'form-F_CONTACT',
 								isVisible: true,
 								params: {
 									isRoute: true,
 									limits: [
 										{
 											identifier: 'id',
-											fnValueSelector: (row) => row.ValCodcountry
+											fnValueSelector: (row) => row.ValCodcontact
 										},
 									],
 									isControlled: true,
-									action: vm.openFormAction, type: 'form', mode: 'SHOW', formName: 'F_COUNTRY'
+									action: vm.openFormAction, type: 'form', mode: 'SHOW', formName: 'F_CONTACT'
 								}
 							},
 							formsDefinition: {
-								'F_COUNTRY': {
-									fnKeySelector: (row) => row.Fields.ValCodcountry,
+								'F_CONTACT': {
+									fnKeySelector: (row) => row.Fields.ValCodcontact,
 									isPopup: false
 								},
 							},
-							defaultSearchColumnName: '',
-							defaultSearchColumnNameOriginal: '',
+							defaultSearchColumnName: 'ValClient_name',
+							defaultSearchColumnNameOriginal: 'ValClient_name',
 							defaultColumnSorting: {
-								columnName: '',
+								columnName: 'ValDate',
 								sortOrder: 'asc'
 							}
 						},
-						globalEvents: ['changed-COUNTRY'],
-						uuid: '029048a2-7568-48d7-ab82-5d2d6a355505',
+						globalEvents: ['changed-PROPERTY', 'changed-CONTACT'],
+						uuid: '60b14a24-ea59-48ed-b77c-06d5172e5026',
 						allSelectedRows: 'false',
 						headerLevel: 1,
 						isActiveControl: computed(() => this.isActiveMenu)

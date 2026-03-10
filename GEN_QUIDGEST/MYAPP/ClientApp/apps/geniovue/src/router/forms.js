@@ -4,18 +4,6 @@ export default function getFormsRoutes()
 {
 	return [
 		{
-			path: '/:culture/:system/:module/form/F_AGENT/:mode/:id?',
-			name: 'form-F_AGENT',
-			props: route => propsConverter(route),
-			component: () => import('@/views/forms/FormFAgent/QFormFAgent.vue'),
-			meta: {
-				routeType: 'form',
-				baseArea: 'AGENT',
-				humanKeyFields: ['ValName'],
-				isPopup: false
-			}
-		},
-		{
 			path: '/:culture/:system/:module/form/F_BROKE/:mode/:id?',
 			name: 'form-F_BROKE',
 			props: route => propsConverter(route),
@@ -24,6 +12,18 @@ export default function getFormsRoutes()
 				routeType: 'form',
 				baseArea: 'BROKER',
 				humanKeyFields: ['ValName'],
+				isPopup: false
+			}
+		},
+		{
+			path: '/:culture/:system/:module/form/F_CITY/:mode/:id?',
+			name: 'form-F_CITY',
+			props: route => propsConverter(route),
+			component: () => import('@/views/forms/FormFCity/QFormFCity.vue'),
+			meta: {
+				routeType: 'form',
+				baseArea: 'CITY',
+				humanKeyFields: [],
 				isPopup: false
 			}
 		},

@@ -153,7 +153,7 @@
 						</base-input-structure>
 					</q-col>
 				</q-row>
-				<q-row v-if="controls.F_PROPERTY__BROKER__NAME.isVisible">
+				<q-row v-if="controls.F_PROPERTY__BROKER__NAME.isVisible || controls.F_PROPERTY__PROPERTY__SIZE.isVisible || controls.F_PROPERTY__PROPERTY__BATHROOMSNUMBER.isVisible || controls.F_PROPERTY__PROPERTY__DATECONSTRUCTION.isVisible || controls.F_PROPERTY__PROPERTY__DESCRIPTION.isVisible">
 					<q-col
 						v-if="controls.F_PROPERTY__BROKER__NAME.isVisible"
 						cols="auto">
@@ -173,6 +173,76 @@
 								v-if="controls.F_PROPERTY__BROKER__NAME.seeMoreIsVisible"
 								v-bind="controls.F_PROPERTY__BROKER__NAME.seeMoreParams"
 								v-on="controls.F_PROPERTY__BROKER__NAME.handlers" />
+						</base-input-structure>
+					</q-col>
+					<q-col
+						v-if="controls.F_PROPERTY__PROPERTY__SIZE.isVisible"
+						cols="auto">
+						<base-input-structure
+							v-if="controls.F_PROPERTY__PROPERTY__SIZE.isVisible"
+							class="i-text"
+							v-bind="controls.F_PROPERTY__PROPERTY__SIZE"
+							v-on="controls.F_PROPERTY__PROPERTY__SIZE.handlers"
+							:loading="controls.F_PROPERTY__PROPERTY__SIZE.props.loading"
+							:reporting-mode-on="reportingModeCAV"
+							:suggestion-mode-on="suggestionModeOn">
+							<q-text-field
+								v-bind="controls.F_PROPERTY__PROPERTY__SIZE.props"
+								@blur="onBlur(controls.F_PROPERTY__PROPERTY__SIZE, model.ValSize.value)"
+								@change="model.ValSize.fnUpdateValueOnChange" />
+						</base-input-structure>
+					</q-col>
+					<q-col
+						v-if="controls.F_PROPERTY__PROPERTY__BATHROOMSNUMBER.isVisible"
+						cols="auto">
+						<base-input-structure
+							v-if="controls.F_PROPERTY__PROPERTY__BATHROOMSNUMBER.isVisible"
+							class="i-text"
+							v-bind="controls.F_PROPERTY__PROPERTY__BATHROOMSNUMBER"
+							v-on="controls.F_PROPERTY__PROPERTY__BATHROOMSNUMBER.handlers"
+							:loading="controls.F_PROPERTY__PROPERTY__BATHROOMSNUMBER.props.loading"
+							:reporting-mode-on="reportingModeCAV"
+							:suggestion-mode-on="suggestionModeOn">
+							<q-text-field
+								v-bind="controls.F_PROPERTY__PROPERTY__BATHROOMSNUMBER.props"
+								@blur="onBlur(controls.F_PROPERTY__PROPERTY__BATHROOMSNUMBER, model.ValBathroom_number.value)"
+								@change="model.ValBathroom_number.fnUpdateValueOnChange" />
+						</base-input-structure>
+					</q-col>
+					<q-col
+						v-if="controls.F_PROPERTY__PROPERTY__DATECONSTRUCTION.isVisible"
+						cols="auto">
+						<base-input-structure
+							v-if="controls.F_PROPERTY__PROPERTY__DATECONSTRUCTION.isVisible"
+							class="i-text"
+							v-bind="controls.F_PROPERTY__PROPERTY__DATECONSTRUCTION"
+							v-on="controls.F_PROPERTY__PROPERTY__DATECONSTRUCTION.handlers"
+							:loading="controls.F_PROPERTY__PROPERTY__DATECONSTRUCTION.props.loading"
+							:reporting-mode-on="reportingModeCAV"
+							:suggestion-mode-on="suggestionModeOn">
+							<q-date-time-picker
+								v-if="controls.F_PROPERTY__PROPERTY__DATECONSTRUCTION.isVisible"
+								v-bind="controls.F_PROPERTY__PROPERTY__DATECONSTRUCTION.props"
+								:model-value="model.ValDate_construction.value"
+								@reset-icon-click="model.ValDate_construction.fnUpdateValue(model.ValDate_construction.originalValue ?? new Date())"
+								@update:model-value="model.ValDate_construction.fnUpdateValue($event ?? '')" />
+						</base-input-structure>
+					</q-col>
+					<q-col
+						v-if="controls.F_PROPERTY__PROPERTY__DESCRIPTION.isVisible"
+						cols="auto">
+						<base-input-structure
+							v-if="controls.F_PROPERTY__PROPERTY__DESCRIPTION.isVisible"
+							class="i-text"
+							v-bind="controls.F_PROPERTY__PROPERTY__DESCRIPTION"
+							v-on="controls.F_PROPERTY__PROPERTY__DESCRIPTION.handlers"
+							:loading="controls.F_PROPERTY__PROPERTY__DESCRIPTION.props.loading"
+							:reporting-mode-on="reportingModeCAV"
+							:suggestion-mode-on="suggestionModeOn">
+							<q-text-field
+								v-bind="controls.F_PROPERTY__PROPERTY__DESCRIPTION.props"
+								@blur="onBlur(controls.F_PROPERTY__PROPERTY__DESCRIPTION, model.ValDescription.value)"
+								@change="model.ValDescription.fnUpdateValueOnChange" />
 						</base-input-structure>
 					</q-col>
 				</q-row>
@@ -533,7 +603,7 @@
 						placeholder: '',
 						labelPosition: computed(() => this.labelAlignment.topleft),
 						height: 50,
-						width: 100,
+						width: 30,
 						dataTitle: computed(() => genericFunctions.formatString(vm.Resources.IMAGEM_UTILIZADA_PAR17299, vm.Resources.MAIN_PHOTO18723)),
 						maxFileSize: 10485760, // In bytes.
 						maxFileSizeLabel: '10 MB',
@@ -596,6 +666,58 @@
 						controlLimits: [
 						],
 					}, this),
+					F_PROPERTY__PROPERTY__SIZE: new fieldControlClass.StringControl({
+						modelField: 'ValSize',
+						valueChangeEvent: 'fieldChange:property.size',
+						id: 'F_PROPERTY__PROPERTY__SIZE',
+						name: 'SIZE',
+						size: 'xxlarge',
+						label: computed(() => this.Resources.SIZE10299),
+						placeholder: '',
+						labelPosition: computed(() => this.labelAlignment.topleft),
+						maxLength: 50,
+						controlLimits: [
+						],
+					}, this),
+					F_PROPERTY__PROPERTY__BATHROOMSNUMBER: new fieldControlClass.StringControl({
+						modelField: 'ValBathroom_number',
+						valueChangeEvent: 'fieldChange:property.bathroom_number',
+						id: 'F_PROPERTY__PROPERTY__BATHROOMSNUMBER',
+						name: 'BATHROOMSNUMBER',
+						size: 'xxlarge',
+						label: computed(() => this.Resources.BATHROOMS54249),
+						placeholder: '',
+						labelPosition: computed(() => this.labelAlignment.topleft),
+						maxLength: 50,
+						controlLimits: [
+						],
+					}, this),
+					F_PROPERTY__PROPERTY__DATECONSTRUCTION: new fieldControlClass.DateControl({
+						modelField: 'ValDate_construction',
+						valueChangeEvent: 'fieldChange:property.date_construction',
+						id: 'F_PROPERTY__PROPERTY__DATECONSTRUCTION',
+						name: 'DATECONSTRUCTION',
+						size: 'small',
+						label: computed(() => this.Resources.DATE18475),
+						placeholder: '',
+						labelPosition: computed(() => this.labelAlignment.topleft),
+						dateTimeType: 'date',
+						controlLimits: [
+						],
+					}, this),
+					F_PROPERTY__PROPERTY__DESCRIPTION: new fieldControlClass.StringControl({
+						modelField: 'ValDescription',
+						valueChangeEvent: 'fieldChange:property.description',
+						id: 'F_PROPERTY__PROPERTY__DESCRIPTION',
+						name: 'DESCRIPTION',
+						size: 'xxlarge',
+						label: computed(() => this.Resources.DESCRIPTION07383),
+						placeholder: '',
+						labelPosition: computed(() => this.labelAlignment.topleft),
+						maxLength: 50,
+						controlLimits: [
+						],
+					}, this),
 				},
 
 				model: new FormViewModel(this, {
@@ -623,14 +745,22 @@
 						set ValName(value) { vm.model.TableBrokerName.updateValue(value) },
 					},
 					Property: {
+						get ValBathroom_number() { return vm.model.ValBathroom_number.value },
+						set ValBathroom_number(value) { vm.model.ValBathroom_number.updateValue(value) },
 						get ValCodagent() { return vm.model.ValCodagent.value },
 						set ValCodagent(value) { vm.model.ValCodagent.updateValue(value) },
 						get ValCodcity() { return vm.model.ValCodcity.value },
 						set ValCodcity(value) { vm.model.ValCodcity.updateValue(value) },
+						get ValDate_construction() { return vm.model.ValDate_construction.value },
+						set ValDate_construction(value) { vm.model.ValDate_construction.updateValue(value) },
+						get ValDescription() { return vm.model.ValDescription.value },
+						set ValDescription(value) { vm.model.ValDescription.updateValue(value) },
 						get ValMain_photo() { return vm.model.ValMain_photo.value },
 						set ValMain_photo(value) { vm.model.ValMain_photo.updateValue(value) },
 						get ValPrice() { return vm.model.ValPrice.value },
 						set ValPrice(value) { vm.model.ValPrice.updateValue(value) },
+						get ValSize() { return vm.model.ValSize.value },
+						set ValSize(value) { vm.model.ValSize.updateValue(value) },
 						get ValTitle() { return vm.model.ValTitle.value },
 						set ValTitle(value) { vm.model.ValTitle.updateValue(value) },
 					},

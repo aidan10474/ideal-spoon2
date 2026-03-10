@@ -93,97 +93,46 @@
 
 		<q-container
 			fluid
-			data-key="F_AGENT"
+			data-key="F_CITY"
 			:data-loading="!formInitialDataLoaded || !isActiveForm">
 			<template v-if="formControl.initialized && showFormBody">
-				<q-row v-if="controls.F_AGENT_AGENTPHOTO___.isVisible">
+				<q-row v-if="controls.F_CITY__COUNTRY__COUNTRY.isVisible || controls.F_CITY__CITY_CITY____.isVisible">
 					<q-col
-						v-if="controls.F_AGENT_AGENTPHOTO___.isVisible"
+						v-if="controls.F_CITY__COUNTRY__COUNTRY.isVisible"
 						cols="auto">
 						<base-input-structure
-							v-if="controls.F_AGENT_AGENTPHOTO___.isVisible"
-							class="q-image"
-							v-bind="controls.F_AGENT_AGENTPHOTO___"
-							v-on="controls.F_AGENT_AGENTPHOTO___.handlers"
-							:loading="controls.F_AGENT_AGENTPHOTO___.props.loading"
+							v-if="controls.F_CITY__COUNTRY__COUNTRY.isVisible"
+							class="i-text"
+							v-bind="controls.F_CITY__COUNTRY__COUNTRY"
+							v-on="controls.F_CITY__COUNTRY__COUNTRY.handlers"
+							:loading="controls.F_CITY__COUNTRY__COUNTRY.props.loading"
 							:reporting-mode-on="reportingModeCAV"
 							:suggestion-mode-on="suggestionModeOn">
-							<q-image
-								v-if="controls.F_AGENT_AGENTPHOTO___.isVisible"
-								v-bind="controls.F_AGENT_AGENTPHOTO___.props"
-								v-on="controls.F_AGENT_AGENTPHOTO___.handlers" />
+							<q-lookup
+								v-if="controls.F_CITY__COUNTRY__COUNTRY.isVisible"
+								v-bind="controls.F_CITY__COUNTRY__COUNTRY.props"
+								v-on="controls.F_CITY__COUNTRY__COUNTRY.handlers" />
+							<q-see-more-f-city-country-country
+								v-if="controls.F_CITY__COUNTRY__COUNTRY.seeMoreIsVisible"
+								v-bind="controls.F_CITY__COUNTRY__COUNTRY.seeMoreParams"
+								v-on="controls.F_CITY__COUNTRY__COUNTRY.handlers" />
 						</base-input-structure>
 					</q-col>
-				</q-row>
-				<q-row v-if="controls.F_AGENT_AGENTNAME____.isVisible || controls.F_AGENT__AGENT__BIRTHDATE.isVisible || controls.F_AGENT_AGENTEMAIL___.isVisible || controls.F_AGENT__AGENT__TELEPHONE.isVisible">
 					<q-col
-						v-if="controls.F_AGENT_AGENTNAME____.isVisible"
+						v-if="controls.F_CITY__CITY_CITY____.isVisible"
 						cols="auto">
 						<base-input-structure
-							v-if="controls.F_AGENT_AGENTNAME____.isVisible"
+							v-if="controls.F_CITY__CITY_CITY____.isVisible"
 							class="i-text"
-							v-bind="controls.F_AGENT_AGENTNAME____"
-							v-on="controls.F_AGENT_AGENTNAME____.handlers"
-							:loading="controls.F_AGENT_AGENTNAME____.props.loading"
+							v-bind="controls.F_CITY__CITY_CITY____"
+							v-on="controls.F_CITY__CITY_CITY____.handlers"
+							:loading="controls.F_CITY__CITY_CITY____.props.loading"
 							:reporting-mode-on="reportingModeCAV"
 							:suggestion-mode-on="suggestionModeOn">
 							<q-text-field
-								v-bind="controls.F_AGENT_AGENTNAME____.props"
-								@blur="onBlur(controls.F_AGENT_AGENTNAME____, model.ValName.value)"
-								@change="model.ValName.fnUpdateValueOnChange" />
-						</base-input-structure>
-					</q-col>
-					<q-col
-						v-if="controls.F_AGENT__AGENT__BIRTHDATE.isVisible"
-						cols="auto">
-						<base-input-structure
-							v-if="controls.F_AGENT__AGENT__BIRTHDATE.isVisible"
-							class="i-text"
-							v-bind="controls.F_AGENT__AGENT__BIRTHDATE"
-							v-on="controls.F_AGENT__AGENT__BIRTHDATE.handlers"
-							:loading="controls.F_AGENT__AGENT__BIRTHDATE.props.loading"
-							:reporting-mode-on="reportingModeCAV"
-							:suggestion-mode-on="suggestionModeOn">
-							<q-date-time-picker
-								v-if="controls.F_AGENT__AGENT__BIRTHDATE.isVisible"
-								v-bind="controls.F_AGENT__AGENT__BIRTHDATE.props"
-								:model-value="model.ValBirthdate.value"
-								@reset-icon-click="model.ValBirthdate.fnUpdateValue(model.ValBirthdate.originalValue ?? new Date())"
-								@update:model-value="model.ValBirthdate.fnUpdateValue($event ?? '')" />
-						</base-input-structure>
-					</q-col>
-					<q-col
-						v-if="controls.F_AGENT_AGENTEMAIL___.isVisible"
-						cols="auto">
-						<base-input-structure
-							v-if="controls.F_AGENT_AGENTEMAIL___.isVisible"
-							class="i-text"
-							v-bind="controls.F_AGENT_AGENTEMAIL___"
-							v-on="controls.F_AGENT_AGENTEMAIL___.handlers"
-							:loading="controls.F_AGENT_AGENTEMAIL___.props.loading"
-							:reporting-mode-on="reportingModeCAV"
-							:suggestion-mode-on="suggestionModeOn">
-							<q-text-field
-								v-bind="controls.F_AGENT_AGENTEMAIL___.props"
-								@blur="onBlur(controls.F_AGENT_AGENTEMAIL___, model.ValEmail.value)"
-								@change="model.ValEmail.fnUpdateValueOnChange" />
-						</base-input-structure>
-					</q-col>
-					<q-col
-						v-if="controls.F_AGENT__AGENT__TELEPHONE.isVisible"
-						cols="auto">
-						<base-input-structure
-							v-if="controls.F_AGENT__AGENT__TELEPHONE.isVisible"
-							class="i-text"
-							v-bind="controls.F_AGENT__AGENT__TELEPHONE"
-							v-on="controls.F_AGENT__AGENT__TELEPHONE.handlers"
-							:loading="controls.F_AGENT__AGENT__TELEPHONE.props.loading"
-							:reporting-mode-on="reportingModeCAV"
-							:suggestion-mode-on="suggestionModeOn">
-							<q-numeric-input
-								v-if="controls.F_AGENT__AGENT__TELEPHONE.isVisible"
-								v-bind="controls.F_AGENT__AGENT__TELEPHONE.props"
-								@update:model-value="model.ValTelephone.fnUpdateValue" />
+								v-bind="controls.F_CITY__CITY_CITY____.props"
+								@blur="onBlur(controls.F_CITY__CITY_CITY____, model.ValCity.value)"
+								@change="model.ValCity.fnUpdateValueOnChange" />
 						</base-input-structure>
 					</q-col>
 				</q-row>
@@ -245,19 +194,20 @@
 	import qProjArrays from '@/api/genio/projectArrays.js'
 	/* eslint-enable @typescript-eslint/no-unused-vars */
 
-	import FormViewModel from './QFormFAgentViewModel.js'
+	import FormViewModel from './QFormFCityViewModel.js'
 
-	const requiredTextResources = ['QFormFAgent', 'hardcoded', 'messages']
+	const requiredTextResources = ['QFormFCity', 'hardcoded', 'messages']
 
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA FORM_INCLUDEJS F_AGENT]/
+// USE /[MANUAL TRA FORM_INCLUDEJS F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 
 	export default {
-		name: 'QFormFAgent',
+		name: 'QFormFCity',
 
 		components: {
+			QSeeMoreFCityCountryCountry: defineAsyncComponent(() => import('@/views/forms/FormFCity/dbedits/FCityCountryCountrySeeMore.vue')),
 		},
 
 		mixins: [
@@ -271,8 +221,8 @@
 			nestedRouteParams: {
 				type: Object,
 				default: () => ({
-					name: 'F_AGENT',
-					location: 'form-F_AGENT',
+					name: 'F_CITY',
+					location: 'form-F_CITY',
 					params: {
 						isNested: true
 					}
@@ -305,20 +255,20 @@
 			// eslint-disable-next-line
 			const vm = this
 			return {
-				componentOnLoadProc: asyncProcM.getProcListMonitor('QFormFAgent', false),
+				componentOnLoadProc: asyncProcM.getProcListMonitor('QFormFCity', false),
 
 				interfaceMetadata: {
-					id: 'QFormFAgent', // Used for resources
+					id: 'QFormFCity', // Used for resources
 					requiredTextResources
 				},
 
 				formInfo: {
 					type: 'normal',
-					name: 'F_AGENT',
-					route: 'form-F_AGENT',
-					area: 'AGENT',
-					primaryKey: 'ValCodagent',
-					designation: computed(() => this.Resources.AGENT00994),
+					name: 'F_CITY',
+					route: 'form-F_CITY',
+					area: 'CITY',
+					primaryKey: 'ValCodcity',
+					designation: computed(() => this.Resources.CITY42505),
 					identifier: '', // Unique identifier received by route (when it's nested).
 					mode: '',
 					availableAgents: [],
@@ -533,75 +483,44 @@
 				},
 
 				controls: {
-					F_AGENT_AGENTPHOTO___: new fieldControlClass.ImageControl({
-						modelField: 'ValPhoto',
-						valueChangeEvent: 'fieldChange:agent.photo',
-						id: 'F_AGENT_AGENTPHOTO___',
-						name: 'PHOTO',
-						size: 'mini',
-						label: computed(() => this.Resources.PHOTO51874),
+					F_CITY__COUNTRY__COUNTRY: new fieldControlClass.LookupControl({
+						modelField: 'TableCountryCountry',
+						valueChangeEvent: 'fieldChange:country.country',
+						id: 'F_CITY__COUNTRY__COUNTRY',
+						name: 'COUNTRY',
+						size: 'xxlarge',
+						label: computed(() => this.Resources.COUNTRY45120),
 						placeholder: '',
 						labelPosition: computed(() => this.labelAlignment.topleft),
-						height: 50,
-						width: 30,
-						dataTitle: computed(() => genericFunctions.formatString(vm.Resources.IMAGEM_UTILIZADA_PAR17299, vm.Resources.PHOTO51874)),
-						maxFileSize: 10485760, // In bytes.
-						maxFileSizeLabel: '10 MB',
+						externalCallbacks: {
+							getModelField: vm.getModelField,
+							getModelFieldValue: vm.getModelFieldValue,
+							setModelFieldValue: vm.setModelFieldValue
+						},
+						externalProperties: {
+							modelKeys: computed(() => vm.modelKeys)
+						},
+						lookupKeyModelField: {
+							name: 'ValCodcountry',
+							dependencyEvent: 'fieldChange:city.codcountry'
+						},
+						dependentFields: () => ({
+							set 'country.codcountry'(value) { vm.model.ValCodcountry.updateValue(value) },
+							set 'country.country'(value) { vm.model.TableCountryCountry.updateValue(value) },
+						}),
 						controlLimits: [
 						],
 					}, this),
-					F_AGENT_AGENTNAME____: new fieldControlClass.StringControl({
-						modelField: 'ValName',
-						valueChangeEvent: 'fieldChange:agent.name',
-						id: 'F_AGENT_AGENTNAME____',
-						name: 'NAME',
+					F_CITY__CITY_CITY____: new fieldControlClass.StringControl({
+						modelField: 'ValCity',
+						valueChangeEvent: 'fieldChange:city.city',
+						id: 'F_CITY__CITY_CITY____',
+						name: 'CITY',
 						size: 'xxlarge',
-						label: computed(() => this.Resources.NAME31974),
+						label: computed(() => this.Resources.CITY42505),
 						placeholder: '',
 						labelPosition: computed(() => this.labelAlignment.topleft),
 						maxLength: 50,
-						mustBeFilled: true,
-						controlLimits: [
-						],
-					}, this),
-					F_AGENT__AGENT__BIRTHDATE: new fieldControlClass.DateControl({
-						modelField: 'ValBirthdate',
-						valueChangeEvent: 'fieldChange:agent.birthdate',
-						id: 'F_AGENT__AGENT__BIRTHDATE',
-						name: 'BIRTHDATE',
-						size: 'small',
-						label: computed(() => this.Resources.BIRTHDATE22743),
-						placeholder: '',
-						labelPosition: computed(() => this.labelAlignment.topleft),
-						dateTimeType: 'date',
-						controlLimits: [
-						],
-					}, this),
-					F_AGENT_AGENTEMAIL___: new fieldControlClass.StringControl({
-						modelField: 'ValEmail',
-						valueChangeEvent: 'fieldChange:agent.email',
-						id: 'F_AGENT_AGENTEMAIL___',
-						name: 'EMAIL',
-						size: 'xxlarge',
-						label: computed(() => this.Resources.EMAIL25170),
-						placeholder: '',
-						labelPosition: computed(() => this.labelAlignment.topleft),
-						maxLength: 256,
-						mustBeFilled: true,
-						controlLimits: [
-						],
-					}, this),
-					F_AGENT__AGENT__TELEPHONE: new fieldControlClass.NumberControl({
-						modelField: 'ValTelephone',
-						valueChangeEvent: 'fieldChange:agent.telephone',
-						id: 'F_AGENT__AGENT__TELEPHONE',
-						name: 'TELEPHONE',
-						size: 'small',
-						label: computed(() => this.Resources.TELEPHONE28697),
-						placeholder: '',
-						labelPosition: computed(() => this.labelAlignment.topleft),
-						maxIntegers: 11,
-						maxDecimals: 0,
 						controlLimits: [
 						],
 					}, this),
@@ -627,21 +546,21 @@
 				 * The Data API for easy access to model variables.
 				 */
 				dataApi: {
-					Agent: {
-						get ValBirthdate() { return vm.model.ValBirthdate.value },
-						set ValBirthdate(value) { vm.model.ValBirthdate.updateValue(value) },
-						get ValEmail() { return vm.model.ValEmail.value },
-						set ValEmail(value) { vm.model.ValEmail.updateValue(value) },
-						get ValName() { return vm.model.ValName.value },
-						set ValName(value) { vm.model.ValName.updateValue(value) },
-						get ValPhoto() { return vm.model.ValPhoto.value },
-						set ValPhoto(value) { vm.model.ValPhoto.updateValue(value) },
-						get ValTelephone() { return vm.model.ValTelephone.value },
-						set ValTelephone(value) { vm.model.ValTelephone.updateValue(value) },
+					City: {
+						get ValCity() { return vm.model.ValCity.value },
+						set ValCity(value) { vm.model.ValCity.updateValue(value) },
+						get ValCodcountry() { return vm.model.ValCodcountry.value },
+						set ValCodcountry(value) { vm.model.ValCodcountry.updateValue(value) },
+					},
+					Country: {
+						get ValCountry() { return vm.model.TableCountryCountry.value },
+						set ValCountry(value) { vm.model.TableCountryCountry.updateValue(value) },
 					},
 					keys: {
-						/** The primary key of the AGENT table */
-						get agent() { return vm.model.ValCodagent },
+						/** The primary key of the CITY table */
+						get city() { return vm.model.ValCodcity },
+						/** The foreign key to the COUNTRY table */
+						get country() { return vm.model.ValCodcountry },
 					},
 					get extraProperties() { return vm.model.extraProperties },
 				},
@@ -681,7 +600,7 @@
 		mounted()
 		{
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA FORM_CODEJS F_AGENT]/
+// USE /[MANUAL TRA FORM_CODEJS F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 		},
@@ -689,7 +608,7 @@
 		beforeUnmount()
 		{
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA COMPONENT_BEFORE_UNMOUNT F_AGENT]/
+// USE /[MANUAL TRA COMPONENT_BEFORE_UNMOUNT F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 		},
@@ -708,7 +627,7 @@
 				this.emitEvent('before-load-form')
 
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA BEFORE_LOAD_JS F_AGENT]/
+// USE /[MANUAL TRA BEFORE_LOAD_JS F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 
@@ -728,7 +647,7 @@
 				this.emitEvent('after-load-form')
 
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA FORM_LOADED_JS F_AGENT]/
+// USE /[MANUAL TRA FORM_LOADED_JS F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 			},
@@ -775,7 +694,7 @@
 				this.emitEvent('before-apply-form')
 
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA BEFORE_APPLY_JS F_AGENT]/
+// USE /[MANUAL TRA BEFORE_APPLY_JS F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 
@@ -795,7 +714,7 @@
 				this.emitEvent('after-apply-form')
 
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA AFTER_APPLY_JS F_AGENT]/
+// USE /[MANUAL TRA AFTER_APPLY_JS F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 			},
@@ -842,7 +761,7 @@
 				this.emitEvent('before-save-form')
 
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA BEFORE_SAVE_JS F_AGENT]/
+// USE /[MANUAL TRA BEFORE_SAVE_JS F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 
@@ -862,7 +781,7 @@
 				this.emitEvent('after-save-form')
 
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA AFTER_SAVE_JS F_AGENT]/
+// USE /[MANUAL TRA AFTER_SAVE_JS F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 
@@ -877,7 +796,7 @@
 				this.emitEvent('before-delete-form')
 
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA BEFORE_DEL_JS F_AGENT]/
+// USE /[MANUAL TRA BEFORE_DEL_JS F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 
@@ -892,7 +811,7 @@
 				this.emitEvent('after-delete-form')
 
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA AFTER_DEL_JS F_AGENT]/
+// USE /[MANUAL TRA AFTER_DEL_JS F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 
@@ -912,7 +831,7 @@
 				this.emitEvent('before-exit-form')
 
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA BEFORE_EXIT_JS F_AGENT]/
+// USE /[MANUAL TRA BEFORE_EXIT_JS F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 
@@ -932,7 +851,7 @@
 				this.emitEvent('after-exit-form')
 
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA AFTER_EXIT_JS F_AGENT]/
+// USE /[MANUAL TRA AFTER_EXIT_JS F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 			},
@@ -948,7 +867,7 @@
 			onUpdate(fieldName, fieldObject, fieldValue, oldFieldValue)
 			{
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA DLGUPDT F_AGENT]/
+// USE /[MANUAL TRA DLGUPDT F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 
@@ -964,7 +883,7 @@
 			onBlur(fieldObject, fieldValue)
 			{
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA CTRLBLR F_AGENT]/
+// USE /[MANUAL TRA CTRLBLR F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 
@@ -981,14 +900,14 @@
 			onControlUpdate(controlField, control, fieldValue)
 			{
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA CTRLUPD F_AGENT]/
+// USE /[MANUAL TRA CTRLUPD F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 
 				this.afterControlUpdate(controlField, fieldValue)
 			},
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA FUNCTIONS_JS F_AGENT]/
+// USE /[MANUAL TRA FUNCTIONS_JS F_CITY]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 		},

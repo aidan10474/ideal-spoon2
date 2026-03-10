@@ -118,6 +118,45 @@ export default class ViewModel extends FormViewModelBase
 			ignoreFldSubmit: true,
 		}).cloneFrom(values?.TableBrokerName))
 		this.stopWatchers.push(watch(() => this.TableBrokerName.value, (newValue, oldValue) => this.onUpdate('broker.name', this.TableBrokerName, newValue, oldValue)))
+
+		this.ValSize = reactive(new modelFieldType.String({
+			id: 'ValSize',
+			originId: 'ValSize',
+			area: 'PROPERTY',
+			field: 'SIZE',
+			maxLength: 50,
+			description: computed(() => this.Resources.SIZE10299),
+		}).cloneFrom(values?.ValSize))
+		this.stopWatchers.push(watch(() => this.ValSize.value, (newValue, oldValue) => this.onUpdate('property.size', this.ValSize, newValue, oldValue)))
+
+		this.ValBathroom_number = reactive(new modelFieldType.String({
+			id: 'ValBathroom_number',
+			originId: 'ValBathroom_number',
+			area: 'PROPERTY',
+			field: 'BATHROOMSNUMBER',
+			maxLength: 50,
+			description: computed(() => this.Resources.BATHROOMS54249),
+		}).cloneFrom(values?.ValBathroom_number))
+		this.stopWatchers.push(watch(() => this.ValBathroom_number.value, (newValue, oldValue) => this.onUpdate('property.bathroom_number', this.ValBathroom_number, newValue, oldValue)))
+
+		this.ValDate_construction = reactive(new modelFieldType.Date({
+			id: 'ValDate_construction',
+			originId: 'ValDate_construction',
+			area: 'PROPERTY',
+			field: 'DATECONSTRUCTION',
+			description: computed(() => this.Resources.DATE18475),
+		}).cloneFrom(values?.ValDate_construction))
+		this.stopWatchers.push(watch(() => this.ValDate_construction.value, (newValue, oldValue) => this.onUpdate('property.date_construction', this.ValDate_construction, newValue, oldValue)))
+
+		this.ValDescription = reactive(new modelFieldType.String({
+			id: 'ValDescription',
+			originId: 'ValDescription',
+			area: 'PROPERTY',
+			field: 'DESCRIPTION',
+			maxLength: 50,
+			description: computed(() => this.Resources.DESCRIPTION07383),
+		}).cloneFrom(values?.ValDescription))
+		this.stopWatchers.push(watch(() => this.ValDescription.value, (newValue, oldValue) => this.onUpdate('property.description', this.ValDescription, newValue, oldValue)))
 	}
 
 	/**

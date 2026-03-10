@@ -121,12 +121,12 @@
 				menuInfo: {
 					id: '41',
 					isMenuList: true,
-					designation: computed(() => this.Resources.CITIES41573),
+					designation: computed(() => this.Resources.PHOTO_ALBUMS41529),
 					acronym: 'TRA_41',
-					name: 'CITY',
+					name: 'PHOTO_ALBUM',
 					route: 'menu-TRA_41',
 					order: '41',
-					controller: 'CITY',
+					controller: 'PHOTO_ALBUM',
 					action: 'TRA_Menu_41',
 					isPopup: false
 				},
@@ -137,7 +137,7 @@
 					menu: new controlClass.TableListControl({
 						fnHydrateViewModel: (data) => vm.model.hydrate(data),
 						id: 'TRA_Menu_41',
-						controller: 'CITY',
+						controller: 'PHOTO_ALBUM',
 						action: 'TRA_Menu_41',
 						hasDependencies: false,
 						isInCollapsible: false,
@@ -148,7 +148,16 @@
 						columnsOriginal: [
 							new listColumnTypes.TextColumn({
 								order: 1,
-								name: '.ValTitle',
+								name: 'ValTitle',
+								area: 'PHOTO_ALBUM',
+								field: 'TITLE',
+								dataLength: 50,
+								scrollData: 30,
+								export: 1,
+							}, computed(() => vm.model), computed(() => vm.internalEvents)),
+							new listColumnTypes.TextColumn({
+								order: 2,
+								name: 'Property.ValTitle',
 								area: 'PROPERTY',
 								field: 'TITLE',
 								label: computed(() => this.Resources.TITLE21885),
@@ -157,14 +166,12 @@
 								export: 1,
 								pkColumn: 'ValCodproperty',
 							}, computed(() => vm.model), computed(() => vm.internalEvents)),
-							new listColumnTypes.TextColumn({
-								order: 2,
-								name: 'ValCity',
-								area: 'CITY',
-								field: 'CITY',
-								label: computed(() => this.Resources.CITY42505),
-								dataLength: 50,
-								scrollData: 30,
+							new listColumnTypes.ImageColumn({
+								order: 3,
+								name: 'ValPhoto',
+								area: 'PHOTO_ALBUM',
+								field: 'PHOTO',
+								scrollData: 3,
 								sortable: false,
 								searchable: false,
 								export: 1,
@@ -173,12 +180,12 @@
 						config: {
 							name: 'TRA_Menu_41',
 							serverMode: true,
-							pkColumn: 'ValCodcity',
-							tableAlias: 'CITY',
-							tableNamePlural: computed(() => this.Resources.CITIES41573),
+							pkColumn: 'ValCodphoto_album',
+							tableAlias: 'PHOTO_ALBUM',
+							tableNamePlural: computed(() => this.Resources.PHOTO_ALBUMS41529),
 							viewManagement: '',
 							showLimitsInfo: true,
-							tableTitle: computed(() => this.Resources.CITIES41573),
+							tableTitle: computed(() => this.Resources.PHOTO_ALBUMS41529),
 							showAlternatePagination: true,
 							permissions: {
 							},
@@ -199,7 +206,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_CITY',
+										formName: 'F_PHOTO_ALBUM',
 										mode: 'SHOW',
 										isControlled: true
 									}
@@ -215,7 +222,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_CITY',
+										formName: 'F_PHOTO_ALBUM',
 										mode: 'EDIT',
 										isControlled: true
 									}
@@ -231,7 +238,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_CITY',
+										formName: 'F_PHOTO_ALBUM',
 										mode: 'DUPLICATE',
 										isControlled: true
 									}
@@ -247,7 +254,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_CITY',
+										formName: 'F_PHOTO_ALBUM',
 										mode: 'DELETE',
 										isControlled: true
 									}
@@ -265,7 +272,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_CITY',
+										formName: 'F_PHOTO_ALBUM',
 										mode: 'NEW',
 										repeatInsertion: false,
 										isControlled: true
@@ -282,35 +289,39 @@
 							],
 							rowClickAction: {
 								id: 'RCA_TRA_411',
-								name: 'form-F_CITY',
+								name: 'form-PHOTO_ALBUM',
 								isVisible: true,
 								params: {
 									isRoute: true,
 									limits: [
 										{
 											identifier: 'id',
-											fnValueSelector: (row) => row.ValCodcity
+											fnValueSelector: (row) => row.ValCodphoto_album
 										},
 									],
 									isControlled: true,
-									action: vm.openFormAction, type: 'form', mode: 'SHOW', formName: 'F_CITY'
+									action: vm.openFormAction, type: 'form', mode: 'SHOW', formName: 'PHOTO_ALBUM'
 								}
 							},
 							formsDefinition: {
-								'F_CITY': {
-									fnKeySelector: (row) => row.Fields.ValCodcity,
+								'F_PHOTO_ALBUM': {
+									fnKeySelector: (row) => row.Fields.ValCodphoto_album,
+									isPopup: false
+								},
+								'PHOTO_ALBUM': {
+									fnKeySelector: (row) => row.Fields.ValCodphoto_album,
 									isPopup: false
 								},
 							},
-							defaultSearchColumnName: '',
-							defaultSearchColumnNameOriginal: '',
+							defaultSearchColumnName: 'ValTitle',
+							defaultSearchColumnNameOriginal: 'ValTitle',
 							defaultColumnSorting: {
-								columnName: '',
+								columnName: 'ValTitle',
 								sortOrder: 'asc'
 							}
 						},
-						globalEvents: ['changed-COUNTRY', 'changed-CITY'],
-						uuid: '0fab610a-550c-46d7-8dcb-9e6c3920df59',
+						globalEvents: ['changed-PROPERTY', 'changed-PHOTO_ALBUM'],
+						uuid: '0c1bb75c-e6e8-41a8-ac02-1a8645340115',
 						allSelectedRows: 'false',
 						headerLevel: 1,
 						isActiveControl: computed(() => this.isActiveMenu)
