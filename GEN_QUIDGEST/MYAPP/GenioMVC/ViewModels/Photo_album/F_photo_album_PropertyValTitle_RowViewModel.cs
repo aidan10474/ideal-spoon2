@@ -37,13 +37,13 @@ public class F_photo_album_PropertyValTitle_RowViewModel : Models.Property
 			{
 				Order = 1,
 				Area = "PROPERTY",
-				Field = "PRICE",
+				Field = "TITLE",
 			},
 			new ListColumn()
 			{
 				Order = 2,
 				Area = "PROPERTY",
-				Field = "TITLE",
+				Field = "PRICE",
 			},
 		];
 	}

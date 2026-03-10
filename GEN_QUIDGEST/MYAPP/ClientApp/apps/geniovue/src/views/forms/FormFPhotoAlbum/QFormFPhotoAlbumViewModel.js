@@ -74,6 +74,16 @@ export default class ViewModel extends FormViewModelBase
 		}).cloneFrom(values?.ValPhoto))
 		this.stopWatchers.push(watch(() => this.ValPhoto.value, (newValue, oldValue) => this.onUpdate('photo_album.photo', this.ValPhoto, newValue, oldValue)))
 
+		this.ValTitle = reactive(new modelFieldType.String({
+			id: 'ValTitle',
+			originId: 'ValTitle',
+			area: 'PHOTO_ALBUM',
+			field: 'TITLE',
+			maxLength: 50,
+			description: computed(() => this.Resources.TITLE21885),
+		}).cloneFrom(values?.ValTitle))
+		this.stopWatchers.push(watch(() => this.ValTitle.value, (newValue, oldValue) => this.onUpdate('photo_album.title', this.ValTitle, newValue, oldValue)))
+
 		this.TablePropertyTitle = reactive(new modelFieldType.String({
 			type: 'Lookup',
 			id: 'TablePropertyTitle',
@@ -85,16 +95,6 @@ export default class ViewModel extends FormViewModelBase
 			ignoreFldSubmit: true,
 		}).cloneFrom(values?.TablePropertyTitle))
 		this.stopWatchers.push(watch(() => this.TablePropertyTitle.value, (newValue, oldValue) => this.onUpdate('property.title', this.TablePropertyTitle, newValue, oldValue)))
-
-		this.ValTitle = reactive(new modelFieldType.String({
-			id: 'ValTitle',
-			originId: 'ValTitle',
-			area: 'PHOTO_ALBUM',
-			field: 'TITLE',
-			maxLength: 50,
-			description: computed(() => this.Resources.TITLE21885),
-		}).cloneFrom(values?.ValTitle))
-		this.stopWatchers.push(watch(() => this.ValTitle.value, (newValue, oldValue) => this.onUpdate('photo_album.title', this.ValTitle, newValue, oldValue)))
 	}
 
 	/**

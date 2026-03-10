@@ -37,19 +37,19 @@ namespace GenioMVC.ViewModels.Photo_album
 
 		#endregion
 		/// <summary>
-		/// Title: "" | Type: "IJ"
+		/// Title: "Photo" | Type: "IJ"
 		/// </summary>
-		[ImageThumbnailJsonConverter(0, 0)]
+		[ImageThumbnailJsonConverter(30, 0)]
 		public GenioMVC.Models.ImageModel ValPhoto { get; set; }
+		/// <summary>
+		/// Title: "Title" | Type: "C"
+		/// </summary>
+		public string ValTitle { get; set; }
 		/// <summary>
 		/// Title: "Title" | Type: "C"
 		/// </summary>
 		[ValidateSetAccess]
 		public TableDBEdit<GenioMVC.Models.Property> TablePropertyTitle { get; set; }
-		/// <summary>
-		/// Title: "" | Type: "C"
-		/// </summary>
-		public string ValTitle { get; set; }
 
 		#region Navigations
 		#endregion
@@ -374,7 +374,7 @@ namespace GenioMVC.ViewModels.Photo_album
 		{
 			CrudViewModelFieldValidator validator = new(m_userContext.User.Language);
 
-			validator.StringLength("ValTitle", "ValTitle", ValTitle, 50);
+			validator.StringLength("ValTitle", Resources.Resources.TITLE21885, ValTitle, 50);
 
 
 			return validator.GetResult();
@@ -452,7 +452,6 @@ namespace GenioMVC.ViewModels.Photo_album
 				ColumnSort requestedSort = GetRequestSort(TablePropertyTitle, "sTablePropertyTitle", "dTablePropertyTitle", qs, "property");
 				if (requestedSort != null)
 					sorts.Add(requestedSort);
-				sorts.Add(new ColumnSort(new ColumnReference(CSGenioAproperty.FldTitle), SortOrder.Ascending));
 
 				string query = "";
 				if (!string.IsNullOrEmpty(qs["TablePropertyTitle_tableFilters"]))
@@ -493,7 +492,7 @@ namespace GenioMVC.ViewModels.Photo_album
 				else
 					f_photo_album__property__titleConds.Criterias.Add(new Criteria(new ColumnReference(CSGenioAproperty.FldZzstate), CriteriaOperator.Equal, 0));
 
-				FieldRef firstVisibleColumn = new FieldRef("property", "price");
+				FieldRef firstVisibleColumn = new FieldRef("property", "title");
 				ListingMVC<CSGenioAproperty> listing = Models.ModelBase.Where<CSGenioAproperty>(m_userContext, false, f_photo_album__property__titleConds, fields, offset, numberItems, sorts, "LED_F_PHOTO_ALBUM__PROPERTY__TITLE", true, false, firstVisibleColumn: firstVisibleColumn);
 
 				TablePropertyTitle.SetPagination(page, numberItems, listing.HasMore, listing.GetTotal, listing.TotalRecords);
@@ -600,7 +599,7 @@ namespace GenioMVC.ViewModels.Photo_album
 			}
 		}
 
-		private readonly string[] _fieldsToSerialize_F_PHOTO_ALBUM__PROPERTY__TITLE = ["Property", "Property.ValCodproperty", "Property.ValZzstate", "Property.ValPrice", "Property.ValTitle"];
+		private readonly string[] _fieldsToSerialize_F_PHOTO_ALBUM__PROPERTY__TITLE = ["Property", "Property.ValCodproperty", "Property.ValZzstate", "Property.ValTitle", "Property.ValPrice"];
 
 		protected override object GetViewModelValue(string identifier, object modelValue)
 		{

@@ -128,8 +128,8 @@ namespace GenioMVC.ViewModels.Photo_album
 		{
 			return
 			[
+				new Exports.QColumn(CSGenioAproperty.FldTitle, FieldType.TEXT, Resources.Resources.TITLE21885, 30, 0, true),
 				new Exports.QColumn(CSGenioAproperty.FldPrice, FieldType.CURRENCY, Resources.Resources.PRICE_0000000000_0058065, 15, 2, true),
-				new Exports.QColumn(CSGenioAproperty.FldTitle, FieldType.TEXT, Resources.Resources.TITLE21885, 80, 0, true),
 			];
 		}
 
@@ -293,8 +293,6 @@ namespace GenioMVC.ViewModels.Photo_album
 
 			//FOR: MENU LIST SORTING
 			Dictionary<string, OrderedDictionary> allSortOrders = new Dictionary<string, OrderedDictionary>();
-			allSortOrders.Add("PROPERTY.TITLE", new OrderedDictionary());
-			allSortOrders["PROPERTY.TITLE"].Add("PROPERTY.TITLE", "A");
 
 
 			int numberListItems = tableConfig.RowsPerPage;
@@ -306,14 +304,8 @@ namespace GenioMVC.ViewModels.Photo_album
 
 			List<ColumnSort> sorts = GetRequestSorts(this.Menu, tableConfig, "property", allSortOrders);
 
-			if (sorts == null || sorts.Count == 0)
-			{
-				sorts = new List<ColumnSort>();
-				sorts.Add(new ColumnSort(new ColumnReference(CSGenioAproperty.FldTitle), SortOrder.Ascending));
 
-			}
-
-			FieldRef[] fields = new FieldRef[] { CSGenioAproperty.FldCodproperty, CSGenioAproperty.FldZzstate, CSGenioAproperty.FldPrice, CSGenioAproperty.FldTitle };
+			FieldRef[] fields = new FieldRef[] { CSGenioAproperty.FldCodproperty, CSGenioAproperty.FldZzstate, CSGenioAproperty.FldTitle, CSGenioAproperty.FldPrice };
 
 
 			// Totalizers
@@ -325,7 +317,7 @@ namespace GenioMVC.ViewModels.Photo_album
 			{
 				firstVisibleColumn = tableConfig?.GetFirstVisibleColumn(TableAlias);
 
-				firstVisibleColumn ??= new FieldRef("property", "price");
+				firstVisibleColumn ??= new FieldRef("property", "title");
 			}
 			// Limitations
 			this.TableLimits ??= [];
@@ -508,13 +500,13 @@ namespace GenioMVC.ViewModels.Photo_album
 
 		private static readonly string[] _fieldsToSerialize =
 		[
-			"Property", "Property.ValCodproperty", "Property.ValZzstate", "Property.ValPrice", "Property.ValTitle", "Property.ValCodagent", "Property.ValCodcity"
+			"Property", "Property.ValCodproperty", "Property.ValZzstate", "Property.ValTitle", "Property.ValPrice", "Property.ValCodagent", "Property.ValCodcity"
 		];
 
 		private static readonly List<TableSearchColumn> _searchableColumns =
 		[
-			new TableSearchColumn("ValPrice", CSGenioAproperty.FldPrice, typeof(decimal?), defaultSearch : true),
 			new TableSearchColumn("ValTitle", CSGenioAproperty.FldTitle, typeof(string), defaultSearch : true),
+			new TableSearchColumn("ValPrice", CSGenioAproperty.FldPrice, typeof(decimal?), defaultSearch : true),
 		];
 	}
 }

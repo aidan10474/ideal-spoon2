@@ -96,6 +96,63 @@
 			data-key="F_PHOTO_ALBUM"
 			:data-loading="!formInitialDataLoaded || !isActiveForm">
 			<template v-if="formControl.initialized && showFormBody">
+				<q-row v-if="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__PHOTO.isVisible || controls.F_PHOTO_ALBUM__PHOTO_ALBUM__TITLE.isVisible || controls.F_PHOTO_ALBUM__PROPERTY__TITLE.isVisible">
+					<q-col
+						v-if="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__PHOTO.isVisible"
+						cols="auto">
+						<base-input-structure
+							v-if="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__PHOTO.isVisible"
+							class="q-image"
+							v-bind="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__PHOTO"
+							v-on="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__PHOTO.handlers"
+							:loading="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__PHOTO.props.loading"
+							:reporting-mode-on="reportingModeCAV"
+							:suggestion-mode-on="suggestionModeOn">
+							<q-image
+								v-if="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__PHOTO.isVisible"
+								v-bind="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__PHOTO.props"
+								v-on="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__PHOTO.handlers" />
+						</base-input-structure>
+					</q-col>
+					<q-col
+						v-if="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__TITLE.isVisible"
+						cols="auto">
+						<base-input-structure
+							v-if="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__TITLE.isVisible"
+							class="i-text"
+							v-bind="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__TITLE"
+							v-on="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__TITLE.handlers"
+							:loading="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__TITLE.props.loading"
+							:reporting-mode-on="reportingModeCAV"
+							:suggestion-mode-on="suggestionModeOn">
+							<q-text-field
+								v-bind="controls.F_PHOTO_ALBUM__PHOTO_ALBUM__TITLE.props"
+								@blur="onBlur(controls.F_PHOTO_ALBUM__PHOTO_ALBUM__TITLE, model.ValTitle.value)"
+								@change="model.ValTitle.fnUpdateValueOnChange" />
+						</base-input-structure>
+					</q-col>
+					<q-col
+						v-if="controls.F_PHOTO_ALBUM__PROPERTY__TITLE.isVisible"
+						cols="auto">
+						<base-input-structure
+							v-if="controls.F_PHOTO_ALBUM__PROPERTY__TITLE.isVisible"
+							class="i-text"
+							v-bind="controls.F_PHOTO_ALBUM__PROPERTY__TITLE"
+							v-on="controls.F_PHOTO_ALBUM__PROPERTY__TITLE.handlers"
+							:loading="controls.F_PHOTO_ALBUM__PROPERTY__TITLE.props.loading"
+							:reporting-mode-on="reportingModeCAV"
+							:suggestion-mode-on="suggestionModeOn">
+							<q-lookup
+								v-if="controls.F_PHOTO_ALBUM__PROPERTY__TITLE.isVisible"
+								v-bind="controls.F_PHOTO_ALBUM__PROPERTY__TITLE.props"
+								v-on="controls.F_PHOTO_ALBUM__PROPERTY__TITLE.handlers" />
+							<q-see-more-f-photo-album-property-title
+								v-if="controls.F_PHOTO_ALBUM__PROPERTY__TITLE.seeMoreIsVisible"
+								v-bind="controls.F_PHOTO_ALBUM__PROPERTY__TITLE.seeMoreParams"
+								v-on="controls.F_PHOTO_ALBUM__PROPERTY__TITLE.handlers" />
+						</base-input-structure>
+					</q-col>
+				</q-row>
 			</template>
 		</q-container>
 	</teleport>
@@ -449,13 +506,27 @@
 						id: 'F_PHOTO_ALBUM__PHOTO_ALBUM__PHOTO',
 						name: 'PHOTO',
 						size: 'mini',
-						label: '',
+						label: computed(() => this.Resources.PHOTO51874),
 						placeholder: '',
 						labelPosition: computed(() => this.labelAlignment.topleft),
-						height: ${fieldCtrl.Height},
-						width: ${fieldCtrl.Width},
+						height: 0,
+						width: 30,
+						dataTitle: computed(() => genericFunctions.formatString(vm.Resources.IMAGEM_UTILIZADA_PAR17299, vm.Resources.PHOTO51874)),
 						maxFileSize: 10485760, // In bytes.
 						maxFileSizeLabel: '10 MB',
+						controlLimits: [
+						],
+					}, this),
+					F_PHOTO_ALBUM__PHOTO_ALBUM__TITLE: new fieldControlClass.StringControl({
+						modelField: 'ValTitle',
+						valueChangeEvent: 'fieldChange:photo_album.title',
+						id: 'F_PHOTO_ALBUM__PHOTO_ALBUM__TITLE',
+						name: 'TITLE',
+						size: 'xxlarge',
+						label: computed(() => this.Resources.TITLE21885),
+						placeholder: '',
+						labelPosition: computed(() => this.labelAlignment.topleft),
+						maxLength: 50,
 						controlLimits: [
 						],
 					}, this),
@@ -484,19 +555,6 @@
 							set 'property.codproperty'(value) { vm.model.ValCodproperty.updateValue(value) },
 							set 'property.title'(value) { vm.model.TablePropertyTitle.updateValue(value) },
 						}),
-						controlLimits: [
-						],
-					}, this),
-					F_PHOTO_ALBUM__PHOTO_ALBUM__TITLE: new fieldControlClass.StringControl({
-						modelField: 'ValTitle',
-						valueChangeEvent: 'fieldChange:photo_album.title',
-						id: 'F_PHOTO_ALBUM__PHOTO_ALBUM__TITLE',
-						name: 'TITLE',
-						size: 'xxlarge',
-						label: '',
-						placeholder: '',
-						labelPosition: computed(() => this.labelAlignment.topleft),
-						maxLength: 50,
 						controlLimits: [
 						],
 					}, this),

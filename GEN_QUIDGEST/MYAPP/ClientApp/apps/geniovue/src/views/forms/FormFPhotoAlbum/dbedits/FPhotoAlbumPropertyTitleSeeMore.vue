@@ -219,8 +219,18 @@
 						hasDependencies: false,
 						isInCollapsible: false,
 						columnsOriginal: [
-							new listColumnTypes.CurrencyColumn({
+							new listColumnTypes.TextColumn({
 								order: 1,
+								name: 'ValTitle',
+								area: 'PROPERTY',
+								field: 'TITLE',
+								label: computed(() => this.Resources.TITLE21885),
+								dataLength: 80,
+								scrollData: 30,
+								export: 1,
+							}, computed(() => vm.model), computed(() => vm.internalEvents)),
+							new listColumnTypes.CurrencyColumn({
+								order: 2,
 								name: 'ValPrice',
 								area: 'PROPERTY',
 								field: 'PRICE',
@@ -228,16 +238,6 @@
 								scrollData: 15,
 								maxDigits: 10,
 								decimalPlaces: 4,
-								export: 1,
-							}, computed(() => vm.model), computed(() => vm.internalEvents)),
-							new listColumnTypes.TextColumn({
-								order: 2,
-								name: 'ValTitle',
-								area: 'PROPERTY',
-								field: 'TITLE',
-								label: computed(() => this.Resources.TITLE21885),
-								dataLength: 80,
-								scrollData: 80,
 								export: 1,
 							}, computed(() => vm.model), computed(() => vm.internalEvents)),
 						],
@@ -272,10 +272,10 @@
 							},
 							formsDefinition: {
 							},
-							defaultSearchColumnName: 'ValTitle',
-							defaultSearchColumnNameOriginal: 'ValTitle',
+							defaultSearchColumnName: 'ValPrice',
+							defaultSearchColumnNameOriginal: 'ValPrice',
 							defaultColumnSorting: {
-								columnName: 'ValTitle',
+								columnName: '',
 								sortOrder: 'asc'
 							}
 						},
