@@ -100,7 +100,8 @@ namespace GenioMVC.ViewModels.City
 			conditions.SubSets.Add(GetCustomizedStaticLimits(StaticLimits));
 
 			// Checks for foreign tables in fields and conditions
-			
+			FieldRef[] fields = new FieldRef[] { CSGenioAcity.FldCodcity, CSGenioAcity.FldZzstate, CSGenioAcity.FldCity };
+
 			ListingMVC<CSGenioAcity> listing = new(fields, null, 1, 1, false, user, true, string.Empty, false);
 			SelectQuery qs = sp.getSelectQueryFromListingMVC(conditions, listing);
 
@@ -144,7 +145,6 @@ namespace GenioMVC.ViewModels.City
 		{
 			return
 			[
-				new Exports.QColumn(CSGenioAproperty.FldTitle, FieldType.TEXT, Resources.Resources.TITLE21885, 30, 0, true),
 				new Exports.QColumn(CSGenioAcity.FldCity, FieldType.TEXT, Resources.Resources.CITY42505, 30, 0, true),
 			];
 		}
@@ -321,7 +321,8 @@ namespace GenioMVC.ViewModels.City
 			List<ColumnSort> sorts = GetRequestSorts(this.Menu, tableConfig, "city", allSortOrders);
 
 
-			
+			FieldRef[] fields = new FieldRef[] { CSGenioAcity.FldCodcity, CSGenioAcity.FldZzstate, CSGenioAcity.FldCity };
+
 
 			// Totalizers
 			List<FieldRef> fieldsWithTotalizers = fields.Where(field => tableConfig.TotalizerColumns.Contains(field.FullName)).ToList();
@@ -332,7 +333,7 @@ namespace GenioMVC.ViewModels.City
 			{
 				firstVisibleColumn = tableConfig?.GetFirstVisibleColumn(TableAlias);
 
-				firstVisibleColumn ??= new FieldRef("property", "title");
+				firstVisibleColumn ??= new FieldRef("city", "city");
 			}
 			// Limitations
 			this.TableLimits ??= [];
@@ -466,8 +467,6 @@ namespace GenioMVC.ViewModels.City
 				{
 					case "city":
 						model.klass.insertNameValueField(Qfield.FullName, Qfield.Value); break;
-					case "property":
-						model..klass.insertNameValueField(Qfield.FullName, Qfield.Value); break;
 					default:
 						break;
 				}
@@ -519,12 +518,11 @@ namespace GenioMVC.ViewModels.City
 
 		private static readonly string[] _fieldsToSerialize =
 		[
-			"City", "City.ValCodcity", "City.ValZzstate", "Property", "Property.ValTitle", "City.ValCity", "City.ValCodcountry"
+			"City", "City.ValCodcity", "City.ValZzstate", "City.ValCity", "City.ValCodcountry"
 		];
 
 		private static readonly List<TableSearchColumn> _searchableColumns =
 		[
-			new TableSearchColumn("_ValTitle", CSGenioAproperty.FldTitle, typeof(string)),
 			new TableSearchColumn("ValCity", CSGenioAcity.FldCity, typeof(string)),
 		];
 	}

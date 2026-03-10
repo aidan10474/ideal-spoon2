@@ -148,17 +148,6 @@
 						columnsOriginal: [
 							new listColumnTypes.TextColumn({
 								order: 1,
-								name: '.ValTitle',
-								area: 'PROPERTY',
-								field: 'TITLE',
-								label: computed(() => this.Resources.TITLE21885),
-								dataLength: 80,
-								scrollData: 30,
-								export: 1,
-								pkColumn: 'ValCodproperty',
-							}, computed(() => vm.model), computed(() => vm.internalEvents)),
-							new listColumnTypes.TextColumn({
-								order: 2,
 								name: 'ValCity',
 								area: 'CITY',
 								field: 'CITY',

@@ -36,12 +36,6 @@ public class TRA_Menu_31_RowViewModel : Models.City
 			new ListColumn()
 			{
 				Order = 1,
-				Area = "PROPERTY",
-				Field = "TITLE",
-			},
-			new ListColumn()
-			{
-				Order = 2,
 				Area = "CITY",
 				Field = "CITY",
 			},
