@@ -24,8 +24,48 @@ namespace GenioMVC.Models
 
 		[Key]
 		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
-		[ShouldSerialize("Property.ValPrimary_property")]
-		public string ValPrimary_property { get { return klass.ValPrimary_property; } set { klass.ValPrimary_property = value; } }
+		[ShouldSerialize("Property.ValCodproperty")]
+		public string ValCodproperty { get { return klass.ValCodproperty; } set { klass.ValCodproperty = value; } }
+
+		[DisplayName("")]
+		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		[ShouldSerialize("Property.ValCodagent")]
+		public string ValCodagent { get { return klass.ValCodagent; } set { klass.ValCodagent = value; } }
+
+		private Agent _agent;
+		[DisplayName("Agent")]
+		[ShouldSerialize("Agent")]
+		public virtual Agent Agent
+		{
+			get
+			{
+				if (!isEmptyModel && (_agent == null || (!string.IsNullOrEmpty(ValCodagent) && (_agent.isEmptyModel || _agent.klass.QPrimaryKey != ValCodagent))))
+					_agent = Models.Agent.Find(ValCodagent, m_userContext, Identifier, _fieldsToSerialize);
+				_agent ??= new Models.Agent(m_userContext, true, _fieldsToSerialize);
+				return _agent;
+			}
+			set { _agent = value; }
+		}
+
+		[DisplayName("")]
+		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		[ShouldSerialize("Property.ValCodcity")]
+		public string ValCodcity { get { return klass.ValCodcity; } set { klass.ValCodcity = value; } }
+
+		private City _city;
+		[DisplayName("City")]
+		[ShouldSerialize("City")]
+		public virtual City City
+		{
+			get
+			{
+				if (!isEmptyModel && (_city == null || (!string.IsNullOrEmpty(ValCodcity) && (_city.isEmptyModel || _city.klass.QPrimaryKey != ValCodcity))))
+					_city = Models.City.Find(ValCodcity, m_userContext, Identifier, _fieldsToSerialize);
+				_city ??= new Models.City(m_userContext, true, _fieldsToSerialize);
+				return _city;
+			}
+			set { _city = value; }
+		}
 
 		[DisplayName("Main Photo")]
 		/// <summary>Field : "Main Photo" Tipo: "IJ" Formula:  ""</summary>
@@ -47,24 +87,26 @@ namespace GenioMVC.Models
 		public decimal? ValPrice { get { return Convert.ToDecimal(GenFunctions.RoundQG(klass.ValPrice, 4)); } set { klass.ValPrice = Convert.ToDecimal(value); } }
 
 		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
-		[ShouldSerialize("Property.ValBroker_fk")]
-		public string ValBroker_fk { get { return klass.ValBroker_fk; } set { klass.ValBroker_fk = value; } }
+		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		[ShouldSerialize("Property.ValSize (m2)")]
+		public string ValSize (m2) { get { return klass.ValSize (m2); } set { klass.ValSize (m2) = value; } }
 
-		private Broker _broker;
-		[DisplayName("Broker")]
-		[ShouldSerialize("Broker")]
-		public virtual Broker Broker
-		{
-			get
-			{
-				if (!isEmptyModel && (_broker == null || (!string.IsNullOrEmpty(ValBroker_fk) && (_broker.isEmptyModel || _broker.klass.QPrimaryKey != ValBroker_fk))))
-					_broker = Models.Broker.Find(ValBroker_fk, m_userContext, Identifier, _fieldsToSerialize);
-				_broker ??= new Models.Broker(m_userContext, true, _fieldsToSerialize);
-				return _broker;
-			}
-			set { _broker = value; }
-		}
+		[DisplayName("")]
+		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		[ShouldSerialize("Property.ValBathroomsnumber")]
+		public string ValBathroomsnumber { get { return klass.ValBathroomsnumber; } set { klass.ValBathroomsnumber = value; } }
+
+		[DisplayName("")]
+		/// <summary>Field : "" Tipo: "D" Formula:  ""</summary>
+		[ShouldSerialize("Property.ValDateconstruction")]
+		[DataType(DataType.Date)]
+		[DateAttribute("D")]
+		public DateTime? ValDateconstruction { get { return klass.ValDateconstruction; } set { klass.ValDateconstruction = value ?? DateTime.MinValue; } }
+
+		[DisplayName("")]
+		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		[ShouldSerialize("Property.ValDescription")]
+		public string ValDescription { get { return klass.ValDescription; } set { klass.ValDescription = value; } }
 
 		[DisplayName("ZZSTATE")]
 		[ShouldSerialize("Property.ValZzstate")]
@@ -97,9 +139,13 @@ namespace GenioMVC.Models
 			{
 				switch (Qfield.Area)
 				{
-					case "broker":
-						_broker ??= new Broker(m_userContext, true, _fieldsToSerialize);
-						_broker.klass.insertNameValueField(Qfield.FullName, Qfield.Value);
+					case "agent":
+						_agent ??= new Agent(m_userContext, true, _fieldsToSerialize);
+						_agent.klass.insertNameValueField(Qfield.FullName, Qfield.Value);
+						break;
+					case "city":
+						_city ??= new City(m_userContext, true, _fieldsToSerialize);
+						_city.klass.insertNameValueField(Qfield.FullName, Qfield.Value);
 						break;
 					default:
 						break;

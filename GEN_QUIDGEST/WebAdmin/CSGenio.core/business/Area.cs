@@ -20,6 +20,8 @@ namespace CSGenio.business
     /// </summary>
     public abstract class Area : IArea
     {
+        public static AreaRef AreaCITY { get { return m_AreaCITY; } }
+        private static AreaRef m_AreaCITY = new AreaRef("TRA", "tracity", "city");
         public static AreaRef AreaS_ARG { get { return m_AreaS_ARG; } }
         private static AreaRef m_AreaS_ARG = new AreaRef("TRA", "asyncprocessargument", "s_arg");
         public static AreaRef AreaS_NM { get { return m_AreaS_NM; } }
@@ -30,10 +32,14 @@ namespace CSGenio.business
         private static AreaRef m_AreaAGENT = new AreaRef("TRA", "traagent", "agent");
         public static AreaRef AreaS_UA { get { return m_AreaS_UA; } }
         private static AreaRef m_AreaS_UA = new AreaRef("TRA", "userauthorization", "s_ua");
+        public static AreaRef AreaCOUNTRY { get { return m_AreaCOUNTRY; } }
+        private static AreaRef m_AreaCOUNTRY = new AreaRef("TRA", "tracountry", "country");
         public static AreaRef AreaS_NES { get { return m_AreaS_NES; } }
         private static AreaRef m_AreaS_NES = new AreaRef("TRA", "notificationemailsignature", "s_nes");
         public static AreaRef AreaBROKER { get { return m_AreaBROKER; } }
         private static AreaRef m_AreaBROKER = new AreaRef("TRA", "trabroker", "broker");
+        public static AreaRef AreaPHOTO_ALBUM { get { return m_AreaPHOTO_ALBUM; } }
+        private static AreaRef m_AreaPHOTO_ALBUM = new AreaRef("TRA", "traphoto_album", "photo_album");
         public static AreaRef AreaS_APR { get { return m_AreaS_APR; } }
         private static AreaRef m_AreaS_APR = new AreaRef("TRA", "asyncprocess", "s_apr");
         public static AreaRef AreaS_PAX { get { return m_AreaS_PAX; } }
@@ -42,6 +48,8 @@ namespace CSGenio.business
         private static AreaRef m_AreaPSW = new AreaRef("TRA", "userlogin", "psw");
         public static AreaRef AreaMEM { get { return m_AreaMEM; } }
         private static AreaRef m_AreaMEM = new AreaRef("TRA", "tramem", "mem");
+        public static AreaRef AreaCONTACT { get { return m_AreaCONTACT; } }
+        private static AreaRef m_AreaCONTACT = new AreaRef("TRA", "tracontact", "contact");
         //areas hardcoded
         public static AreaRef AreaDELEGA { get { return m_AreaDELEGA; } }
         private static AreaRef m_AreaDELEGA = new AreaRef("TRAdelega", "delega");
@@ -73,17 +81,21 @@ namespace CSGenio.business
         /// </summary>
         public static readonly System.Collections.ObjectModel.ReadOnlyCollection<string> ListaAreas = new System.Collections.ObjectModel.ReadOnlyCollection<string>(
             new List<string>() {
+            "city",
             "s_arg",
             "s_nm",
             "property",
             "agent",
             "s_ua",
+            "country",
             "s_nes",
             "broker",
+            "photo_album",
             "s_apr",
             "s_pax",
             "psw",
             "mem",
+            "contact",
         });
 
         /// <summary>

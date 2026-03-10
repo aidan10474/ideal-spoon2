@@ -171,7 +171,7 @@
 							}, computed(() => vm.model), computed(() => vm.internalEvents)),
 							new listColumnTypes.TextColumn({
 								order: 3,
-								name: 'Broker.ValName',
+								name: '.ValName',
 								area: 'BROKER',
 								field: 'NAME',
 								label: computed(() => this.Resources.NAME31974),
@@ -194,7 +194,7 @@
 						config: {
 							name: 'TRA_Menu_21',
 							serverMode: true,
-							pkColumn: 'ValPrimary_property',
+							pkColumn: 'ValCodproperty',
 							tableAlias: 'PROPERTY',
 							tableNamePlural: computed(() => this.Resources.PROPERTIES34868),
 							viewManagement: '',
@@ -310,7 +310,7 @@
 									limits: [
 										{
 											identifier: 'id',
-											fnValueSelector: (row) => row.ValPrimary_property
+											fnValueSelector: (row) => row.ValCodproperty
 										},
 									],
 									isControlled: true,
@@ -319,7 +319,7 @@
 							},
 							formsDefinition: {
 								'F_PROPERTY': {
-									fnKeySelector: (row) => row.Fields.ValPrimary_property,
+									fnKeySelector: (row) => row.Fields.ValCodproperty,
 									isPopup: false
 								},
 							},
@@ -330,7 +330,7 @@
 								sortOrder: 'asc'
 							}
 						},
-						globalEvents: ['changed-BROKER', 'changed-PROPERTY'],
+						globalEvents: ['changed-AGENT', 'changed-CITY', 'changed-PROPERTY'],
 						uuid: '887437e6-55fa-4ae1-829a-955d8a779459',
 						allSelectedRows: 'false',
 						headerLevel: 1,

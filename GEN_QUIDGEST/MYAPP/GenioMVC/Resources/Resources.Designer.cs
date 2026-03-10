@@ -72,6 +72,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "countries"
+		/// </summary>
+		public static string COUNTRIES03108 {
+			get {
+				return ResourceManager.GetString("COUNTRIES03108", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Enabled?"
 		/// </summary>
 		public static string ENABLED_33995 {
@@ -140,6 +149,15 @@ namespace GenioMVC.Resources
 		public static string NOTIFICATION_MESSAGE60981 {
 			get {
 				return ResourceManager.GetString("NOTIFICATION_MESSAGE60981", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to "Contact"
+		/// </summary>
+		public static string CONTACT59247 {
+			get {
+				return ResourceManager.GetString("CONTACT59247", resourceCulture);
 			}
 		}
 
@@ -378,6 +396,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Photo Album"
+		/// </summary>
+		public static string PHOTO_ALBUM45574 {
+			get {
+				return ResourceManager.GetString("PHOTO_ALBUM45574", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Desautorizado"
 		/// </summary>
 		public static string DESAUTORIZADO34584 {
@@ -392,6 +419,15 @@ namespace GenioMVC.Resources
 		public static string VALUE10285 {
 			get {
 				return ResourceManager.GetString("VALUE10285", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to "CODCountry"
+		/// </summary>
+		public static string CODCOUNTRY13783 {
+			get {
+				return ResourceManager.GetString("CODCOUNTRY13783", resourceCulture);
 			}
 		}
 
@@ -482,6 +518,15 @@ namespace GenioMVC.Resources
 		public static string AGGREGATE05721 {
 			get {
 				return ResourceManager.GetString("AGGREGATE05721", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to "country"
+		/// </summary>
+		public static string COUNTRY45120 {
+			get {
+				return ResourceManager.GetString("COUNTRY45120", resourceCulture);
 			}
 		}
 
@@ -639,6 +684,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Country"
+		/// </summary>
+		public static string COUNTRY64133 {
+			get {
+				return ResourceManager.GetString("COUNTRY64133", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Modos de processamento"
 		/// </summary>
 		public static string MODOS_DE_PROCESSAMEN07602 {
@@ -774,11 +828,29 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Cities"
+		/// </summary>
+		public static string CITIES41573 {
+			get {
+				return ResourceManager.GetString("CITIES41573", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Client ip address"
 		/// </summary>
 		public static string CLIENT_IP_ADDRESS62089 {
 			get {
 				return ResourceManager.GetString("CLIENT_IP_ADDRESS62089", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to "City"
+		/// </summary>
+		public static string CITY42505 {
+			get {
+				return ResourceManager.GetString("CITY42505", resourceCulture);
 			}
 		}
 
@@ -990,6 +1062,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Contacts"
+		/// </summary>
+		public static string CONTACTS55742 {
+			get {
+				return ResourceManager.GetString("CONTACTS55742", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Birthday"
 		/// </summary>
 		public static string BIRTHDAY30236 {
@@ -1166,6 +1247,15 @@ namespace GenioMVC.Resources
 		public static string CANCELED_BY01167 {
 			get {
 				return ResourceManager.GetString("CANCELED_BY01167", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to "Photo Albums"
+		/// </summary>
+		public static string PHOTO_ALBUMS41529 {
+			get {
+				return ResourceManager.GetString("PHOTO_ALBUMS41529", resourceCulture);
 			}
 		}
 

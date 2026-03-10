@@ -120,6 +120,9 @@
   <data name="STATUS62033" xml:space="preserve">
     <value>Status</value>
   </data>
+  <data name="COUNTRIES03108" xml:space="preserve">
+    <value>countries</value>
+  </data>
   <data name="ENABLED_33995" xml:space="preserve">
     <value>Enabled?</value>
   </data>
@@ -143,6 +146,9 @@
   </data>
   <data name="NOTIFICATION_MESSAGE60981" xml:space="preserve">
     <value>Notification Messages</value>
+  </data>
+  <data name="CONTACT59247" xml:space="preserve">
+    <value>Contact</value>
   </data>
   <data name="TEXT_AFTER_SIGNATURE11837" xml:space="preserve">
     <value>Text after signature</value>
@@ -222,11 +228,17 @@
   <data name="ASYNC_PROCESS56674" xml:space="preserve">
     <value>Async process</value>
   </data>
+  <data name="PHOTO_ALBUM45574" xml:space="preserve">
+    <value>Photo Album</value>
+  </data>
   <data name="DESAUTORIZADO34584" xml:space="preserve">
     <value>Desautorizado</value>
   </data>
   <data name="VALUE10285" xml:space="preserve">
     <value>Value</value>
+  </data>
+  <data name="CODCOUNTRY13783" xml:space="preserve">
+    <value>CODCountry</value>
   </data>
   <data name="PASSWORD_TYPE03035" xml:space="preserve">
     <value>Password type</value>
@@ -257,6 +269,9 @@
   </data>
   <data name="AGGREGATE05721" xml:space="preserve">
     <value>Aggregate</value>
+  </data>
+  <data name="COUNTRY45120" xml:space="preserve">
+    <value>country</value>
   </data>
   <data name="ID36840" xml:space="preserve">
     <value>Id</value>
@@ -309,6 +324,9 @@
   <data name="PRICE06900" xml:space="preserve">
     <value>Price</value>
   </data>
+  <data name="COUNTRY64133" xml:space="preserve">
+    <value>Country</value>
+  </data>
   <data name="MODOS_DE_PROCESSAMEN07602" xml:space="preserve">
     <value>Modos de processamento</value>
   </data>
@@ -354,8 +372,14 @@
   <data name="ESTADOS_DO_PROCESSO59118" xml:space="preserve">
     <value>Estados do processo</value>
   </data>
+  <data name="CITIES41573" xml:space="preserve">
+    <value>Cities</value>
+  </data>
   <data name="CLIENT_IP_ADDRESS62089" xml:space="preserve">
     <value>Client ip address</value>
+  </data>
+  <data name="CITY42505" xml:space="preserve">
+    <value>City</value>
   </data>
   <data name="NOTIFICATION_MESSAGE31108" xml:space="preserve">
     <value>Notification Message</value>
@@ -426,6 +450,9 @@
   <data name="SAVES_ON_DB_61384" xml:space="preserve">
     <value>Saves on DB?</value>
   </data>
+  <data name="CONTACTS55742" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
   <data name="BIRTHDAY30236" xml:space="preserve">
     <value>Birthday</value>
   </data>
@@ -485,6 +512,9 @@
   </data>
   <data name="CANCELED_BY01167" xml:space="preserve">
     <value>Canceled by</value>
+  </data>
+  <data name="PHOTO_ALBUMS41529" xml:space="preserve">
+    <value>Photo Albums</value>
   </data>
   <data name="CHANGED_BY08967" xml:space="preserve">
     <value>Changed by</value>

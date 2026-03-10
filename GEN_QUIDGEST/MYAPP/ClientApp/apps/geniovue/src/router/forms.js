@@ -4,6 +4,18 @@ export default function getFormsRoutes()
 {
 	return [
 		{
+			path: '/:culture/:system/:module/form/F_AGENT/:mode/:id?',
+			name: 'form-F_AGENT',
+			props: route => propsConverter(route),
+			component: () => import('@/views/forms/FormFAgent/QFormFAgent.vue'),
+			meta: {
+				routeType: 'form',
+				baseArea: 'AGENT',
+				humanKeyFields: ['ValName'],
+				isPopup: false
+			}
+		},
+		{
 			path: '/:culture/:system/:module/form/F_BROKE/:mode/:id?',
 			name: 'form-F_BROKE',
 			props: route => propsConverter(route),
@@ -16,14 +28,38 @@ export default function getFormsRoutes()
 			}
 		},
 		{
-			path: '/:culture/:system/:module/form/F_PROPERTY/:mode/:id?',
-			name: 'form-F_PROPERTY',
+			path: '/:culture/:system/:module/form/F_CONTACT/:mode/:id?',
+			name: 'form-F_CONTACT',
 			props: route => propsConverter(route),
-			component: () => import('@/views/forms/FormFProperty/QFormFProperty.vue'),
+			component: () => import('@/views/forms/FormFContact/QFormFContact.vue'),
 			meta: {
 				routeType: 'form',
-				baseArea: 'PROPERTY',
-				humanKeyFields: ['ValTitle', 'ValPrice'],
+				baseArea: 'CONTACT',
+				humanKeyFields: ['ValClient_name'],
+				isPopup: false
+			}
+		},
+		{
+			path: '/:culture/:system/:module/form/F_COUNTRY/:mode/:id?',
+			name: 'form-F_COUNTRY',
+			props: route => propsConverter(route),
+			component: () => import('@/views/forms/FormFCountry/QFormFCountry.vue'),
+			meta: {
+				routeType: 'form',
+				baseArea: 'COUNTRY',
+				humanKeyFields: [],
+				isPopup: false
+			}
+		},
+		{
+			path: '/:culture/:system/:module/form/F_PHOTO_ALBUM/:mode/:id?',
+			name: 'form-F_PHOTO_ALBUM',
+			props: route => propsConverter(route),
+			component: () => import('@/views/forms/FormFPhotoAlbum/QFormFPhotoAlbum.vue'),
+			meta: {
+				routeType: 'form',
+				baseArea: 'PHOTO_ALBUM',
+				humanKeyFields: ['ValTitle'],
 				isPopup: false
 			}
 		},

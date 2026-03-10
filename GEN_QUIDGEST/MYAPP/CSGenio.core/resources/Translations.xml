@@ -3,6 +3,9 @@
   <msg id="Status" code="STATUS62033">
     <ENUS>Status</ENUS>
   </msg>
+  <msg id="countries" code="COUNTRIES03108">
+    <ENUS>countries</ENUS>
+  </msg>
   <msg id="Enabled?" code="ENABLED_33995">
     <ENUS>Enabled?</ENUS>
   </msg>
@@ -26,6 +29,9 @@
   </msg>
   <msg id="Notification Messages" code="NOTIFICATION_MESSAGE60981">
     <ENUS>Notification Messages</ENUS>
+  </msg>
+  <msg id="Contact" code="CONTACT59247">
+    <ENUS>Contact</ENUS>
   </msg>
   <msg id="Text after signature" code="TEXT_AFTER_SIGNATURE11837">
     <ENUS>Text after signature</ENUS>
@@ -105,11 +111,17 @@
   <msg id="Async process" code="ASYNC_PROCESS56674">
     <ENUS>Async process</ENUS>
   </msg>
+  <msg id="Photo Album" code="PHOTO_ALBUM45574">
+    <ENUS>Photo Album</ENUS>
+  </msg>
   <msg id="Desautorizado" code="DESAUTORIZADO34584">
     <ENUS>Desautorizado</ENUS>
   </msg>
   <msg id="Value" code="VALUE10285">
     <ENUS>Value</ENUS>
+  </msg>
+  <msg id="CODCountry" code="CODCOUNTRY13783">
+    <ENUS>CODCountry</ENUS>
   </msg>
   <msg id="Password type" code="PASSWORD_TYPE03035">
     <ENUS>Password type</ENUS>
@@ -140,6 +152,9 @@
   </msg>
   <msg id="Aggregate" code="AGGREGATE05721">
     <ENUS>Aggregate</ENUS>
+  </msg>
+  <msg id="country" code="COUNTRY45120">
+    <ENUS>country</ENUS>
   </msg>
   <msg id="Id" code="ID36840">
     <ENUS>Id</ENUS>
@@ -192,6 +207,9 @@
   <msg id="Price" code="PRICE06900">
     <ENUS>Price</ENUS>
   </msg>
+  <msg id="Country" code="COUNTRY64133">
+    <ENUS>Country</ENUS>
+  </msg>
   <msg id="Modos de processamento" code="MODOS_DE_PROCESSAMEN07602">
     <ENUS>Modos de processamento</ENUS>
   </msg>
@@ -237,8 +255,14 @@
   <msg id="Estados do processo" code="ESTADOS_DO_PROCESSO59118">
     <ENUS>Estados do processo</ENUS>
   </msg>
+  <msg id="Cities" code="CITIES41573">
+    <ENUS>Cities</ENUS>
+  </msg>
   <msg id="Client ip address" code="CLIENT_IP_ADDRESS62089">
     <ENUS>Client ip address</ENUS>
+  </msg>
+  <msg id="City" code="CITY42505">
+    <ENUS>City</ENUS>
   </msg>
   <msg id="Notification Message" code="NOTIFICATION_MESSAGE31108">
     <ENUS>Notification Message</ENUS>
@@ -309,6 +333,9 @@
   <msg id="Saves on DB?" code="SAVES_ON_DB_61384">
     <ENUS>Saves on DB?</ENUS>
   </msg>
+  <msg id="Contacts" code="CONTACTS55742">
+    <ENUS>Contacts</ENUS>
+  </msg>
   <msg id="Birthday" code="BIRTHDAY30236">
     <ENUS>Birthday</ENUS>
   </msg>
@@ -368,6 +395,9 @@
   </msg>
   <msg id="Canceled by" code="CANCELED_BY01167">
     <ENUS>Canceled by</ENUS>
+  </msg>
+  <msg id="Photo Albums" code="PHOTO_ALBUMS41529">
+    <ENUS>Photo Albums</ENUS>
   </msg>
   <msg id="Changed by" code="CHANGED_BY08967">
     <ENUS>Changed by</ENUS>

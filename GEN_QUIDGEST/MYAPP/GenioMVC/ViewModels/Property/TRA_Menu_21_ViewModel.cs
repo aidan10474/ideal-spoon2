@@ -100,8 +100,7 @@ namespace GenioMVC.ViewModels.Property
 			conditions.SubSets.Add(GetCustomizedStaticLimits(StaticLimits));
 
 			// Checks for foreign tables in fields and conditions
-			FieldRef[] fields = new FieldRef[] { CSGenioAproperty.FldPrimary_property, CSGenioAproperty.FldZzstate, CSGenioAproperty.FldMain_photo, CSGenioAproperty.FldPrice, CSGenioAproperty.FldBroker_fk, CSGenioAbroker.FldCodbroker, CSGenioAbroker.FldName, CSGenioAproperty.FldTitle };
-
+			
 			ListingMVC<CSGenioAproperty> listing = new(fields, null, 1, 1, false, user, true, string.Empty, false);
 			SelectQuery qs = sp.getSelectQueryFromListingMVC(conditions, listing);
 
@@ -331,8 +330,7 @@ namespace GenioMVC.ViewModels.Property
 
 			}
 
-			FieldRef[] fields = new FieldRef[] { CSGenioAproperty.FldPrimary_property, CSGenioAproperty.FldZzstate, CSGenioAproperty.FldMain_photo, CSGenioAproperty.FldPrice, CSGenioAproperty.FldBroker_fk, CSGenioAbroker.FldCodbroker, CSGenioAbroker.FldName, CSGenioAproperty.FldTitle };
-
+			
 
 			// Totalizers
 			List<FieldRef> fieldsWithTotalizers = fields.Where(field => tableConfig.TotalizerColumns.Contains(field.FullName)).ToList();
@@ -478,7 +476,7 @@ namespace GenioMVC.ViewModels.Property
 					case "property":
 						model.klass.insertNameValueField(Qfield.FullName, Qfield.Value); break;
 					case "broker":
-						model.Broker.klass.insertNameValueField(Qfield.FullName, Qfield.Value); break;
+						model..klass.insertNameValueField(Qfield.FullName, Qfield.Value); break;
 					default:
 						break;
 				}
@@ -531,13 +529,13 @@ namespace GenioMVC.ViewModels.Property
 
 		private static readonly string[] _fieldsToSerialize =
 		[
-			"Property", "Property.ValPrimary_property", "Property.ValZzstate", "Property.ValMain_photo", "Property.ValPrice", "Broker", "Broker.ValName", "Property.ValTitle", "Property.ValBroker_fk"
+			"Property", "Property.ValCodproperty", "Property.ValZzstate", "Property.ValMain_photo", "Property.ValPrice", "Broker", "Broker.ValName", "Property.ValTitle", "Property.ValCodagent", "Property.ValCodcity"
 		];
 
 		private static readonly List<TableSearchColumn> _searchableColumns =
 		[
 			new TableSearchColumn("ValPrice", CSGenioAproperty.FldPrice, typeof(decimal?), defaultSearch : true),
-			new TableSearchColumn("Broker_ValName", CSGenioAbroker.FldName, typeof(string)),
+			new TableSearchColumn("_ValName", CSGenioAbroker.FldName, typeof(string)),
 			new TableSearchColumn("ValTitle", CSGenioAproperty.FldTitle, typeof(string), defaultSearch : true),
 		];
 		protected void SetTicketToImageFields(Models.Property row)
@@ -545,7 +543,7 @@ namespace GenioMVC.ViewModels.Property
 			if (row == null)
 				return;
 
-			row.ValMain_photoQTicket = Helpers.Helpers.GetFileTicket(m_userContext.User, CSGenio.business.Area.AreaPROPERTY, CSGenioAproperty.FldMain_photo.Field, null, row.ValPrimary_property);
+			row.ValMain_photoQTicket = Helpers.Helpers.GetFileTicket(m_userContext.User, CSGenio.business.Area.AreaPROPERTY, CSGenioAproperty.FldMain_photo.Field, null, row.ValCodproperty);
 		}
 	}
 }
