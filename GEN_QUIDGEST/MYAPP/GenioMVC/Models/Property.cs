@@ -23,12 +23,12 @@ namespace GenioMVC.Models
 		public CSGenioAproperty klass { get { return baseklass as CSGenioAproperty; } set { baseklass = value; } }
 
 		[Key]
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Property" Tipo: "+" Formula:  ""</summary>
 		[ShouldSerialize("Property.ValCodproperty")]
 		public string ValCodproperty { get { return klass.ValCodproperty; } set { klass.ValCodproperty = value; } }
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		[DisplayName("Agent")]
+		/// <summary>Field : "Agent" Tipo: "CE" Formula:  ""</summary>
 		[ShouldSerialize("Property.ValCodagent")]
 		public string ValCodagent { get { return klass.ValCodagent; } set { klass.ValCodagent = value; } }
 
@@ -47,8 +47,8 @@ namespace GenioMVC.Models
 			set { _agent = value; }
 		}
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		[DisplayName("City")]
+		/// <summary>Field : "City" Tipo: "CE" Formula:  ""</summary>
 		[ShouldSerialize("Property.ValCodcity")]
 		public string ValCodcity { get { return klass.ValCodcity; } set { klass.ValCodcity = value; } }
 
@@ -86,25 +86,25 @@ namespace GenioMVC.Models
 		[CurrencyAttribute("EUR", 4)]
 		public decimal? ValPrice { get { return Convert.ToDecimal(GenFunctions.RoundQG(klass.ValPrice, 4)); } set { klass.ValPrice = Convert.ToDecimal(value); } }
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
-		[ShouldSerialize("Property.ValSize (m2)")]
-		public string ValSize (m2) { get { return klass.ValSize (m2); } set { klass.ValSize (m2) = value; } }
+		[DisplayName("Size")]
+		/// <summary>Field : "Size" Tipo: "C" Formula:  ""</summary>
+		[ShouldSerialize("Property.ValSize")]
+		public string ValSize { get { return klass.ValSize; } set { klass.ValSize = value; } }
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
-		[ShouldSerialize("Property.ValBathroomsnumber")]
-		public string ValBathroomsnumber { get { return klass.ValBathroomsnumber; } set { klass.ValBathroomsnumber = value; } }
+		[DisplayName("Bathrooms")]
+		/// <summary>Field : "Bathrooms" Tipo: "C" Formula:  ""</summary>
+		[ShouldSerialize("Property.ValBathroom_number")]
+		public string ValBathroom_number { get { return klass.ValBathroom_number; } set { klass.ValBathroom_number = value; } }
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "D" Formula:  ""</summary>
-		[ShouldSerialize("Property.ValDateconstruction")]
+		[DisplayName("Date")]
+		/// <summary>Field : "Date" Tipo: "D" Formula:  ""</summary>
+		[ShouldSerialize("Property.ValDate_construction")]
 		[DataType(DataType.Date)]
 		[DateAttribute("D")]
-		public DateTime? ValDateconstruction { get { return klass.ValDateconstruction; } set { klass.ValDateconstruction = value ?? DateTime.MinValue; } }
+		public DateTime? ValDate_construction { get { return klass.ValDate_construction; } set { klass.ValDate_construction = value ?? DateTime.MinValue; } }
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		[DisplayName("Description")]
+		/// <summary>Field : "Description" Tipo: "C" Formula:  ""</summary>
 		[ShouldSerialize("Property.ValDescription")]
 		public string ValDescription { get { return klass.ValDescription; } set { klass.ValDescription = value; } }
 

@@ -177,6 +177,9 @@
   <msg id="Process info" code="PROCESS_INFO62044">
     <ENUS>Process info</ENUS>
   </msg>
+  <msg id="Bathrooms" code="BATHROOMS54249">
+    <ENUS>Bathrooms</ENUS>
+  </msg>
   <msg id="Password" code="PASSWORD09467">
     <ENUS>Password</ENUS>
   </msg>
@@ -225,6 +228,9 @@
   <msg id="My application" code="MY_APPLICATION56216">
     <ENUS>My application</ENUS>
   </msg>
+  <msg id="Size" code="SIZE10299">
+    <ENUS>Size</ENUS>
+  </msg>
   <msg id="Individual" code="INDIVIDUAL42893">
     <ENUS>Individual</ENUS>
   </msg>
@@ -264,6 +270,9 @@
   <msg id="City" code="CITY42505">
     <ENUS>City</ENUS>
   </msg>
+  <msg id="Phone" code="PHONE56703">
+    <ENUS>Phone</ENUS>
+  </msg>
   <msg id="Notification Message" code="NOTIFICATION_MESSAGE31108">
     <ENUS>Notification Message</ENUS>
   </msg>
@@ -275,6 +284,9 @@
   </msg>
   <msg id="Abortado" code="ABORTADO52378">
     <ENUS>Abortado</ENUS>
+  </msg>
+  <msg id="Photo_album" code="PHOTO_ALBUM14823">
+    <ENUS>Photo_album</ENUS>
   </msg>
   <msg id="Bcc" code="BCC22049">
     <ENUS>Bcc</ENUS>

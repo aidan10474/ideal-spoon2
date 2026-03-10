@@ -45,10 +45,10 @@ namespace CSGenio.business
 #pragma warning restore CS0168, S1481 // Variable is declared but never used
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "codbroker", FieldType.KEY_INT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Broker";
 			Qfield.FieldSize =  8;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "BROKER49181";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
@@ -259,11 +259,11 @@ namespace CSGenio.business
 			return informacao;
 		}
 
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Broker" Tipo: "+" Formula:  ""</summary>
 		public static FieldRef FldCodbroker { get { return m_fldCodbroker; } }
 		private static FieldRef m_fldCodbroker = new FieldRef("broker", "codbroker");
 
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Broker" Tipo: "+" Formula:  ""</summary>
 		public string ValCodbroker
 		{
 			get { return (string)returnValueField(FldCodbroker); }

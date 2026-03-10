@@ -146,7 +146,7 @@
 							'page-full-height'
 						],
 						columnsOriginal: [
-							new listColumnTypes.GeographicColumn({
+							new listColumnTypes.TextColumn({
 								order: 1,
 								name: 'ValCountry',
 								area: 'COUNTRY',

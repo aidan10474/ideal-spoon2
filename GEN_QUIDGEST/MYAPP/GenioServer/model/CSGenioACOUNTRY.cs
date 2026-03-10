@@ -45,16 +45,16 @@ namespace CSGenio.business
 #pragma warning restore CS0168, S1481 // Variable is declared but never used
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "codcountry", FieldType.KEY_INT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Country";
 			Qfield.FieldSize =  8;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "COUNTRY64133";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
-			Qfield = new Field(info.Alias, "country", FieldType.GEOGRAPHY_POINT);
+			Qfield = new Field(info.Alias, "country", FieldType.TEXT);
 			Qfield.FieldDescription = "Country";
 			Qfield.FieldSize =  50;
 			Qfield.MQueue = false;
@@ -212,22 +212,22 @@ namespace CSGenio.business
 			return informacao;
 		}
 
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Country" Tipo: "+" Formula:  ""</summary>
 		public static FieldRef FldCodcountry { get { return m_fldCodcountry; } }
 		private static FieldRef m_fldCodcountry = new FieldRef("country", "codcountry");
 
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Country" Tipo: "+" Formula:  ""</summary>
 		public string ValCodcountry
 		{
 			get { return (string)returnValueField(FldCodcountry); }
 			set { insertNameValueField(FldCodcountry, value); }
 		}
 
-		/// <summary>Field : "Country" Tipo: "GG" Formula:  ""</summary>
+		/// <summary>Field : "Country" Tipo: "C" Formula:  ""</summary>
 		public static FieldRef FldCountry { get { return m_fldCountry; } }
 		private static FieldRef m_fldCountry = new FieldRef("country", "country");
 
-		/// <summary>Field : "Country" Tipo: "GG" Formula:  ""</summary>
+		/// <summary>Field : "Country" Tipo: "C" Formula:  ""</summary>
 		public string ValCountry
 		{
 			get { return (string)returnValueField(FldCountry); }

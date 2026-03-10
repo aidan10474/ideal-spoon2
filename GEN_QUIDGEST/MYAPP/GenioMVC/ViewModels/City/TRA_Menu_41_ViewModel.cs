@@ -145,7 +145,7 @@ namespace GenioMVC.ViewModels.City
 			return
 			[
 				new Exports.QColumn(CSGenioAproperty.FldTitle, FieldType.TEXT, Resources.Resources.TITLE21885, 30, 0, true),
-				new Exports.QColumn(CSGenioAcity.FldCity, FieldType.GEOGRAPHY_POINT, Resources.Resources.CITY42505, 30, 0, true),
+				new Exports.QColumn(CSGenioAcity.FldCity, FieldType.TEXT, Resources.Resources.CITY42505, 30, 0, true),
 			];
 		}
 
@@ -525,6 +525,7 @@ namespace GenioMVC.ViewModels.City
 		private static readonly List<TableSearchColumn> _searchableColumns =
 		[
 			new TableSearchColumn("_ValTitle", CSGenioAproperty.FldTitle, typeof(string)),
+			new TableSearchColumn("ValCity", CSGenioAcity.FldCity, typeof(string)),
 		];
 	}
 }

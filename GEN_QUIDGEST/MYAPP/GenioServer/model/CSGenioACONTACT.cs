@@ -45,40 +45,40 @@ namespace CSGenio.business
 #pragma warning restore CS0168, S1481 // Variable is declared but never used
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "codcontact", FieldType.KEY_INT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Contact";
 			Qfield.FieldSize =  8;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "CONTACT59247";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "date", FieldType.DATE);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Date";
 			Qfield.FieldSize =  8;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "DATE18475";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "codproperty", FieldType.KEY_INT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Property";
 			Qfield.FieldSize =  8;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "PROPERTY43977";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "client_name", FieldType.TEXT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Name";
 			Qfield.FieldSize =  50;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "NAME31974";
 
             Qfield.NotNull = true;
 			Qfield.Dupmsg = "";
@@ -86,10 +86,10 @@ namespace CSGenio.business
 
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "email_contact", FieldType.TEXT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Email";
 			Qfield.FieldSize =  50;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "EMAIL25170";
 
             Qfield.NotNull = true;
 			Qfield.Dupmsg = "";
@@ -97,22 +97,22 @@ namespace CSGenio.business
 
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "phone_contact", FieldType.NUMERIC);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Phone";
 			Qfield.FieldSize =  15;
 			Qfield.MQueue = false;
 			Qfield.IntegerDigits = 12;
 			Qfield.Decimals = 2;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "PHONE56703";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "description", FieldType.TEXT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Description";
 			Qfield.FieldSize =  50;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "DESCRIPTION07383";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
@@ -269,77 +269,77 @@ namespace CSGenio.business
 			return informacao;
 		}
 
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Contact" Tipo: "+" Formula:  ""</summary>
 		public static FieldRef FldCodcontact { get { return m_fldCodcontact; } }
 		private static FieldRef m_fldCodcontact = new FieldRef("contact", "codcontact");
 
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Contact" Tipo: "+" Formula:  ""</summary>
 		public string ValCodcontact
 		{
 			get { return (string)returnValueField(FldCodcontact); }
 			set { insertNameValueField(FldCodcontact, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "D" Formula:  ""</summary>
+		/// <summary>Field : "Date" Tipo: "D" Formula:  ""</summary>
 		public static FieldRef FldDate { get { return m_fldDate; } }
 		private static FieldRef m_fldDate = new FieldRef("contact", "date");
 
-		/// <summary>Field : "" Tipo: "D" Formula:  ""</summary>
+		/// <summary>Field : "Date" Tipo: "D" Formula:  ""</summary>
 		public DateTime ValDate
 		{
 			get { return (DateTime)returnValueField(FldDate); }
 			set { insertNameValueField(FldDate, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		/// <summary>Field : "Property" Tipo: "CE" Formula:  ""</summary>
 		public static FieldRef FldCodproperty { get { return m_fldCodproperty; } }
 		private static FieldRef m_fldCodproperty = new FieldRef("contact", "codproperty");
 
-		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		/// <summary>Field : "Property" Tipo: "CE" Formula:  ""</summary>
 		public string ValCodproperty
 		{
 			get { return (string)returnValueField(FldCodproperty); }
 			set { insertNameValueField(FldCodproperty, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		/// <summary>Field : "Name" Tipo: "C" Formula:  ""</summary>
 		public static FieldRef FldClient_name { get { return m_fldClient_name; } }
 		private static FieldRef m_fldClient_name = new FieldRef("contact", "client_name");
 
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		/// <summary>Field : "Name" Tipo: "C" Formula:  ""</summary>
 		public string ValClient_name
 		{
 			get { return (string)returnValueField(FldClient_name); }
 			set { insertNameValueField(FldClient_name, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		/// <summary>Field : "Email" Tipo: "C" Formula:  ""</summary>
 		public static FieldRef FldEmail_contact { get { return m_fldEmail_contact; } }
 		private static FieldRef m_fldEmail_contact = new FieldRef("contact", "email_contact");
 
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		/// <summary>Field : "Email" Tipo: "C" Formula:  ""</summary>
 		public string ValEmail_contact
 		{
 			get { return (string)returnValueField(FldEmail_contact); }
 			set { insertNameValueField(FldEmail_contact, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "N" Formula:  ""</summary>
+		/// <summary>Field : "Phone" Tipo: "N" Formula:  ""</summary>
 		public static FieldRef FldPhone_contact { get { return m_fldPhone_contact; } }
 		private static FieldRef m_fldPhone_contact = new FieldRef("contact", "phone_contact");
 
-		/// <summary>Field : "" Tipo: "N" Formula:  ""</summary>
+		/// <summary>Field : "Phone" Tipo: "N" Formula:  ""</summary>
 		public decimal ValPhone_contact
 		{
 			get { return (decimal)returnValueField(FldPhone_contact); }
 			set { insertNameValueField(FldPhone_contact, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		/// <summary>Field : "Description" Tipo: "C" Formula:  ""</summary>
 		public static FieldRef FldDescription { get { return m_fldDescription; } }
 		private static FieldRef m_fldDescription = new FieldRef("contact", "description");
 
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		/// <summary>Field : "Description" Tipo: "C" Formula:  ""</summary>
 		public string ValDescription
 		{
 			get { return (string)returnValueField(FldDescription); }

@@ -49,16 +49,17 @@ export default class ViewModel extends FormViewModelBase
 			originId: 'ValCodcountry',
 			area: 'COUNTRY',
 			field: 'CODCOUNTRY',
-			description: '',
+			description: computed(() => this.Resources.COUNTRY64133),
 		}).cloneFrom(values?.ValCodcountry))
 		this.stopWatchers.push(watch(() => this.ValCodcountry.value, (newValue, oldValue) => this.onUpdate('country.codcountry', this.ValCodcountry, newValue, oldValue)))
 
 		/** The remaining form fields. */
-		this.ValCountry = reactive(new modelFieldType.Coordinate({
+		this.ValCountry = reactive(new modelFieldType.String({
 			id: 'ValCountry',
 			originId: 'ValCountry',
 			area: 'COUNTRY',
 			field: 'COUNTRY',
+			maxLength: 50,
 			description: computed(() => this.Resources.COUNTRY64133),
 		}).cloneFrom(values?.ValCountry))
 		this.stopWatchers.push(watch(() => this.ValCountry.value, (newValue, oldValue) => this.onUpdate('country.country', this.ValCountry, newValue, oldValue)))

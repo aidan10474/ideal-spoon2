@@ -33,7 +33,7 @@ namespace GenioMVC.ViewModels.Country
 
 		#endregion
 		/// <summary>
-		/// Title: "Country" | Type: "GG"
+		/// Title: "Country" | Type: "C"
 		/// </summary>
 		public string ValCountry { get; set; }
 
@@ -348,6 +348,7 @@ namespace GenioMVC.ViewModels.Country
 		{
 			CrudViewModelFieldValidator validator = new(m_userContext.User.Language);
 
+			validator.StringLength("ValCountry", Resources.Resources.COUNTRY64133, ValCountry, 50);
 
 
 			return validator.GetResult();

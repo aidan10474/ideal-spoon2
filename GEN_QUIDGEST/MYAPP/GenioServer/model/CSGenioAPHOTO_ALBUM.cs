@@ -45,40 +45,40 @@ namespace CSGenio.business
 #pragma warning restore CS0168, S1481 // Variable is declared but never used
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "codphoto_album", FieldType.KEY_INT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Photo_album";
 			Qfield.FieldSize =  8;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "PHOTO_ALBUM14823";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "photo", FieldType.IMAGE);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Photo";
 			Qfield.FieldSize =  3;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "PHOTO51874";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "codproperty", FieldType.KEY_INT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Property";
 			Qfield.FieldSize =  8;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "PROPERTY43977";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "title", FieldType.TEXT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Title";
 			Qfield.FieldSize =  50;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "TITLE21885";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
@@ -235,44 +235,44 @@ namespace CSGenio.business
 			return informacao;
 		}
 
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Photo_album" Tipo: "+" Formula:  ""</summary>
 		public static FieldRef FldCodphoto_album { get { return m_fldCodphoto_album; } }
 		private static FieldRef m_fldCodphoto_album = new FieldRef("photo_album", "codphoto_album");
 
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Photo_album" Tipo: "+" Formula:  ""</summary>
 		public string ValCodphoto_album
 		{
 			get { return (string)returnValueField(FldCodphoto_album); }
 			set { insertNameValueField(FldCodphoto_album, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "IJ" Formula:  ""</summary>
+		/// <summary>Field : "Photo" Tipo: "IJ" Formula:  ""</summary>
 		public static FieldRef FldPhoto { get { return m_fldPhoto; } }
 		private static FieldRef m_fldPhoto = new FieldRef("photo_album", "photo");
 
-		/// <summary>Field : "" Tipo: "IJ" Formula:  ""</summary>
+		/// <summary>Field : "Photo" Tipo: "IJ" Formula:  ""</summary>
 		public byte[] ValPhoto
 		{
 			get { return (byte[])returnValueField(FldPhoto); }
 			set { insertNameValueField(FldPhoto, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		/// <summary>Field : "Property" Tipo: "CE" Formula:  ""</summary>
 		public static FieldRef FldCodproperty { get { return m_fldCodproperty; } }
 		private static FieldRef m_fldCodproperty = new FieldRef("photo_album", "codproperty");
 
-		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		/// <summary>Field : "Property" Tipo: "CE" Formula:  ""</summary>
 		public string ValCodproperty
 		{
 			get { return (string)returnValueField(FldCodproperty); }
 			set { insertNameValueField(FldCodproperty, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		/// <summary>Field : "Title" Tipo: "C" Formula:  ""</summary>
 		public static FieldRef FldTitle { get { return m_fldTitle; } }
 		private static FieldRef m_fldTitle = new FieldRef("photo_album", "title");
 
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		/// <summary>Field : "Title" Tipo: "C" Formula:  ""</summary>
 		public string ValTitle
 		{
 			get { return (string)returnValueField(FldTitle); }

@@ -49,7 +49,7 @@ export default class ViewModel extends FormViewModelBase
 			originId: 'ValCodphoto_album',
 			area: 'PHOTO_ALBUM',
 			field: 'CODPHOTO_ALBUM',
-			description: '',
+			description: computed(() => this.Resources.PHOTO_ALBUM14823),
 		}).cloneFrom(values?.ValCodphoto_album))
 		this.stopWatchers.push(watch(() => this.ValCodphoto_album.value, (newValue, oldValue) => this.onUpdate('photo_album.codphoto_album', this.ValCodphoto_album, newValue, oldValue)))
 
@@ -60,7 +60,7 @@ export default class ViewModel extends FormViewModelBase
 			area: 'PHOTO_ALBUM',
 			field: 'CODPROPERTY',
 			relatedArea: 'PROPERTY',
-			description: '',
+			description: computed(() => this.Resources.PROPERTY43977),
 		}).cloneFrom(values?.ValCodproperty))
 		this.stopWatchers.push(watch(() => this.ValCodproperty.value, (newValue, oldValue) => this.onUpdate('photo_album.codproperty', this.ValCodproperty, newValue, oldValue)))
 
@@ -70,7 +70,7 @@ export default class ViewModel extends FormViewModelBase
 			originId: 'ValPhoto',
 			area: 'PHOTO_ALBUM',
 			field: 'PHOTO',
-			description: '',
+			description: computed(() => this.Resources.PHOTO51874),
 		}).cloneFrom(values?.ValPhoto))
 		this.stopWatchers.push(watch(() => this.ValPhoto.value, (newValue, oldValue) => this.onUpdate('photo_album.photo', this.ValPhoto, newValue, oldValue)))
 
@@ -92,7 +92,7 @@ export default class ViewModel extends FormViewModelBase
 			area: 'PHOTO_ALBUM',
 			field: 'TITLE',
 			maxLength: 50,
-			description: '',
+			description: computed(() => this.Resources.TITLE21885),
 		}).cloneFrom(values?.ValTitle))
 		this.stopWatchers.push(watch(() => this.ValTitle.value, (newValue, oldValue) => this.onUpdate('photo_album.title', this.ValTitle, newValue, oldValue)))
 	}

@@ -23,7 +23,7 @@ namespace GenioMVC.Models
 		public CSGenioAbroker klass { get { return baseklass as CSGenioAbroker; } set { baseklass = value; } }
 
 		[Key]
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Broker" Tipo: "+" Formula:  ""</summary>
 		[ShouldSerialize("Broker.ValCodbroker")]
 		public string ValCodbroker { get { return klass.ValCodbroker; } set { klass.ValCodbroker = value; } }
 

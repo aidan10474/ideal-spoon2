@@ -157,7 +157,7 @@
 								export: 1,
 								pkColumn: 'ValCodproperty',
 							}, computed(() => vm.model), computed(() => vm.internalEvents)),
-							new listColumnTypes.GeographicColumn({
+							new listColumnTypes.TextColumn({
 								order: 2,
 								name: 'ValCity',
 								area: 'CITY',

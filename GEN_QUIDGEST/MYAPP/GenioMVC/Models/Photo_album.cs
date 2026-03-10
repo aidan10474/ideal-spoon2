@@ -23,20 +23,20 @@ namespace GenioMVC.Models
 		public CSGenioAphoto_album klass { get { return baseklass as CSGenioAphoto_album; } set { baseklass = value; } }
 
 		[Key]
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Photo_album" Tipo: "+" Formula:  ""</summary>
 		[ShouldSerialize("Photo_album.ValCodphoto_album")]
 		public string ValCodphoto_album { get { return klass.ValCodphoto_album; } set { klass.ValCodphoto_album = value; } }
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "IJ" Formula:  ""</summary>
+		[DisplayName("Photo")]
+		/// <summary>Field : "Photo" Tipo: "IJ" Formula:  ""</summary>
 		[ShouldSerialize("Photo_album.ValPhoto")]
 		[ImageThumbnailJsonConverter(75, 75)]
 		public ImageModel ValPhoto { get { return new ImageModel(klass.ValPhoto) { Ticket = ValPhotoQTicket }; } set { klass.ValPhoto = value; } }
 		[JsonIgnore]
 		public string ValPhotoQTicket = null;
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		[DisplayName("Property")]
+		/// <summary>Field : "Property" Tipo: "CE" Formula:  ""</summary>
 		[ShouldSerialize("Photo_album.ValCodproperty")]
 		public string ValCodproperty { get { return klass.ValCodproperty; } set { klass.ValCodproperty = value; } }
 
@@ -55,8 +55,8 @@ namespace GenioMVC.Models
 			set { _property = value; }
 		}
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		[DisplayName("Title")]
+		/// <summary>Field : "Title" Tipo: "C" Formula:  ""</summary>
 		[ShouldSerialize("Photo_album.ValTitle")]
 		public string ValTitle { get { return klass.ValTitle; } set { klass.ValTitle = value; } }
 

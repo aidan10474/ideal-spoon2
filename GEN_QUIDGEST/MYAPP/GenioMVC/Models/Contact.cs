@@ -23,19 +23,19 @@ namespace GenioMVC.Models
 		public CSGenioAcontact klass { get { return baseklass as CSGenioAcontact; } set { baseklass = value; } }
 
 		[Key]
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Contact" Tipo: "+" Formula:  ""</summary>
 		[ShouldSerialize("Contact.ValCodcontact")]
 		public string ValCodcontact { get { return klass.ValCodcontact; } set { klass.ValCodcontact = value; } }
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "D" Formula:  ""</summary>
+		[DisplayName("Date")]
+		/// <summary>Field : "Date" Tipo: "D" Formula:  ""</summary>
 		[ShouldSerialize("Contact.ValDate")]
 		[DataType(DataType.Date)]
 		[DateAttribute("D")]
 		public DateTime? ValDate { get { return klass.ValDate; } set { klass.ValDate = value ?? DateTime.MinValue; } }
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		[DisplayName("Property")]
+		/// <summary>Field : "Property" Tipo: "CE" Formula:  ""</summary>
 		[ShouldSerialize("Contact.ValCodproperty")]
 		public string ValCodproperty { get { return klass.ValCodproperty; } set { klass.ValCodproperty = value; } }
 
@@ -54,24 +54,24 @@ namespace GenioMVC.Models
 			set { _property = value; }
 		}
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		[DisplayName("Name")]
+		/// <summary>Field : "Name" Tipo: "C" Formula:  ""</summary>
 		[ShouldSerialize("Contact.ValClient_name")]
 		public string ValClient_name { get { return klass.ValClient_name; } set { klass.ValClient_name = value; } }
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		[DisplayName("Email")]
+		/// <summary>Field : "Email" Tipo: "C" Formula:  ""</summary>
 		[ShouldSerialize("Contact.ValEmail_contact")]
 		public string ValEmail_contact { get { return klass.ValEmail_contact; } set { klass.ValEmail_contact = value; } }
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "N" Formula:  ""</summary>
+		[DisplayName("Phone")]
+		/// <summary>Field : "Phone" Tipo: "N" Formula:  ""</summary>
 		[ShouldSerialize("Contact.ValPhone_contact")]
 		[NumericAttribute(2)]
 		public decimal? ValPhone_contact { get { return Convert.ToDecimal(GenFunctions.RoundQG(klass.ValPhone_contact, 2)); } set { klass.ValPhone_contact = Convert.ToDecimal(value); } }
 
-		[DisplayName("")]
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		[DisplayName("Description")]
+		/// <summary>Field : "Description" Tipo: "C" Formula:  ""</summary>
 		[ShouldSerialize("Contact.ValDescription")]
 		public string ValDescription { get { return klass.ValDescription; } set { klass.ValDescription = value; } }
 

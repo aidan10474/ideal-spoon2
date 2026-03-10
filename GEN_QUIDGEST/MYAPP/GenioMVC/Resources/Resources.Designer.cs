@@ -594,6 +594,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Bathrooms"
+		/// </summary>
+		public static string BATHROOMS54249 {
+			get {
+				return ResourceManager.GetString("BATHROOMS54249", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Password"
 		/// </summary>
 		public static string PASSWORD09467 {
@@ -738,6 +747,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Size"
+		/// </summary>
+		public static string SIZE10299 {
+			get {
+				return ResourceManager.GetString("SIZE10299", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Individual"
 		/// </summary>
 		public static string INDIVIDUAL42893 {
@@ -855,6 +873,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Phone"
+		/// </summary>
+		public static string PHONE56703 {
+			get {
+				return ResourceManager.GetString("PHONE56703", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Notification Message"
 		/// </summary>
 		public static string NOTIFICATION_MESSAGE31108 {
@@ -887,6 +914,15 @@ namespace GenioMVC.Resources
 		public static string ABORTADO52378 {
 			get {
 				return ResourceManager.GetString("ABORTADO52378", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to "Photo_album"
+		/// </summary>
+		public static string PHOTO_ALBUM14823 {
+			get {
+				return ResourceManager.GetString("PHOTO_ALBUM14823", resourceCulture);
 			}
 		}
 

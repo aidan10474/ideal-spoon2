@@ -294,6 +294,9 @@
   <data name="PROCESS_INFO62044" xml:space="preserve">
     <value>Process info</value>
   </data>
+  <data name="BATHROOMS54249" xml:space="preserve">
+    <value>Bathrooms</value>
+  </data>
   <data name="PASSWORD09467" xml:space="preserve">
     <value>Password</value>
   </data>
@@ -342,6 +345,9 @@
   <data name="MY_APPLICATION56216" xml:space="preserve">
     <value>My application</value>
   </data>
+  <data name="SIZE10299" xml:space="preserve">
+    <value>Size</value>
+  </data>
   <data name="INDIVIDUAL42893" xml:space="preserve">
     <value>Individual</value>
   </data>
@@ -381,6 +387,9 @@
   <data name="CITY42505" xml:space="preserve">
     <value>City</value>
   </data>
+  <data name="PHONE56703" xml:space="preserve">
+    <value>Phone</value>
+  </data>
   <data name="NOTIFICATION_MESSAGE31108" xml:space="preserve">
     <value>Notification Message</value>
   </data>
@@ -392,6 +401,9 @@
   </data>
   <data name="ABORTADO52378" xml:space="preserve">
     <value>Abortado</value>
+  </data>
+  <data name="PHOTO_ALBUM14823" xml:space="preserve">
+    <value>Photo_album</value>
   </data>
   <data name="BCC22049" xml:space="preserve">
     <value>Bcc</value>

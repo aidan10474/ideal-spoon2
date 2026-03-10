@@ -49,7 +49,7 @@ export default class ViewModel extends FormViewModelBase
 			originId: 'ValCodcontact',
 			area: 'CONTACT',
 			field: 'CODCONTACT',
-			description: '',
+			description: computed(() => this.Resources.CONTACT59247),
 		}).cloneFrom(values?.ValCodcontact))
 		this.stopWatchers.push(watch(() => this.ValCodcontact.value, (newValue, oldValue) => this.onUpdate('contact.codcontact', this.ValCodcontact, newValue, oldValue)))
 
@@ -60,7 +60,7 @@ export default class ViewModel extends FormViewModelBase
 			area: 'CONTACT',
 			field: 'CODPROPERTY',
 			relatedArea: 'PROPERTY',
-			description: '',
+			description: computed(() => this.Resources.PROPERTY43977),
 		}).cloneFrom(values?.ValCodproperty))
 		this.stopWatchers.push(watch(() => this.ValCodproperty.value, (newValue, oldValue) => this.onUpdate('contact.codproperty', this.ValCodproperty, newValue, oldValue)))
 
@@ -82,7 +82,7 @@ export default class ViewModel extends FormViewModelBase
 			originId: 'ValDate',
 			area: 'CONTACT',
 			field: 'DATE',
-			description: '',
+			description: computed(() => this.Resources.DATE18475),
 		}).cloneFrom(values?.ValDate))
 		this.stopWatchers.push(watch(() => this.ValDate.value, (newValue, oldValue) => this.onUpdate('contact.date', this.ValDate, newValue, oldValue)))
 
@@ -92,7 +92,7 @@ export default class ViewModel extends FormViewModelBase
 			area: 'CONTACT',
 			field: 'CLIENT_NAME',
 			maxLength: 50,
-			description: '',
+			description: computed(() => this.Resources.NAME31974),
 		}).cloneFrom(values?.ValClient_name))
 		this.stopWatchers.push(watch(() => this.ValClient_name.value, (newValue, oldValue) => this.onUpdate('contact.client_name', this.ValClient_name, newValue, oldValue)))
 
@@ -102,7 +102,7 @@ export default class ViewModel extends FormViewModelBase
 			area: 'CONTACT',
 			field: 'EMAIL_CONTACT',
 			maxLength: 50,
-			description: '',
+			description: computed(() => this.Resources.EMAIL25170),
 		}).cloneFrom(values?.ValEmail_contact))
 		this.stopWatchers.push(watch(() => this.ValEmail_contact.value, (newValue, oldValue) => this.onUpdate('contact.email_contact', this.ValEmail_contact, newValue, oldValue)))
 
@@ -113,7 +113,7 @@ export default class ViewModel extends FormViewModelBase
 			field: 'PHONE_CONTACT',
 			maxDigits: 12,
 			decimalDigits: 2,
-			description: '',
+			description: computed(() => this.Resources.PHONE56703),
 		}).cloneFrom(values?.ValPhone_contact))
 		this.stopWatchers.push(watch(() => this.ValPhone_contact.value, (newValue, oldValue) => this.onUpdate('contact.phone_contact', this.ValPhone_contact, newValue, oldValue)))
 
@@ -123,7 +123,7 @@ export default class ViewModel extends FormViewModelBase
 			area: 'CONTACT',
 			field: 'DESCRIPTION',
 			maxLength: 50,
-			description: '',
+			description: computed(() => this.Resources.DESCRIPTION07383),
 		}).cloneFrom(values?.ValDescription))
 		this.stopWatchers.push(watch(() => this.ValDescription.value, (newValue, oldValue) => this.onUpdate('contact.description', this.ValDescription, newValue, oldValue)))
 	}

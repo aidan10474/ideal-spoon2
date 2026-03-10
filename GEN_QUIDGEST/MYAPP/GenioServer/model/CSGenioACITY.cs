@@ -45,16 +45,16 @@ namespace CSGenio.business
 #pragma warning restore CS0168, S1481 // Variable is declared but never used
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "codcity", FieldType.KEY_INT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "City";
 			Qfield.FieldSize =  8;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "CITY42505";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
-			Qfield = new Field(info.Alias, "city", FieldType.GEOGRAPHY_POINT);
+			Qfield = new Field(info.Alias, "city", FieldType.TEXT);
 			Qfield.FieldDescription = "City";
 			Qfield.FieldSize =  50;
 			Qfield.MQueue = false;
@@ -224,22 +224,22 @@ namespace CSGenio.business
 			return informacao;
 		}
 
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "City" Tipo: "+" Formula:  ""</summary>
 		public static FieldRef FldCodcity { get { return m_fldCodcity; } }
 		private static FieldRef m_fldCodcity = new FieldRef("city", "codcity");
 
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "City" Tipo: "+" Formula:  ""</summary>
 		public string ValCodcity
 		{
 			get { return (string)returnValueField(FldCodcity); }
 			set { insertNameValueField(FldCodcity, value); }
 		}
 
-		/// <summary>Field : "City" Tipo: "GG" Formula:  ""</summary>
+		/// <summary>Field : "City" Tipo: "C" Formula:  ""</summary>
 		public static FieldRef FldCity { get { return m_fldCity; } }
 		private static FieldRef m_fldCity = new FieldRef("city", "city");
 
-		/// <summary>Field : "City" Tipo: "GG" Formula:  ""</summary>
+		/// <summary>Field : "City" Tipo: "C" Formula:  ""</summary>
 		public string ValCity
 		{
 			get { return (string)returnValueField(FldCity); }

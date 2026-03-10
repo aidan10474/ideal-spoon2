@@ -23,14 +23,13 @@ namespace GenioMVC.Models
 		public CSGenioAcountry klass { get { return baseklass as CSGenioAcountry; } set { baseklass = value; } }
 
 		[Key]
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Country" Tipo: "+" Formula:  ""</summary>
 		[ShouldSerialize("Country.ValCodcountry")]
 		public string ValCodcountry { get { return klass.ValCodcountry; } set { klass.ValCodcountry = value; } }
 
 		[DisplayName("Country")]
-		/// <summary>Field : "Country" Tipo: "GG" Formula:  ""</summary>
+		/// <summary>Field : "Country" Tipo: "C" Formula:  ""</summary>
 		[ShouldSerialize("Country.ValCountry")]
-		[GeographicAttribute("GG")]
 		public string ValCountry { get { return klass.ValCountry; } set { klass.ValCountry = value; } }
 
 		[DisplayName("ZZSTATE")]

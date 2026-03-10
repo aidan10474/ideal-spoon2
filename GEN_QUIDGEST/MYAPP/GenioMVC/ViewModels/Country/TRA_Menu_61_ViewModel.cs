@@ -145,7 +145,7 @@ namespace GenioMVC.ViewModels.Country
 		{
 			return
 			[
-				new Exports.QColumn(CSGenioAcountry.FldCountry, FieldType.GEOGRAPHY_POINT, Resources.Resources.COUNTRY64133, 30, 0, true),
+				new Exports.QColumn(CSGenioAcountry.FldCountry, FieldType.TEXT, Resources.Resources.COUNTRY64133, 30, 0, true),
 			];
 		}
 
@@ -523,6 +523,7 @@ namespace GenioMVC.ViewModels.Country
 
 		private static readonly List<TableSearchColumn> _searchableColumns =
 		[
+			new TableSearchColumn("ValCountry", CSGenioAcountry.FldCountry, typeof(string)),
 		];
 	}
 }

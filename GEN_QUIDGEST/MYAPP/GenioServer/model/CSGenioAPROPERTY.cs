@@ -45,30 +45,30 @@ namespace CSGenio.business
 #pragma warning restore CS0168, S1481 // Variable is declared but never used
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "codproperty", FieldType.KEY_INT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Property";
 			Qfield.FieldSize =  8;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "PROPERTY43977";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "codagent", FieldType.KEY_INT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Agent";
 			Qfield.FieldSize =  8;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "AGENT00994";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "codcity", FieldType.KEY_INT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "City";
 			Qfield.FieldSize =  8;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "CITY42505";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
@@ -107,41 +107,41 @@ namespace CSGenio.business
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
-			Qfield = new Field(info.Alias, "size (m2)", FieldType.TEXT);
-			Qfield.FieldDescription = "";
+			Qfield = new Field(info.Alias, "size", FieldType.TEXT);
+			Qfield.FieldDescription = "Size";
 			Qfield.FieldSize =  50;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "SIZE10299";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
-			Qfield = new Field(info.Alias, "bathroomsnumber", FieldType.TEXT);
-			Qfield.FieldDescription = "";
+			Qfield = new Field(info.Alias, "bathroom_number", FieldType.TEXT);
+			Qfield.FieldDescription = "Bathrooms";
 			Qfield.FieldSize =  50;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "BATHROOMS54249";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
-			Qfield = new Field(info.Alias, "dateconstruction", FieldType.DATE);
-			Qfield.FieldDescription = "";
+			Qfield = new Field(info.Alias, "date_construction", FieldType.DATE);
+			Qfield.FieldDescription = "Date";
 			Qfield.FieldSize =  8;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "DATE18475";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "description", FieldType.TEXT);
-			Qfield.FieldDescription = "";
+			Qfield.FieldDescription = "Description";
 			Qfield.FieldSize =  50;
 			Qfield.MQueue = false;
-			Qfield.CavDesignation = "";
+			Qfield.CavDesignation = "DESCRIPTION07383";
 
 			Qfield.Dupmsg = "";
 			info.RegisterFieldDB(Qfield);
@@ -301,33 +301,33 @@ namespace CSGenio.business
 			return informacao;
 		}
 
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Property" Tipo: "+" Formula:  ""</summary>
 		public static FieldRef FldCodproperty { get { return m_fldCodproperty; } }
 		private static FieldRef m_fldCodproperty = new FieldRef("property", "codproperty");
 
-		/// <summary>Field : "" Tipo: "+" Formula:  ""</summary>
+		/// <summary>Field : "Property" Tipo: "+" Formula:  ""</summary>
 		public string ValCodproperty
 		{
 			get { return (string)returnValueField(FldCodproperty); }
 			set { insertNameValueField(FldCodproperty, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		/// <summary>Field : "Agent" Tipo: "CE" Formula:  ""</summary>
 		public static FieldRef FldCodagent { get { return m_fldCodagent; } }
 		private static FieldRef m_fldCodagent = new FieldRef("property", "codagent");
 
-		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		/// <summary>Field : "Agent" Tipo: "CE" Formula:  ""</summary>
 		public string ValCodagent
 		{
 			get { return (string)returnValueField(FldCodagent); }
 			set { insertNameValueField(FldCodagent, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		/// <summary>Field : "City" Tipo: "CE" Formula:  ""</summary>
 		public static FieldRef FldCodcity { get { return m_fldCodcity; } }
 		private static FieldRef m_fldCodcity = new FieldRef("property", "codcity");
 
-		/// <summary>Field : "" Tipo: "CE" Formula:  ""</summary>
+		/// <summary>Field : "City" Tipo: "CE" Formula:  ""</summary>
 		public string ValCodcity
 		{
 			get { return (string)returnValueField(FldCodcity); }
@@ -367,44 +367,44 @@ namespace CSGenio.business
 			set { insertNameValueField(FldPrice, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
-		public static FieldRef FldSize (m2) { get { return m_fldSize (m2); } }
-		private static FieldRef m_fldSize (m2) = new FieldRef("property", "size (m2)");
+		/// <summary>Field : "Size" Tipo: "C" Formula:  ""</summary>
+		public static FieldRef FldSize { get { return m_fldSize; } }
+		private static FieldRef m_fldSize = new FieldRef("property", "size");
 
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
-		public string ValSize (m2)
+		/// <summary>Field : "Size" Tipo: "C" Formula:  ""</summary>
+		public string ValSize
 		{
-			get { return (string)returnValueField(FldSize (m2)); }
-			set { insertNameValueField(FldSize (m2), value); }
+			get { return (string)returnValueField(FldSize); }
+			set { insertNameValueField(FldSize, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
-		public static FieldRef FldBathroomsnumber { get { return m_fldBathroomsnumber; } }
-		private static FieldRef m_fldBathroomsnumber = new FieldRef("property", "bathroomsnumber");
+		/// <summary>Field : "Bathrooms" Tipo: "C" Formula:  ""</summary>
+		public static FieldRef FldBathroom_number { get { return m_fldBathroom_number; } }
+		private static FieldRef m_fldBathroom_number = new FieldRef("property", "bathroom_number");
 
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
-		public string ValBathroomsnumber
+		/// <summary>Field : "Bathrooms" Tipo: "C" Formula:  ""</summary>
+		public string ValBathroom_number
 		{
-			get { return (string)returnValueField(FldBathroomsnumber); }
-			set { insertNameValueField(FldBathroomsnumber, value); }
+			get { return (string)returnValueField(FldBathroom_number); }
+			set { insertNameValueField(FldBathroom_number, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "D" Formula:  ""</summary>
-		public static FieldRef FldDateconstruction { get { return m_fldDateconstruction; } }
-		private static FieldRef m_fldDateconstruction = new FieldRef("property", "dateconstruction");
+		/// <summary>Field : "Date" Tipo: "D" Formula:  ""</summary>
+		public static FieldRef FldDate_construction { get { return m_fldDate_construction; } }
+		private static FieldRef m_fldDate_construction = new FieldRef("property", "date_construction");
 
-		/// <summary>Field : "" Tipo: "D" Formula:  ""</summary>
-		public DateTime ValDateconstruction
+		/// <summary>Field : "Date" Tipo: "D" Formula:  ""</summary>
+		public DateTime ValDate_construction
 		{
-			get { return (DateTime)returnValueField(FldDateconstruction); }
-			set { insertNameValueField(FldDateconstruction, value); }
+			get { return (DateTime)returnValueField(FldDate_construction); }
+			set { insertNameValueField(FldDate_construction, value); }
 		}
 
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		/// <summary>Field : "Description" Tipo: "C" Formula:  ""</summary>
 		public static FieldRef FldDescription { get { return m_fldDescription; } }
 		private static FieldRef m_fldDescription = new FieldRef("property", "description");
 
-		/// <summary>Field : "" Tipo: "C" Formula:  ""</summary>
+		/// <summary>Field : "Description" Tipo: "C" Formula:  ""</summary>
 		public string ValDescription
 		{
 			get { return (string)returnValueField(FldDescription); }

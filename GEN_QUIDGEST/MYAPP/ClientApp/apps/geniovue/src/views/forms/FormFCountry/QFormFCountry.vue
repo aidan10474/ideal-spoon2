@@ -461,17 +461,16 @@
 				},
 
 				controls: {
-					F_COUNTRY__COUNTRY__COUNTRY: new fieldControlClass.BaseControl({
+					F_COUNTRY__COUNTRY__COUNTRY: new fieldControlClass.StringControl({
 						modelField: 'ValCountry',
 						valueChangeEvent: 'fieldChange:country.country',
-						isGeographicShape: false,
-						isEuclideanCoord: false,
 						id: 'F_COUNTRY__COUNTRY__COUNTRY',
 						name: 'COUNTRY',
 						size: 'xxlarge',
 						label: computed(() => this.Resources.COUNTRY64133),
 						placeholder: '',
 						labelPosition: computed(() => this.labelAlignment.topleft),
+						maxLength: 50,
 						controlLimits: [
 						],
 					}, this),
