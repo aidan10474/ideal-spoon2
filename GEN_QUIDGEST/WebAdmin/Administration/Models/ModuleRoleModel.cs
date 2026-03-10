@@ -34,6 +34,18 @@ namespace Administration.Models
                 Module = "TRA"
             },
             new ModuleRoleModel() {
+                Role = "5",
+                Designation = "OFFICER20358",
+                Description = "",              
+                Module = "TRA"
+            },
+            new ModuleRoleModel() {
+                Role = "12",
+                Designation = "AGENT00994",
+                Description = "",              
+                Module = "TRA"
+            },
+            new ModuleRoleModel() {
                 Role = "99",
                 Designation = "ADMINISTRADOR57294",
                 Description = "",              

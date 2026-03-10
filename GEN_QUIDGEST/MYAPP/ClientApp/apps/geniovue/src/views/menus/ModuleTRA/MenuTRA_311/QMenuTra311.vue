@@ -15,7 +15,7 @@
 							:table-ctrl="controls.menu"
 							v-on="controls.menu.handlers" />
 					</template>
-					<!-- USE /[MANUAL TRA CUSTOM_TABLE TRA_Menu_21]/ -->
+					<!-- USE /[MANUAL TRA CUSTOM_TABLE TRA_Menu_311]/ -->
 				</q-table>
 			</q-row-container>
 		</form>
@@ -72,17 +72,17 @@
 	import qProjArrays from '@/api/genio/projectArrays.js'
 	/* eslint-enable @typescript-eslint/no-unused-vars */
 
-	import MenuViewModel from './QMenuTRA_21ViewModel.js'
+	import MenuViewModel from './QMenuTRA_311ViewModel.js'
 
-	const requiredTextResources = ['QMenuTRA_21', 'hardcoded', 'messages']
+	const requiredTextResources = ['QMenuTRA_311', 'hardcoded', 'messages']
 
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA FORM_INCLUDEJS TRA_MENU_21]/
+// USE /[MANUAL TRA FORM_INCLUDEJS TRA_MENU_311]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 
 	export default {
-		name: 'QMenuTra21',
+		name: 'QMenuTra311',
 
 		mixins: [
 			MenuHandlers
@@ -111,23 +111,23 @@
 			// eslint-disable-next-line
 			const vm = this
 			return {
-				componentOnLoadProc: asyncProcM.getProcListMonitor('QMenuTRA_21', false),
+				componentOnLoadProc: asyncProcM.getProcListMonitor('QMenuTRA_311', false),
 
 				interfaceMetadata: {
-					id: 'QMenuTRA_21', // Used for resources
+					id: 'QMenuTRA_311', // Used for resources
 					requiredTextResources
 				},
 
 				menuInfo: {
-					id: '21',
+					id: '311',
 					isMenuList: true,
-					designation: computed(() => this.Resources.PHOTO_ALBUMS41529),
-					acronym: 'TRA_21',
-					name: 'PHOTO_ALBUM',
-					route: 'menu-TRA_21',
-					order: '21',
-					controller: 'PHOTO_ALBUM',
-					action: 'TRA_Menu_21',
+					designation: computed(() => this.Resources.COUNTRIES03108),
+					acronym: 'TRA_311',
+					name: 'COUNTRY',
+					route: 'menu-TRA_311',
+					order: '311',
+					controller: 'COUNTRY',
+					action: 'TRA_Menu_311',
 					isPopup: false
 				},
 
@@ -136,9 +136,9 @@
 				controls: {
 					menu: new controlClass.TableListControl({
 						fnHydrateViewModel: (data) => vm.model.hydrate(data),
-						id: 'TRA_Menu_21',
-						controller: 'PHOTO_ALBUM',
-						action: 'TRA_Menu_21',
+						id: 'TRA_Menu_311',
+						controller: 'COUNTRY',
+						action: 'TRA_Menu_311',
 						hasDependencies: false,
 						isInCollapsible: false,
 						tableModeClasses: [
@@ -148,44 +148,24 @@
 						columnsOriginal: [
 							new listColumnTypes.TextColumn({
 								order: 1,
-								name: 'ValTitle',
-								area: 'PHOTO_ALBUM',
-								field: 'TITLE',
+								name: 'ValCountry',
+								area: 'COUNTRY',
+								field: 'COUNTRY',
+								label: computed(() => this.Resources.COUNTRY64133),
 								dataLength: 50,
 								scrollData: 30,
 								export: 1,
 							}, computed(() => vm.model), computed(() => vm.internalEvents)),
-							new listColumnTypes.TextColumn({
-								order: 2,
-								name: 'Property.ValTitle',
-								area: 'PROPERTY',
-								field: 'TITLE',
-								label: computed(() => this.Resources.TITLE21885),
-								dataLength: 80,
-								scrollData: 30,
-								export: 1,
-								pkColumn: 'ValCodproperty',
-							}, computed(() => vm.model), computed(() => vm.internalEvents)),
-							new listColumnTypes.ImageColumn({
-								order: 3,
-								name: 'ValPhoto',
-								area: 'PHOTO_ALBUM',
-								field: 'PHOTO',
-								scrollData: 3,
-								sortable: false,
-								searchable: false,
-								export: 1,
-							}, computed(() => vm.model), computed(() => vm.internalEvents)),
 						],
 						config: {
-							name: 'TRA_Menu_21',
+							name: 'TRA_Menu_311',
 							serverMode: true,
-							pkColumn: 'ValCodphoto_album',
-							tableAlias: 'PHOTO_ALBUM',
-							tableNamePlural: computed(() => this.Resources.PHOTO_ALBUMS41529),
+							pkColumn: 'ValCodcountry',
+							tableAlias: 'COUNTRY',
+							tableNamePlural: computed(() => this.Resources.COUNTRIES03108),
 							viewManagement: '',
 							showLimitsInfo: true,
-							tableTitle: computed(() => this.Resources.PHOTO_ALBUMS41529),
+							tableTitle: computed(() => this.Resources.COUNTRIES03108),
 							showAlternatePagination: true,
 							permissions: {
 							},
@@ -206,7 +186,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_PHOTO_ALBUM',
+										formName: 'F_COUNTRY',
 										mode: 'SHOW',
 										isControlled: true
 									}
@@ -222,7 +202,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_PHOTO_ALBUM',
+										formName: 'F_COUNTRY',
 										mode: 'EDIT',
 										isControlled: true
 									}
@@ -238,7 +218,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_PHOTO_ALBUM',
+										formName: 'F_COUNTRY',
 										mode: 'DUPLICATE',
 										isControlled: true
 									}
@@ -254,7 +234,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_PHOTO_ALBUM',
+										formName: 'F_COUNTRY',
 										mode: 'DELETE',
 										isControlled: true
 									}
@@ -272,7 +252,7 @@
 									params: {
 										action: vm.openFormAction,
 										type: 'form',
-										formName: 'F_PHOTO_ALBUM',
+										formName: 'F_COUNTRY',
 										mode: 'NEW',
 										repeatInsertion: false,
 										isControlled: true
@@ -288,40 +268,36 @@
 							MCActions: [
 							],
 							rowClickAction: {
-								id: 'RCA_TRA_211',
-								name: 'form-PHOTO_ALBUM',
+								id: 'RCA_TRA_3111',
+								name: 'form-F_COUNTRY',
 								isVisible: true,
 								params: {
 									isRoute: true,
 									limits: [
 										{
 											identifier: 'id',
-											fnValueSelector: (row) => row.ValCodphoto_album
+											fnValueSelector: (row) => row.ValCodcountry
 										},
 									],
 									isControlled: true,
-									action: vm.openFormAction, type: 'form', mode: 'SHOW', formName: 'PHOTO_ALBUM'
+									action: vm.openFormAction, type: 'form', mode: 'SHOW', formName: 'F_COUNTRY'
 								}
 							},
 							formsDefinition: {
-								'F_PHOTO_ALBUM': {
-									fnKeySelector: (row) => row.Fields.ValCodphoto_album,
-									isPopup: false
-								},
-								'PHOTO_ALBUM': {
-									fnKeySelector: (row) => row.Fields.ValCodphoto_album,
+								'F_COUNTRY': {
+									fnKeySelector: (row) => row.Fields.ValCodcountry,
 									isPopup: false
 								},
 							},
-							defaultSearchColumnName: 'ValTitle',
-							defaultSearchColumnNameOriginal: 'ValTitle',
+							defaultSearchColumnName: '',
+							defaultSearchColumnNameOriginal: '',
 							defaultColumnSorting: {
-								columnName: 'ValTitle',
+								columnName: 'ValCountry',
 								sortOrder: 'asc'
 							}
 						},
-						globalEvents: ['changed-PROPERTY', 'changed-PHOTO_ALBUM'],
-						uuid: '0c1bb75c-e6e8-41a8-ac02-1a8645340115',
+						globalEvents: ['changed-COUNTRY'],
+						uuid: 'bf298ec9-38c3-4465-8730-b6c914e42e33',
 						allSelectedRows: 'false',
 						headerLevel: 1,
 						isActiveControl: computed(() => this.isActiveMenu)
@@ -347,7 +323,7 @@
 		mounted()
 		{
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA FORM_CODEJS TRA_MENU_21]/
+// USE /[MANUAL TRA FORM_CODEJS TRA_MENU_311]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 		},
@@ -355,18 +331,18 @@
 		beforeUnmount()
 		{
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA COMPONENT_BEFORE_UNMOUNT TRA_MENU_21]/
+// USE /[MANUAL TRA COMPONENT_BEFORE_UNMOUNT TRA_MENU_311]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 		},
 
 		methods: {
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA FUNCTIONS_JS TRA_21]/
+// USE /[MANUAL TRA FUNCTIONS_JS TRA_311]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 /* eslint-disable indent, vue/html-indent, vue/script-indent */
-// USE /[MANUAL TRA LISTING_CODEJS TRA_MENU_21]/
+// USE /[MANUAL TRA LISTING_CODEJS TRA_MENU_311]/
 // eslint-disable-next-line
 /* eslint-enable indent, vue/html-indent, vue/script-indent */
 		}

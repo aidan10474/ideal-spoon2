@@ -261,6 +261,9 @@
   <msg id="Individual" code="INDIVIDUAL42893">
     <ENUS>Individual</ENUS>
   </msg>
+  <msg id="Officer" code="OFFICER20358">
+    <ENUS>Officer</ENUS>
+  </msg>
   <msg id="brokers information" code="BROKERS_INFORMATION64793">
     <ENUS>brokers information</ENUS>
   </msg>
