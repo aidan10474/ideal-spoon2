@@ -47,6 +47,22 @@ export default function getMenusRoutes()
 			}
 		},
 		{
+			path: '/:culture/:system/TRA/menu/TRA_711',
+			name: 'menu-TRA_711',
+			component: () => import('@/views/menus/ModuleTRA/MenuTRA_711/QMenuTra711.vue'),
+			beforeEnter: [updateQueryParams],
+			meta: {
+				routeType: 'menu',
+				module: 'TRA',
+				order: '711',
+				baseArea: 'PROPERTY',
+				hasInitialPHE: false,
+				humanKeyFields: ['ValTitle', 'ValPrice'],
+				limitations: ['broker' /* DB */],
+				isPopup: false
+			}
+		},
+		{
 			path: '/:culture/:system/TRA/menu/TRA_51',
 			name: 'menu-TRA_51',
 			component: () => import('@/views/menus/ModuleTRA/MenuTRA_51/QMenuTra51.vue'),
@@ -82,6 +98,20 @@ export default function getMenusRoutes()
 				routeType: 'menu',
 				module: 'TRA',
 				order: '11',
+				baseArea: 'BROKER',
+				hasInitialPHE: false,
+				humanKeyFields: ['ValName'],
+				isPopup: false
+			}
+		},
+		{
+			path: '/:culture/:system/TRA/menu/TRA_71',
+			name: 'menu-TRA_71',
+			component: () => import('@/views/menus/ModuleTRA/MenuTRA_71/QMenuTra71.vue'),
+			meta: {
+				routeType: 'menu',
+				module: 'TRA',
+				order: '71',
 				baseArea: 'BROKER',
 				hasInitialPHE: false,
 				humanKeyFields: ['ValName'],

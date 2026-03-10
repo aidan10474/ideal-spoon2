@@ -333,6 +333,9 @@
   <msg id="Bcc" code="BCC22049">
     <ENUS>Bcc</ENUS>
   </msg>
+  <msg id="Properties by Agent" code="PROPERTIES_BY_AGENT22840">
+    <ENUS>Properties by Agent</ENUS>
+  </msg>
   <msg id="Subject" code="SUBJECT33942">
     <ENUS>Subject</ENUS>
   </msg>

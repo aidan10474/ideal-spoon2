@@ -1062,6 +1062,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Properties by Agent"
+		/// </summary>
+		public static string PROPERTIES_BY_AGENT22840 {
+			get {
+				return ResourceManager.GetString("PROPERTIES_BY_AGENT22840", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Subject"
 		/// </summary>
 		public static string SUBJECT33942 {

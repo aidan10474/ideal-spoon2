@@ -450,6 +450,9 @@
 	<data name="BCC22049" xml:space="preserve">
 		<value>Bcc</value>
 	</data>
+	<data name="PROPERTIES_BY_AGENT22840" xml:space="preserve">
+		<value>Properties by Agent</value>
+	</data>
 	<data name="SUBJECT33942" xml:space="preserve">
 		<value>Subject</value>
 	</data>
