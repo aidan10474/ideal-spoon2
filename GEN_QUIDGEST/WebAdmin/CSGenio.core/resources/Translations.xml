@@ -348,6 +348,9 @@
   <msg id="Administrador" code="ADMINISTRADOR57294">
     <ENUS>Administrador</ENUS>
   </msg>
+  <msg id="New Group" code="NEW_GROUP63448">
+    <ENUS>New Group</ENUS>
+  </msg>
   <msg id="Broker" code="BROKER49181">
     <ENUS>Broker</ENUS>
   </msg>

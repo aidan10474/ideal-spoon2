@@ -465,6 +465,9 @@
 	<data name="ADMINISTRADOR57294" xml:space="preserve">
 		<value>Administrador</value>
 	</data>
+	<data name="NEW_GROUP63448" xml:space="preserve">
+		<value>New Group</value>
+	</data>
 	<data name="BROKER49181" xml:space="preserve">
 		<value>Broker</value>
 	</data>

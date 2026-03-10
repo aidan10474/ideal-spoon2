@@ -33,6 +33,11 @@ public class F_propertyForm : Form
 	public BaseInputControl PropertyDescription => new BaseInputControl(driver, ContainerLocator, "container-F_PROPERTY__PROPERTY__DESCRIPTION", "#F_PROPERTY__PROPERTY__DESCRIPTION");
 
 	/// <summary>
+	/// New Group
+	/// </summary>
+	public IWebElement PseudNewgrp05 => throw new NotImplementedException();
+
+	/// <summary>
 	/// brokers information
 	/// </summary>
 	public CollapsibleZoneControl PseudNewgrp04 => new CollapsibleZoneControl(driver, ContainerLocator, "#F_PROPERTY__PSEUD__NEWGRP04-container");
