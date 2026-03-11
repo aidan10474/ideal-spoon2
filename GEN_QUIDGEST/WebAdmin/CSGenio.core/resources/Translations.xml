@@ -48,6 +48,9 @@
   <msg id="Phone number" code="PHONE_NUMBER20774">
     <ENUS>Phone number</ENUS>
   </msg>
+  <msg id="All" code="ALL38603">
+    <ENUS>All</ENUS>
+  </msg>
   <msg id="Broker.name" code="BROKER_NAME24456">
     <ENUS>Broker.name</ENUS>
   </msg>

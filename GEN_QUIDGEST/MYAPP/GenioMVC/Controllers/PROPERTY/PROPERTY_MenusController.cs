@@ -42,6 +42,8 @@ namespace GenioMVC.Controllers
 
 			TRA_Menu_21_ViewModel model = new(m_userContext);
 
+			CSGenio.core.framework.table.legacy.v1.TableConfigurationUpdate.SetFilterShiftValue(model.Uuid, "filter_TRA_Menu_21_BUILDINGTY", 0);
+
 			CSGenio.core.framework.table.TableConfiguration tableConfig = model.GetTableConfig(
 				requestModel.TableConfiguration,
 				requestModel.UserTableConfigName,
