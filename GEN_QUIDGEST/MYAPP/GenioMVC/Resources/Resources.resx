@@ -195,6 +195,9 @@
 	<data name="CREATED_BY12292" xml:space="preserve">
 		<value>Created by</value>
 	</data>
+	<data name="FLOOR_NUMBER26169" xml:space="preserve">
+		<value>Floor number</value>
+	</data>
 	<data name="REQUEST_DATE25771" xml:space="preserve">
 		<value>Request date</value>
 	</data>
@@ -245,6 +248,9 @@
 	</data>
 	<data name="PHOTO_ALBUM45574" xml:space="preserve">
 		<value>Photo Album</value>
+	</data>
+	<data name="GROUND_SIZE01563" xml:space="preserve">
+		<value>Ground size</value>
 	</data>
 	<data name="DESAUTORIZADO34584" xml:space="preserve">
 		<value>Desautorizado</value>

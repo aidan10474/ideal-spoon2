@@ -78,6 +78,9 @@
   <msg id="Created by" code="CREATED_BY12292">
     <ENUS>Created by</ENUS>
   </msg>
+  <msg id="Floor number" code="FLOOR_NUMBER26169">
+    <ENUS>Floor number</ENUS>
+  </msg>
   <msg id="Request date" code="REQUEST_DATE25771">
     <ENUS>Request date</ENUS>
   </msg>
@@ -128,6 +131,9 @@
   </msg>
   <msg id="Photo Album" code="PHOTO_ALBUM45574">
     <ENUS>Photo Album</ENUS>
+  </msg>
+  <msg id="Ground size" code="GROUND_SIZE01563">
+    <ENUS>Ground size</ENUS>
   </msg>
   <msg id="Desautorizado" code="DESAUTORIZADO34584">
     <ENUS>Desautorizado</ENUS>

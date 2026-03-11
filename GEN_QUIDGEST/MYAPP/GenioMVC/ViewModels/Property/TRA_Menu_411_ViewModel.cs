@@ -202,6 +202,8 @@ namespace GenioMVC.ViewModels.Property
 				new Exports.QColumn(CSGenioAproperty.FldBuildingtype, FieldType.ARRAY_TEXT, Resources.Resources.BUILDING_TYPE57152, 1, 0, true, "buildingtype"),
 				new Exports.QColumn(CSGenioAproperty.FldTypology, FieldType.ARRAY_NUMERIC, Resources.Resources.TYPOLOGY11991, 1, 0, true, "Typology"),
 				new Exports.QColumn(CSGenioAproperty.FldId, FieldType.NUMERIC, Resources.Resources.ID48520, 10, 0, true),
+				new Exports.QColumn(CSGenioAproperty.FldGroundsize, FieldType.NUMERIC, Resources.Resources.GROUND_SIZE01563, 6, 0, true),
+				new Exports.QColumn(CSGenioAproperty.FldFloornumber, FieldType.NUMERIC, Resources.Resources.FLOOR_NUMBER26169, 3, 0, true),
 				new Exports.QColumn(CSGenioAbroker.FldName, FieldType.TEXT, Resources.Resources.NAME31974, 30, 0, true),
 			};
 		}

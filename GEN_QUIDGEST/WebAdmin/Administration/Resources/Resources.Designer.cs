@@ -295,6 +295,15 @@ namespace Administration.Resources {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "Floor number"
+        /// </summary>
+        public static string FLOOR_NUMBER26169 {
+            get {
+                return ResourceManager.GetString("FLOOR_NUMBER26169", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "Request date"
         /// </summary>
         public static string REQUEST_DATE25771 {
@@ -444,6 +453,15 @@ namespace Administration.Resources {
         public static string PHOTO_ALBUM45574 {
             get {
                 return ResourceManager.GetString("PHOTO_ALBUM45574", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "Ground size"
+        /// </summary>
+        public static string GROUND_SIZE01563 {
+            get {
+                return ResourceManager.GetString("GROUND_SIZE01563", resourceCulture);
             }
         }
 
