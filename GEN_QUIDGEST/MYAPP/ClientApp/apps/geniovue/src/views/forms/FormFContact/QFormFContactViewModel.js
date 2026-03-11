@@ -127,8 +127,8 @@ export default class ViewModel extends FormViewModelBase
 				// eslint-disable-next-line @typescript-eslint/no-unused-vars
 				fnFormula(params)
 				{
-					// Formula: isEmptyC([CONTACT->PHONE_CONTACT])
-					return (this.ValPhone_contact.value === '')
+					// Formula: isEmptyN([CONTACT->PHONE_CONTACT])
+					return (this.ValPhone_contact.value === 0.0)
 				},
 				dependencyEvents: ['fieldChange:contact.phone_contact'],
 				isServerRecalc: false,
