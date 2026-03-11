@@ -153,6 +153,13 @@ namespace GenioMVC.Models
 		[ShouldSerialize("Property.ValSold")]
 		public bool ValSold { get { return Convert.ToBoolean(klass.ValSold); } set { klass.ValSold = Convert.ToInt32(value); } }
 
+		[DisplayName("Sold date")]
+		/// <summary>Field : "Sold date" Tipo: "D" Formula:  ""</summary>
+		[ShouldSerialize("Property.ValSolddate")]
+		[DataType(DataType.Date)]
+		[DateAttribute("D")]
+		public DateTime? ValSolddate { get { return klass.ValSolddate; } set { klass.ValSolddate = value ?? DateTime.MinValue; } }
+
 		[DisplayName("ZZSTATE")]
 		[ShouldSerialize("Property.ValZzstate")]
 		/// <summary>Field: "ZZSTATE", Type: "INT", Formula: ""</summary>

@@ -129,6 +129,21 @@ public class F_propertyForm : Form
 	/// </summary>
 	public ListControl PseudContact_grid => new ListControl(driver, ContainerLocator, "#F_PROPERTY__PSEUD__CONTACT_GRID");
 
+	/// <summary>
+	/// Ground size
+	/// </summary>
+	public BaseInputControl PropertyGroundsize => new BaseInputControl(driver, ContainerLocator, "container-F_PROPERTY__PROPERTY__GROUNDSIZE", "#F_PROPERTY__PROPERTY__GROUNDSIZE");
+
+	/// <summary>
+	/// Floor number
+	/// </summary>
+	public BaseInputControl PropertyFloornumber => new BaseInputControl(driver, ContainerLocator, "container-F_PROPERTY__PROPERTY__FLOORNUMBER", "#F_PROPERTY__PROPERTY__FLOORNUMBER");
+
+	/// <summary>
+	/// Sold date
+	/// </summary>
+	public DateInputControl PropertySolddate => new DateInputControl(driver, ContainerLocator, "#F_PROPERTY__PROPERTY__SOLDDATE");
+
 	public F_propertyForm(IWebDriver driver, FORM_MODE mode, By? containerLocator = null)
 		: base(driver, mode, "F_PROPERTY", containerLocator: containerLocator) { }
 }

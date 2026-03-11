@@ -509,6 +509,61 @@
 						</q-table>
 					</q-col>
 				</q-row>
+				<q-row v-if="controls.F_PROPERTY__PROPERTY__GROUNDSIZE.isVisible || controls.F_PROPERTY__PROPERTY__FLOORNUMBER.isVisible || controls.F_PROPERTY__PROPERTY__SOLDDATE.isVisible">
+					<q-col
+						v-if="controls.F_PROPERTY__PROPERTY__GROUNDSIZE.isVisible"
+						cols="auto">
+						<base-input-structure
+							v-if="controls.F_PROPERTY__PROPERTY__GROUNDSIZE.isVisible"
+							class="i-text"
+							v-bind="controls.F_PROPERTY__PROPERTY__GROUNDSIZE"
+							v-on="controls.F_PROPERTY__PROPERTY__GROUNDSIZE.handlers"
+							:loading="controls.F_PROPERTY__PROPERTY__GROUNDSIZE.props.loading"
+							:reporting-mode-on="reportingModeCAV"
+							:suggestion-mode-on="suggestionModeOn">
+							<q-numeric-input
+								v-if="controls.F_PROPERTY__PROPERTY__GROUNDSIZE.isVisible"
+								v-bind="controls.F_PROPERTY__PROPERTY__GROUNDSIZE.props"
+								@update:model-value="model.ValGroundsize.fnUpdateValue" />
+						</base-input-structure>
+					</q-col>
+					<q-col
+						v-if="controls.F_PROPERTY__PROPERTY__FLOORNUMBER.isVisible"
+						cols="auto">
+						<base-input-structure
+							v-if="controls.F_PROPERTY__PROPERTY__FLOORNUMBER.isVisible"
+							class="i-text"
+							v-bind="controls.F_PROPERTY__PROPERTY__FLOORNUMBER"
+							v-on="controls.F_PROPERTY__PROPERTY__FLOORNUMBER.handlers"
+							:loading="controls.F_PROPERTY__PROPERTY__FLOORNUMBER.props.loading"
+							:reporting-mode-on="reportingModeCAV"
+							:suggestion-mode-on="suggestionModeOn">
+							<q-numeric-input
+								v-if="controls.F_PROPERTY__PROPERTY__FLOORNUMBER.isVisible"
+								v-bind="controls.F_PROPERTY__PROPERTY__FLOORNUMBER.props"
+								@update:model-value="model.ValFloornumber.fnUpdateValue" />
+						</base-input-structure>
+					</q-col>
+					<q-col
+						v-if="controls.F_PROPERTY__PROPERTY__SOLDDATE.isVisible"
+						cols="auto">
+						<base-input-structure
+							v-if="controls.F_PROPERTY__PROPERTY__SOLDDATE.isVisible"
+							class="i-text"
+							v-bind="controls.F_PROPERTY__PROPERTY__SOLDDATE"
+							v-on="controls.F_PROPERTY__PROPERTY__SOLDDATE.handlers"
+							:loading="controls.F_PROPERTY__PROPERTY__SOLDDATE.props.loading"
+							:reporting-mode-on="reportingModeCAV"
+							:suggestion-mode-on="suggestionModeOn">
+							<q-date-time-picker
+								v-if="controls.F_PROPERTY__PROPERTY__SOLDDATE.isVisible"
+								v-bind="controls.F_PROPERTY__PROPERTY__SOLDDATE.props"
+								:model-value="model.ValSolddate.value"
+								@reset-icon-click="model.ValSolddate.fnUpdateValue(model.ValSolddate.originalValue ?? new Date())"
+								@update:model-value="model.ValSolddate.fnUpdateValue($event ?? '')" />
+						</base-input-structure>
+					</q-col>
+				</q-row>
 			</template>
 		</q-container>
 	</teleport>
@@ -1600,6 +1655,47 @@
 							},
 						],
 					}, this),
+					F_PROPERTY__PROPERTY__GROUNDSIZE: new fieldControlClass.NumberControl({
+						modelField: 'ValGroundsize',
+						valueChangeEvent: 'fieldChange:property.groundsize',
+						id: 'F_PROPERTY__PROPERTY__GROUNDSIZE',
+						name: 'GROUNDSIZE',
+						size: 'small',
+						label: computed(() => this.Resources.GROUND_SIZE01563),
+						placeholder: '',
+						labelPosition: computed(() => this.labelAlignment.topleft),
+						maxIntegers: 6,
+						maxDecimals: 0,
+						controlLimits: [
+						],
+					}, this),
+					F_PROPERTY__PROPERTY__FLOORNUMBER: new fieldControlClass.NumberControl({
+						modelField: 'ValFloornumber',
+						valueChangeEvent: 'fieldChange:property.floornumber',
+						id: 'F_PROPERTY__PROPERTY__FLOORNUMBER',
+						name: 'FLOORNUMBER',
+						size: 'medium',
+						label: computed(() => this.Resources.FLOOR_NUMBER26169),
+						placeholder: '',
+						labelPosition: computed(() => this.labelAlignment.topleft),
+						maxIntegers: 3,
+						maxDecimals: 0,
+						controlLimits: [
+						],
+					}, this),
+					F_PROPERTY__PROPERTY__SOLDDATE: new fieldControlClass.DateControl({
+						modelField: 'ValSolddate',
+						valueChangeEvent: 'fieldChange:property.solddate',
+						id: 'F_PROPERTY__PROPERTY__SOLDDATE',
+						name: 'SOLDDATE',
+						size: 'small',
+						label: computed(() => this.Resources.SOLD_DATE37976),
+						placeholder: '',
+						labelPosition: computed(() => this.labelAlignment.topleft),
+						dateTimeType: 'date',
+						controlLimits: [
+						],
+					}, this),
 				},
 
 				model: new FormViewModel(this, {
@@ -1660,6 +1756,10 @@
 						set ValDate_construction(value) { vm.model.ValDate_construction.updateValue(value) },
 						get ValDescription() { return vm.model.ValDescription.value },
 						set ValDescription(value) { vm.model.ValDescription.updateValue(value) },
+						get ValFloornumber() { return vm.model.ValFloornumber.value },
+						set ValFloornumber(value) { vm.model.ValFloornumber.updateValue(value) },
+						get ValGroundsize() { return vm.model.ValGroundsize.value },
+						set ValGroundsize(value) { vm.model.ValGroundsize.updateValue(value) },
 						get ValId() { return vm.model.ValId.value },
 						set ValId(value) { vm.model.ValId.updateValue(value) },
 						get ValMain_photo() { return vm.model.ValMain_photo.value },
@@ -1670,6 +1770,8 @@
 						set ValSize(value) { vm.model.ValSize.updateValue(value) },
 						get ValSold() { return vm.model.ValSold.value },
 						set ValSold(value) { vm.model.ValSold.updateValue(value) },
+						get ValSolddate() { return vm.model.ValSolddate.value },
+						set ValSolddate(value) { vm.model.ValSolddate.updateValue(value) },
 						get ValTitle() { return vm.model.ValTitle.value },
 						set ValTitle(value) { vm.model.ValTitle.updateValue(value) },
 						get ValTypology() { return vm.model.ValTypology.value },

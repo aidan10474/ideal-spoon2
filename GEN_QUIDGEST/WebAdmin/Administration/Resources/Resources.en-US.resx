@@ -411,6 +411,9 @@
   <data name="BROKERS_INFORMATION64793" xml:space="preserve">
     <value>brokers information</value>
   </data>
+  <data name="SOLD_DATE37976" xml:space="preserve">
+    <value>Sold date</value>
+  </data>
   <data name="NOTIFICATION_ID25507" xml:space="preserve">
     <value>Notification ID</value>
   </data>
@@ -506,6 +509,9 @@
   </data>
   <data name="CANCELADO05982" xml:space="preserve">
     <value>Cancelado</value>
+  </data>
+  <data name="LAST_SOLD12635" xml:space="preserve">
+    <value>Last sold</value>
   </data>
   <data name="NO_BEDROOMS23406" xml:space="preserve">
     <value>No bedrooms</value>

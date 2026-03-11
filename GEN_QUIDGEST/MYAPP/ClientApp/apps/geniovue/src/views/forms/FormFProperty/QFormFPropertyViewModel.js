@@ -266,6 +266,70 @@ export default class ViewModel extends FormViewModelBase
 			description: computed(() => this.Resources.SIZE10299),
 		}).cloneFrom(values?.ValSize))
 		this.stopWatchers.push(watch(() => this.ValSize.value, (newValue, oldValue) => this.onUpdate('property.size', this.ValSize, newValue, oldValue)))
+
+		this.ValGroundsize = reactive(new modelFieldType.Number({
+			id: 'ValGroundsize',
+			originId: 'ValGroundsize',
+			area: 'PROPERTY',
+			field: 'GROUNDSIZE',
+			maxDigits: 6,
+			decimalDigits: 0,
+			showWhen: {
+				// eslint-disable-next-line @typescript-eslint/no-unused-vars
+				fnFormula(params)
+				{
+					// Formula: [PROPERTY->BUILDINGTYPE]=="H"
+					return this.ValBuildingtype.value==="H"
+				},
+				dependencyEvents: ['fieldChange:property.buildingtype'],
+				isServerRecalc: false,
+				isEmpty: qApi.emptyN,
+			},
+			description: computed(() => this.Resources.GROUND_SIZE01563),
+		}).cloneFrom(values?.ValGroundsize))
+		this.stopWatchers.push(watch(() => this.ValGroundsize.value, (newValue, oldValue) => this.onUpdate('property.groundsize', this.ValGroundsize, newValue, oldValue)))
+
+		this.ValFloornumber = reactive(new modelFieldType.Number({
+			id: 'ValFloornumber',
+			originId: 'ValFloornumber',
+			area: 'PROPERTY',
+			field: 'FLOORNUMBER',
+			maxDigits: 3,
+			decimalDigits: 0,
+			showWhen: {
+				// eslint-disable-next-line @typescript-eslint/no-unused-vars
+				fnFormula(params)
+				{
+					// Formula: [PROPERTY->BUILDINGTYPE]=="A"
+					return this.ValBuildingtype.value==="A"
+				},
+				dependencyEvents: ['fieldChange:property.buildingtype'],
+				isServerRecalc: false,
+				isEmpty: qApi.emptyN,
+			},
+			description: computed(() => this.Resources.FLOOR_NUMBER26169),
+		}).cloneFrom(values?.ValFloornumber))
+		this.stopWatchers.push(watch(() => this.ValFloornumber.value, (newValue, oldValue) => this.onUpdate('property.floornumber', this.ValFloornumber, newValue, oldValue)))
+
+		this.ValSolddate = reactive(new modelFieldType.Date({
+			id: 'ValSolddate',
+			originId: 'ValSolddate',
+			area: 'PROPERTY',
+			field: 'SOLDDATE',
+			showWhen: {
+				// eslint-disable-next-line @typescript-eslint/no-unused-vars
+				fnFormula(params)
+				{
+					// Formula: [PROPERTY->SOLD]== 1
+					return (this.ValSold.value ? 1 : 0)===1
+				},
+				dependencyEvents: ['fieldChange:property.sold'],
+				isServerRecalc: false,
+				isEmpty: qApi.emptyD,
+			},
+			description: computed(() => this.Resources.SOLD_DATE37976),
+		}).cloneFrom(values?.ValSolddate))
+		this.stopWatchers.push(watch(() => this.ValSolddate.value, (newValue, oldValue) => this.onUpdate('property.solddate', this.ValSolddate, newValue, oldValue)))
 	}
 
 	/**

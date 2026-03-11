@@ -945,6 +945,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Sold date"
+		/// </summary>
+		public static string SOLD_DATE37976 {
+			get {
+				return ResourceManager.GetString("SOLD_DATE37976", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Notification ID"
 		/// </summary>
 		public static string NOTIFICATION_ID25507 {
@@ -1229,6 +1238,15 @@ namespace GenioMVC.Resources
 		public static string CANCELADO05982 {
 			get {
 				return ResourceManager.GetString("CANCELADO05982", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to "Last sold"
+		/// </summary>
+		public static string LAST_SOLD12635 {
+			get {
+				return ResourceManager.GetString("LAST_SOLD12635", resourceCulture);
 			}
 		}
 

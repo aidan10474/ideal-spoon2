@@ -205,6 +205,7 @@ namespace GenioMVC.ViewModels.Property
 				new Exports.QColumn(CSGenioAproperty.FldGroundsize, FieldType.NUMERIC, Resources.Resources.GROUND_SIZE01563, 6, 0, true),
 				new Exports.QColumn(CSGenioAproperty.FldFloornumber, FieldType.NUMERIC, Resources.Resources.FLOOR_NUMBER26169, 3, 0, true),
 				new Exports.QColumn(CSGenioAproperty.FldSold, FieldType.LOGIC, Resources.Resources.SOLD59824, 1, 0, true),
+				new Exports.QColumn(CSGenioAproperty.FldSolddate, FieldType.DATE, Resources.Resources.SOLD_DATE37976, 8, 0, true),
 				new Exports.QColumn(CSGenioAbroker.FldName, FieldType.TEXT, Resources.Resources.NAME31974, 30, 0, true),
 			};
 		}

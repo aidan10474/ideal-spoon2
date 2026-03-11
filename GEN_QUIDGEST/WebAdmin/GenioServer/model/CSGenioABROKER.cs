@@ -137,6 +137,16 @@ namespace CSGenio.business
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
+			Qfield = new Field(info.Alias, "lastsold", FieldType.DATE);
+			Qfield.FieldDescription = "Last sold";
+			Qfield.FieldSize =  8;
+			Qfield.MQueue = false;
+			Qfield.CavDesignation = "LAST_SOLD12635";
+
+			Qfield.Dupmsg = "";
+			info.RegisterFieldDB(Qfield);
+
+			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "zzstate", FieldType.INTEGER);
 			Qfield.FieldDescription = "Estado da ficha";
 			info.RegisterFieldDB(Qfield);
@@ -188,6 +198,9 @@ namespace CSGenio.business
 			};
 
 
+			info.LastValueFields = new string[] {
+			 "lastsold"
+			};
 
 
 
@@ -381,6 +394,17 @@ namespace CSGenio.business
 			set { insertNameValueField(FldSalesprofit, value); }
 		}
 
+		/// <summary>Field : "Last sold" Tipo: "D" Formula: U1 "PROPERTY[PROPERTY->SOLDDATE][PROPERTY->PRICE]"</summary>
+		public static FieldRef FldLastsold { get { return m_fldLastsold; } }
+		private static FieldRef m_fldLastsold = new FieldRef("broker", "lastsold");
+
+		/// <summary>Field : "Last sold" Tipo: "D" Formula: U1 "PROPERTY[PROPERTY->SOLDDATE][PROPERTY->PRICE]"</summary>
+		public DateTime ValLastsold
+		{
+			get { return (DateTime)returnValueField(FldLastsold); }
+			set { insertNameValueField(FldLastsold, value); }
+		}
+
 		/// <summary>Field : "ZZSTATE" Type: "INT" Formula:  ""</summary>
 		public static FieldRef FldZzstate { get { return m_fldZzstate; } }
 		private static FieldRef m_fldZzstate = new FieldRef("broker", "zzstate");
@@ -478,7 +502,7 @@ namespace CSGenio.business
 		// USE /[MANUAL TRA TABAUX BROKER]/
 
  
-         
+          
 
 	}
 }

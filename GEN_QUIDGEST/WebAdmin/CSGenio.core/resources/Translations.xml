@@ -294,6 +294,9 @@
   <msg id="brokers information" code="BROKERS_INFORMATION64793">
     <ENUS>brokers information</ENUS>
   </msg>
+  <msg id="Sold date" code="SOLD_DATE37976">
+    <ENUS>Sold date</ENUS>
+  </msg>
   <msg id="Notification ID" code="NOTIFICATION_ID25507">
     <ENUS>Notification ID</ENUS>
   </msg>
@@ -389,6 +392,9 @@
   </msg>
   <msg id="Cancelado" code="CANCELADO05982">
     <ENUS>Cancelado</ENUS>
+  </msg>
+  <msg id="Last sold" code="LAST_SOLD12635">
+    <ENUS>Last sold</ENUS>
   </msg>
   <msg id="No bedrooms" code="NO_BEDROOMS23406">
     <ENUS>No bedrooms</ENUS>
