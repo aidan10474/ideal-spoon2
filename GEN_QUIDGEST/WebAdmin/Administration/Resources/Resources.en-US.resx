@@ -264,6 +264,9 @@
   <data name="BROKERS_INFORMATION25954" xml:space="preserve">
     <value>BROKERS INFORMATION</value>
   </data>
+  <data name="YOU_CANNOT_SAVE_A_PR17647" xml:space="preserve">
+    <value>You cannot save a property without a price</value>
+  </data>
   <data name="VALUE10285" xml:space="preserve">
     <value>Value</value>
   </data>

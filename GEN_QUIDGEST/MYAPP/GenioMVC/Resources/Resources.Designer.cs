@@ -504,6 +504,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "You cannot save a property without a price"
+		/// </summary>
+		public static string YOU_CANNOT_SAVE_A_PR17647 {
+			get {
+				return ResourceManager.GetString("YOU_CANNOT_SAVE_A_PR17647", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Value"
 		/// </summary>
 		public static string VALUE10285 {

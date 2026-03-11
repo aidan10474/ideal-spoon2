@@ -147,6 +147,9 @@
   <msg id="BROKERS INFORMATION" code="BROKERS_INFORMATION25954">
     <ENUS>BROKERS INFORMATION</ENUS>
   </msg>
+  <msg id="You cannot save a property without a price" code="YOU_CANNOT_SAVE_A_PR17647">
+    <ENUS>You cannot save a property without a price</ENUS>
+  </msg>
   <msg id="Value" code="VALUE10285">
     <ENUS>Value</ENUS>
   </msg>

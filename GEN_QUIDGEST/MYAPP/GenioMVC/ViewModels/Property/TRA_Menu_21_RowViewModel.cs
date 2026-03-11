@@ -121,6 +121,8 @@ public class TRA_Menu_21_RowViewModel : Models.Property
 
 		using (new CSGenio.persistence.ScopedPersistentSupport(m_userContext.PersistentSupport))
 		{
+
+			// Table PROPERTY CRUD conditions.
 		}
 
 		BtnPermission = new TableRowCrudButtonPermissions()
