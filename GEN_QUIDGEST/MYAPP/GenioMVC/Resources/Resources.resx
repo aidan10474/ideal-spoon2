@@ -162,6 +162,9 @@
 	<data name="CC35482" xml:space="preserve">
 		<value>Cc</value>
 	</data>
+	<data name="SOLD59824" xml:space="preserve">
+		<value>Sold</value>
+	</data>
 	<data name="PHONE_NUMBER20774" xml:space="preserve">
 		<value>Phone number</value>
 	</data>
@@ -263,6 +266,9 @@
 	</data>
 	<data name="VALUE10285" xml:space="preserve">
 		<value>Value</value>
+	</data>
+	<data name="SOLD_PROPERTIES37611" xml:space="preserve">
+		<value>Sold Properties</value>
 	</data>
 	<data name="CODCOUNTRY13783" xml:space="preserve">
 		<value>CODCountry</value>

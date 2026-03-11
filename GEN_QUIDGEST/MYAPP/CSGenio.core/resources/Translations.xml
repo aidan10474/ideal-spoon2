@@ -45,6 +45,9 @@
   <msg id="Cc" code="CC35482">
     <ENUS>Cc</ENUS>
   </msg>
+  <msg id="Sold" code="SOLD59824">
+    <ENUS>Sold</ENUS>
+  </msg>
   <msg id="Phone number" code="PHONE_NUMBER20774">
     <ENUS>Phone number</ENUS>
   </msg>
@@ -146,6 +149,9 @@
   </msg>
   <msg id="Value" code="VALUE10285">
     <ENUS>Value</ENUS>
+  </msg>
+  <msg id="Sold Properties" code="SOLD_PROPERTIES37611">
+    <ENUS>Sold Properties</ENUS>
   </msg>
   <msg id="CODCountry" code="CODCOUNTRY13783">
     <ENUS>CODCountry</ENUS>

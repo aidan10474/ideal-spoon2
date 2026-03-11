@@ -148,6 +148,11 @@ namespace GenioMVC.Models
 		[NumericAttribute(0)]
 		public decimal? ValFloornumber { get { return Convert.ToDecimal(GenFunctions.RoundQG(klass.ValFloornumber, 0)); } set { klass.ValFloornumber = Convert.ToDecimal(value); } }
 
+		[DisplayName("Sold")]
+		/// <summary>Field : "Sold" Tipo: "L" Formula:  ""</summary>
+		[ShouldSerialize("Property.ValSold")]
+		public bool ValSold { get { return Convert.ToBoolean(klass.ValSold); } set { klass.ValSold = Convert.ToInt32(value); } }
+
 		[DisplayName("ZZSTATE")]
 		[ShouldSerialize("Property.ValZzstate")]
 		/// <summary>Field: "ZZSTATE", Type: "INT", Formula: ""</summary>

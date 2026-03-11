@@ -96,7 +96,7 @@
 			data-key="F_PROPERTY"
 			:data-loading="!formInitialDataLoaded || !isActiveForm">
 			<template v-if="formControl.initialized && showFormBody">
-				<q-row v-if="controls.F_PROPERTY__PROPERTY__ID.isVisible">
+				<q-row v-if="controls.F_PROPERTY__PROPERTY__ID.isVisible || controls.F_PROPERTY__PROPERTY__SOLD.isVisible">
 					<q-col
 						v-if="controls.F_PROPERTY__PROPERTY__ID.isVisible"
 						cols="auto">
@@ -112,6 +112,25 @@
 								v-if="controls.F_PROPERTY__PROPERTY__ID.isVisible"
 								v-bind="controls.F_PROPERTY__PROPERTY__ID.props"
 								@update:model-value="model.ValId.fnUpdateValue" />
+						</base-input-structure>
+					</q-col>
+					<q-col
+						v-if="controls.F_PROPERTY__PROPERTY__SOLD.isVisible"
+						cols="auto">
+						<base-input-structure
+							v-if="controls.F_PROPERTY__PROPERTY__SOLD.isVisible"
+							class="i-checkbox"
+							v-bind="controls.F_PROPERTY__PROPERTY__SOLD"
+							v-on="controls.F_PROPERTY__PROPERTY__SOLD.handlers"
+							:loading="controls.F_PROPERTY__PROPERTY__SOLD.props.loading"
+							:reporting-mode-on="reportingModeCAV"
+							:suggestion-mode-on="suggestionModeOn">
+							<template #label>
+								<q-checkbox
+									v-if="controls.F_PROPERTY__PROPERTY__SOLD.isVisible"
+									v-bind="controls.F_PROPERTY__PROPERTY__SOLD.props"
+									v-on="controls.F_PROPERTY__PROPERTY__SOLD.handlers" />
+							</template>
 						</base-input-structure>
 					</q-col>
 				</q-row>
@@ -850,6 +869,18 @@
 						maxIntegers: 10,
 						maxDecimals: 0,
 						isSequencial: true,
+						controlLimits: [
+						],
+					}, this),
+					F_PROPERTY__PROPERTY__SOLD: new fieldControlClass.BooleanControl({
+						modelField: 'ValSold',
+						valueChangeEvent: 'fieldChange:property.sold',
+						id: 'F_PROPERTY__PROPERTY__SOLD',
+						name: 'SOLD',
+						size: 'mini',
+						label: computed(() => this.Resources.SOLD59824),
+						placeholder: '',
+						labelPosition: computed(() => this.$app.layout.CheckboxLabelAlignment),
 						controlLimits: [
 						],
 					}, this),
@@ -1637,6 +1668,8 @@
 						set ValPrice(value) { vm.model.ValPrice.updateValue(value) },
 						get ValSize() { return vm.model.ValSize.value },
 						set ValSize(value) { vm.model.ValSize.updateValue(value) },
+						get ValSold() { return vm.model.ValSold.value },
+						set ValSold(value) { vm.model.ValSold.updateValue(value) },
 						get ValTitle() { return vm.model.ValTitle.value },
 						set ValTitle(value) { vm.model.ValTitle.updateValue(value) },
 						get ValTypology() { return vm.model.ValTypology.value },

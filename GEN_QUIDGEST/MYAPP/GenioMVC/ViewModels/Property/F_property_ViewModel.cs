@@ -45,6 +45,10 @@ namespace GenioMVC.ViewModels.Property
 		/// </summary>
 		public decimal? ValId { get; set; }
 		/// <summary>
+		/// Title: "Sold" | Type: "L"
+		/// </summary>
+		public bool ValSold { get; set; }
+		/// <summary>
 		/// Title: "Main Photo" | Type: "IJ"
 		/// </summary>
 		[ImageThumbnailJsonConverter(30, 50)]
@@ -282,6 +286,7 @@ namespace GenioMVC.ViewModels.Property
 				ValCodagent = ViewModelConversion.ToString(m.ValCodagent);
 				ValCodcity = ViewModelConversion.ToString(m.ValCodcity);
 				ValId = ViewModelConversion.ToNumeric(m.ValId);
+				ValSold = ViewModelConversion.ToLogic(m.ValSold);
 				ValMain_photo = ViewModelConversion.ToImage(m.ValMain_photo);
 				ValTitle = ViewModelConversion.ToString(m.ValTitle);
 				ValPrice = ViewModelConversion.ToNumeric(m.ValPrice);
@@ -323,6 +328,7 @@ namespace GenioMVC.ViewModels.Property
 				m.ValCodagent = ViewModelConversion.ToString(ValCodagent);
 				m.ValCodcity = ViewModelConversion.ToString(ValCodcity);
 				m.ValId = ViewModelConversion.ToNumeric(ValId);
+				m.ValSold = ViewModelConversion.ToLogic(ValSold);
 				if (ValMain_photo == null || !ValMain_photo.IsThumbnail)
 					m.ValMain_photo = ViewModelConversion.ToImage(ValMain_photo);
 				m.ValTitle = ViewModelConversion.ToString(ValTitle);
@@ -375,6 +381,9 @@ namespace GenioMVC.ViewModels.Property
 						break;
 					case "property.id":
 						this.ValId = ViewModelConversion.ToNumeric(_value);
+						break;
+					case "property.sold":
+						this.ValSold = ViewModelConversion.ToLogic(_value);
 						break;
 					case "property.main_photo":
 						this.ValMain_photo = ViewModelConversion.ToImage(_value);
@@ -964,6 +973,7 @@ namespace GenioMVC.ViewModels.Property
 				"property.codagent" => ViewModelConversion.ToString(modelValue),
 				"property.codcity" => ViewModelConversion.ToString(modelValue),
 				"property.id" => ViewModelConversion.ToNumeric(modelValue),
+				"property.sold" => ViewModelConversion.ToLogic(modelValue),
 				"property.main_photo" => ViewModelConversion.ToImage(modelValue),
 				"property.title" => ViewModelConversion.ToString(modelValue),
 				"property.price" => ViewModelConversion.ToNumeric(modelValue),

@@ -13,6 +13,11 @@ public class F_propertyForm : Form
 	public BaseInputControl PropertyId => new BaseInputControl(driver, ContainerLocator, "container-F_PROPERTY__PROPERTY__ID", "#F_PROPERTY__PROPERTY__ID");
 
 	/// <summary>
+	/// Sold
+	/// </summary>
+	public CheckboxInputControl PropertySold => new CheckboxInputControl(driver, ContainerLocator, "#container-F_PROPERTY__PROPERTY__SOLD");
+
+	/// <summary>
 	/// MAIN INFO
 	/// </summary>
 	public CollapsibleZoneControl PseudNewgrp01 => new CollapsibleZoneControl(driver, ContainerLocator, "#F_PROPERTY__PSEUD__NEWGRP01-container");
