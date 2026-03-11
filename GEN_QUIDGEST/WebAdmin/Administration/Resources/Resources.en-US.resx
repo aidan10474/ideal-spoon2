@@ -258,6 +258,9 @@
   <data name="GROUND_SIZE01563" xml:space="preserve">
     <value>Ground size</value>
   </data>
+  <data name="SALES_PROFIT15602" xml:space="preserve">
+    <value>Sales profit</value>
+  </data>
   <data name="DESAUTORIZADO34584" xml:space="preserve">
     <value>Desautorizado</value>
   </data>
@@ -569,6 +572,9 @@
   </data>
   <data name="DESCRIPTION07383" xml:space="preserve">
     <value>Description</value>
+  </data>
+  <data name="NR_OF_PROPERTIES33318" xml:space="preserve">
+    <value>Nr of properties</value>
   </data>
   <data name="NOTIFICATION_EMAIL_S37352" xml:space="preserve">
     <value>Notification Email Signatures</value>

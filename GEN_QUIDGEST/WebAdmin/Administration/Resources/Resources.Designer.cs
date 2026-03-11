@@ -484,6 +484,15 @@ namespace Administration.Resources {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to "Sales profit"
+        /// </summary>
+        public static string SALES_PROFIT15602 {
+            get {
+                return ResourceManager.GetString("SALES_PROFIT15602", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to "Desautorizado"
         /// </summary>
         public static string DESAUTORIZADO34584 {
@@ -1416,6 +1425,15 @@ namespace Administration.Resources {
         public static string DESCRIPTION07383 {
             get {
                 return ResourceManager.GetString("DESCRIPTION07383", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to "Nr of properties"
+        /// </summary>
+        public static string NR_OF_PROPERTIES33318 {
+            get {
+                return ResourceManager.GetString("NR_OF_PROPERTIES33318", resourceCulture);
             }
         }
 

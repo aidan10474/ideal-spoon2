@@ -141,6 +141,9 @@
   <msg id="Ground size" code="GROUND_SIZE01563">
     <ENUS>Ground size</ENUS>
   </msg>
+  <msg id="Sales profit" code="SALES_PROFIT15602">
+    <ENUS>Sales profit</ENUS>
+  </msg>
   <msg id="Desautorizado" code="DESAUTORIZADO34584">
     <ENUS>Desautorizado</ENUS>
   </msg>
@@ -452,6 +455,9 @@
   </msg>
   <msg id="Description" code="DESCRIPTION07383">
     <ENUS>Description</ENUS>
+  </msg>
+  <msg id="Nr of properties" code="NR_OF_PROPERTIES33318">
+    <ENUS>Nr of properties</ENUS>
   </msg>
   <msg id="Notification Email Signatures" code="NOTIFICATION_EMAIL_S37352">
     <ENUS>Notification Email Signatures</ENUS>
