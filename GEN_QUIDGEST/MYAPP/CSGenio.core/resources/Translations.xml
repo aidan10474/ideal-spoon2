@@ -69,6 +69,9 @@
   <msg id="Apartment" code="APARTMENT12665">
     <ENUS>Apartment</ENUS>
   </msg>
+  <msg id="Building age" code="BUILDING_AGE27311">
+    <ENUS>Building age</ENUS>
+  </msg>
   <msg id="Manual destination" code="MANUAL_DESTINATION21892">
     <ENUS>Manual destination</ENUS>
   </msg>
@@ -263,6 +266,9 @@
   </msg>
   <msg id="Officer" code="OFFICER20358">
     <ENUS>Officer</ENUS>
+  </msg>
+  <msg id="ID" code="ID48520">
+    <ENUS>ID</ENUS>
   </msg>
   <msg id="brokers information" code="BROKERS_INFORMATION64793">
     <ENUS>brokers information</ENUS>

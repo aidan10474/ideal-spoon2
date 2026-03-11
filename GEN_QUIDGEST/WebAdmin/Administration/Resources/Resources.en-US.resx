@@ -186,6 +186,9 @@
   <data name="APARTMENT12665" xml:space="preserve">
     <value>Apartment</value>
   </data>
+  <data name="BUILDING_AGE27311" xml:space="preserve">
+    <value>Building age</value>
+  </data>
   <data name="MANUAL_DESTINATION21892" xml:space="preserve">
     <value>Manual destination</value>
   </data>
@@ -380,6 +383,9 @@
   </data>
   <data name="OFFICER20358" xml:space="preserve">
     <value>Officer</value>
+  </data>
+  <data name="ID48520" xml:space="preserve">
+    <value>ID</value>
   </data>
   <data name="BROKERS_INFORMATION64793" xml:space="preserve">
     <value>brokers information</value>

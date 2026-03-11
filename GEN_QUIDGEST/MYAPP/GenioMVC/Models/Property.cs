@@ -124,6 +124,18 @@ namespace GenioMVC.Models
 		[JsonIgnore]
 		public SelectList ArrayValtypology { get { return new SelectList(CSGenio.business.ArrayTypology.GetDictionary(), "Key", "Value", ValTypology); } set { ValTypology = Convert.ToDecimal(value.SelectedValue); } }
 
+		[DisplayName("ID")]
+		/// <summary>Field : "ID" Tipo: "N" Formula:  ""</summary>
+		[ShouldSerialize("Property.ValId")]
+		[NumericAttribute(0)]
+		public decimal? ValId { get { return Convert.ToDecimal(GenFunctions.RoundQG(klass.ValId, 0)); } set { klass.ValId = Convert.ToDecimal(value); } }
+
+		[DisplayName("Building age")]
+		/// <summary>Field : "Building age" Tipo: "N" Formula: + "Year([Today]) - Year([PROPERTY->DATECONSTRUCTION])"</summary>
+		[ShouldSerialize("Property.ValBuildingage")]
+		[NumericAttribute(0)]
+		public decimal? ValBuildingage { get { return Convert.ToDecimal(GenFunctions.RoundQG(klass.ValBuildingage, 0)); } set { klass.ValBuildingage = Convert.ToDecimal(value); } }
+
 		[DisplayName("ZZSTATE")]
 		[ShouldSerialize("Property.ValZzstate")]
 		/// <summary>Field: "ZZSTATE", Type: "INT", Formula: ""</summary>

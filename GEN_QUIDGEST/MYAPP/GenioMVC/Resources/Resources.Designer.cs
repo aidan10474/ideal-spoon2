@@ -270,6 +270,15 @@ namespace GenioMVC.Resources
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to "Building age"
+		/// </summary>
+		public static string BUILDING_AGE27311 {
+			get {
+				return ResourceManager.GetString("BUILDING_AGE27311", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to "Manual destination"
 		/// </summary>
 		public static string MANUAL_DESTINATION21892 {
@@ -851,6 +860,15 @@ namespace GenioMVC.Resources
 		public static string OFFICER20358 {
 			get {
 				return ResourceManager.GetString("OFFICER20358", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to "ID"
+		/// </summary>
+		public static string ID48520 {
+			get {
+				return ResourceManager.GetString("ID48520", resourceCulture);
 			}
 		}
 

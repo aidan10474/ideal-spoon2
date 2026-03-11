@@ -171,6 +171,34 @@ namespace CSGenio.business
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
+			Qfield = new Field(info.Alias, "id", FieldType.NUMERIC);
+			Qfield.FieldDescription = "ID";
+			Qfield.FieldSize =  10;
+			Qfield.MQueue = false;
+			Qfield.IntegerDigits = 10;
+			Qfield.CavDesignation = "ID48520";
+
+			Qfield.Dupmsg = "";
+			Qfield.DefaultValue = new DefaultValue(DefaultValue.getGreaterPlus1_int, "id");
+			info.RegisterFieldDB(Qfield);
+
+			//- - - - - - - - - - - - - - - - - - -
+			Qfield = new Field(info.Alias, "buildingage", FieldType.NUMERIC);
+			Qfield.FieldDescription = "Building age";
+			Qfield.FieldSize =  10;
+			Qfield.MQueue = false;
+			Qfield.IntegerDigits = 10;
+			Qfield.CavDesignation = "BUILDING_AGE27311";
+
+			Qfield.Dupmsg = "";
+			argumentsListByArea = new List<ByAreaArguments>();
+			argumentsListByArea.Add(new ByAreaArguments(new string[] {"date_construction"}, new int[] {0}, "property", "codproperty"));
+			Qfield.Formula = new InternalOperationFormula(argumentsListByArea, 1, delegate(object[] args, User user, string module, PersistentSupport sp) {
+				return GenFunctions.Year(DateTime.Today)-GenFunctions.Year(((DateTime)args[0]));
+			});
+			info.RegisterFieldDB(Qfield);
+
+			//- - - - - - - - - - - - - - - - - - -
 			Qfield = new Field(info.Alias, "zzstate", FieldType.INTEGER);
 			Qfield.FieldDescription = "Estado da ficha";
 			info.RegisterFieldDB(Qfield);
@@ -218,6 +246,13 @@ namespace CSGenio.business
 
 
 
+			info.InternalOperationFields = new string[] {
+			 "buildingage"
+			};
+
+			info.SequentialDefaultValues = new string[] {
+			 "id"
+			};
 
 
 
@@ -457,6 +492,28 @@ namespace CSGenio.business
 			set { insertNameValueField(FldTypology, value); }
 		}
 
+		/// <summary>Field : "ID" Tipo: "N" Formula:  ""</summary>
+		public static FieldRef FldId { get { return m_fldId; } }
+		private static FieldRef m_fldId = new FieldRef("property", "id");
+
+		/// <summary>Field : "ID" Tipo: "N" Formula:  ""</summary>
+		public decimal ValId
+		{
+			get { return (decimal)returnValueField(FldId); }
+			set { insertNameValueField(FldId, value); }
+		}
+
+		/// <summary>Field : "Building age" Tipo: "N" Formula: + "Year([Today]) - Year([PROPERTY->DATECONSTRUCTION])"</summary>
+		public static FieldRef FldBuildingage { get { return m_fldBuildingage; } }
+		private static FieldRef m_fldBuildingage = new FieldRef("property", "buildingage");
+
+		/// <summary>Field : "Building age" Tipo: "N" Formula: + "Year([Today]) - Year([PROPERTY->DATECONSTRUCTION])"</summary>
+		public decimal ValBuildingage
+		{
+			get { return (decimal)returnValueField(FldBuildingage); }
+			set { insertNameValueField(FldBuildingage, value); }
+		}
+
 		/// <summary>Field : "ZZSTATE" Type: "INT" Formula:  ""</summary>
 		public static FieldRef FldZzstate { get { return m_fldZzstate; } }
 		private static FieldRef m_fldZzstate = new FieldRef("property", "zzstate");
@@ -554,7 +611,7 @@ namespace CSGenio.business
 		// USE /[MANUAL TRA TABAUX PROPERTY]/
 
  
-             
+               
 
 	}
 }
