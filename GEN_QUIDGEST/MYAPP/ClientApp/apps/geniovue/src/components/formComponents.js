@@ -5,7 +5,9 @@ export default {
 		app.component('QFormAccountInfo', defineAsyncComponent(() => import('@/views/shared/AccountInfo.vue')))
 		app.component('QFormFBroke', defineAsyncComponent(() => import('@/views/forms/FormFBroke/QFormFBroke.vue')))
 		app.component('QFormFCity', defineAsyncComponent(() => import('@/views/forms/FormFCity/QFormFCity.vue')))
+		app.component('QFormFContact', defineAsyncComponent(() => import('@/views/forms/FormFContact/QFormFContact.vue')))
 		app.component('QFormFCountry', defineAsyncComponent(() => import('@/views/forms/FormFCountry/QFormFCountry.vue')))
 		app.component('QFormFPhotoAlbum', defineAsyncComponent(() => import('@/views/forms/FormFPhotoAlbum/QFormFPhotoAlbum.vue')))
+		app.component('QFormFProperty', defineAsyncComponent(() => import('@/views/forms/FormFProperty/QFormFProperty.vue')))
 	}
 }

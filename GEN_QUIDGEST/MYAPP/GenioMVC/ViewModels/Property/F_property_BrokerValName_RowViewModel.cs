@@ -4,18 +4,18 @@ using CSGenio.business;
 using CSGenio.framework;
 using GenioMVC.Models.Navigation;
 
-namespace GenioMVC.ViewModels.Photo_album;
+namespace GenioMVC.ViewModels.Property;
 
-public class TRA_Menu_21_RowViewModel : Models.Photo_album
+public class F_property_BrokerValName_RowViewModel : Models.Broker
 {
 	#region Constructors
 
-	public TRA_Menu_21_RowViewModel(UserContext userContext, bool isEmpty = false, string[]? fieldsToSerialize = null) : base(userContext, isEmpty, fieldsToSerialize)
+	public F_property_BrokerValName_RowViewModel(UserContext userContext, bool isEmpty = false, string[]? fieldsToSerialize = null) : base(userContext, isEmpty, fieldsToSerialize)
 	{
 		InitRowProperties();
 	}
 
-	public TRA_Menu_21_RowViewModel(UserContext userContext, CSGenioAphoto_album val, bool isEmpty = false, string[]? fieldsToSerialize = null) : base(userContext, val, isEmpty, fieldsToSerialize)
+	public F_property_BrokerValName_RowViewModel(UserContext userContext, CSGenioAbroker val, bool isEmpty = false, string[]? fieldsToSerialize = null) : base(userContext, val, isEmpty, fieldsToSerialize)
 	{
 		InitRowProperties();
 	}
@@ -36,20 +36,8 @@ public class TRA_Menu_21_RowViewModel : Models.Photo_album
 			new ListColumn()
 			{
 				Order = 1,
-				Area = "PHOTO_ALBUM",
-				Field = "TITLE",
-			},
-			new ListColumn()
-			{
-				Order = 2,
-				Area = "PROPERTY",
-				Field = "TITLE",
-			},
-			new ListColumn()
-			{
-				Order = 3,
-				Area = "PHOTO_ALBUM",
-				Field = "PHOTO",
+				Area = "BROKER",
+				Field = "NAME",
 			},
 		];
 	}
@@ -64,10 +52,6 @@ public class TRA_Menu_21_RowViewModel : Models.Photo_album
 		bool canDelete = true;
 		bool canDuplicate = true;
 		bool canInsert = true;
-
-		using (new CSGenio.persistence.ScopedPersistentSupport(m_userContext.PersistentSupport))
-		{
-		}
 
 		BtnPermission = new TableRowCrudButtonPermissions()
 		{
