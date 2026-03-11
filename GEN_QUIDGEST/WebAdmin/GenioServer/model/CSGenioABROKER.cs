@@ -94,6 +94,7 @@ namespace CSGenio.business
             Qfield.NotNull = true;
 			Qfield.Dupmsg = "";
             Qfield.NotDup = true;
+			Qfield.DefaultValue = new DefaultValue("@agency.com");
 			info.RegisterFieldDB(Qfield);
 
 			//- - - - - - - - - - - - - - - - - - -
@@ -153,6 +154,10 @@ namespace CSGenio.business
 			//------------------------------
 
 
+
+			info.DefaultValues = new string[] {
+			 "email"
+			};
 
 
 
